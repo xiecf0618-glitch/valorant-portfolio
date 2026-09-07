@@ -1,0 +1,140 @@
+{
+  "scene01": {
+    "chapter": "封面",
+    "paragraphs": "P001–P007",
+    "pdf_page": 1,
+    "type": "analysis"
+  },
+  "scene02": {
+    "chapter": "引言",
+    "paragraphs": "P008–P014",
+    "pdf_page": 2,
+    "type": "analysis"
+  },
+  "scene03": {
+    "chapter": "01 进入条件",
+    "paragraphs": "P015–P021",
+    "pdf_page": 2,
+    "type": "analysis"
+  },
+  "scene04": {
+    "chapter": "02 用户承接",
+    "paragraphs": "P022–P034",
+    "pdf_page": 3,
+    "type": "hypothesis"
+  },
+  "scene05": {
+    "chapter": "02 用户承接",
+    "paragraphs": "P022–P034",
+    "pdf_page": 3,
+    "type": "hypothesis"
+  },
+  "scene06": {
+    "chapter": "03 社交关系",
+    "paragraphs": "P035–P045",
+    "pdf_page": 4,
+    "type": "analysis"
+  },
+  "scene07": {
+    "chapter": "03 局外展示",
+    "paragraphs": "P035–P045",
+    "pdf_page": 4,
+    "type": "analysis"
+  },
+  "scene08": {
+    "chapter": "04 商品价值",
+    "paragraphs": "P046–P052",
+    "pdf_page": 5,
+    "type": "analysis"
+  },
+  "scene09": {
+    "chapter": "05 生命周期",
+    "paragraphs": "P053–P066",
+    "pdf_page": 5,
+    "type": "analysis"
+  },
+  "scene10": {
+    "chapter": "05 新品首发",
+    "paragraphs": "P055–P057",
+    "pdf_page": 6,
+    "type": "analysis"
+  },
+  "scene11": {
+    "chapter": "05 日常商店",
+    "paragraphs": "P058–P060",
+    "pdf_page": 6,
+    "type": "analysis"
+  },
+  "scene12": {
+    "chapter": "05 夜市",
+    "paragraphs": "P061–P062",
+    "pdf_page": 6,
+    "type": "analysis"
+  },
+  "scene13": {
+    "chapter": "05 瓦谷",
+    "paragraphs": "P063–P065",
+    "pdf_page": 6,
+    "type": "analysis"
+  },
+  "scene14": {
+    "chapter": "05 赛季策略",
+    "paragraphs": "P067–P072",
+    "pdf_page": 7,
+    "type": "hypothesis"
+  },
+  "scene15": {
+    "chapter": "05 数据与风险",
+    "paragraphs": "P072–P073",
+    "pdf_page": 7,
+    "type": "validation"
+  },
+  "scene16": {
+    "chapter": "06 赛事生态",
+    "paragraphs": "P074–P082",
+    "pdf_page": 7,
+    "type": "analysis"
+  },
+  "scene17": {
+    "chapter": "06 双端任务",
+    "paragraphs": "P078–P082",
+    "pdf_page": 8,
+    "type": "hypothesis"
+  },
+  "scene18": {
+    "chapter": "06 合作赛事",
+    "paragraphs": "P076–P080",
+    "pdf_page": 8,
+    "type": "analysis"
+  },
+  "scene19": {
+    "chapter": "06 战队商品",
+    "paragraphs": "P083–P086",
+    "pdf_page": 9,
+    "type": "analysis"
+  },
+  "scene20": {
+    "chapter": "结语",
+    "paragraphs": "P087–P093",
+    "pdf_page": 9,
+    "type": "analysis"
+  },
+  "scene21": {
+    "chapter": "附录 商业化评审",
+    "paragraphs": "P094–P097",
+    "pdf_page": 10,
+    "type": "fact"
+  },
+  "scene22": {
+    "chapter": "附录 数据验收",
+    "paragraphs": "P098–P102",
+    "pdf_page": 11,
+    "type": "fact"
+  },
+  "scene23": {
+    "chapter": "公开来源",
+    "paragraphs": "P103–P120",
+    "pdf_page": 11,
+    "type": "fact"
+  }
+}

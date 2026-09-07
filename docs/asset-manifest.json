@@ -1,0 +1,193 @@
+{
+  "assets": [
+    {
+      "filename": "store-official-2020.jpg",
+      "local_path": "assets/store-official-2020.jpg",
+      "source_page_url": "https://playvalorant.com/en-us/news/dev/valorant-store-and-cosmetic-content/",
+      "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/fdf82c474d35f7b6110118aa081a9fc4b7a0e1e3-1280x720.jpg",
+      "official": true,
+      "publisher": "Riot Games",
+      "content": "官方真实商店截图；PRISM Featured 套装及4个日常 Offers",
+      "content_year": "2020-04-29 官方文章，封测时期UI",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      },
+      "mime_format": "JPEG",
+      "bytes": 124258,
+      "sha256": "c3ffbfff86346c2b66f26c3c9ba39f275821b77adf56c1fd4828160bc499d58c",
+      "recommended": true,
+      "use": "替换不可用 Daily Store 图，说明历史商店与轮换商品结构",
+      "notes": "必须标注为2020官方商店示例，不得标为2026实时商店。保留完整原图比例以看到底部4个Offers。",
+      "processing": "原样下载/原样复制，未生成、未裁切、未放大、未重绘"
+    },
+    {
+      "filename": "night-market-official-2025.png",
+      "local_path": "assets/night-market-official-2025.png",
+      "source_page_url": "https://support.riotgames.com/en-us/valorant/store/nightmarket-valorant/",
+      "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/daa5e3fda473d1abf2c1a111cab4d1a32aab6ca2-2484x1369.png",
+      "official": true,
+      "publisher": "Riot Games",
+      "content": "官方真实 Night.Market 截图；6张已揭示折扣商品卡，剩余24天",
+      "content_year": "截图拍摄年未注明；官方支持文章更新于2025-03-05",
+      "dimensions": {
+        "width": 2484,
+        "height": 1369
+      },
+      "mime_format": "PNG",
+      "bytes": 1056433,
+      "sha256": "c448cac2b2f198ea9eac616aefc7d1b42dcc3b22af62b6b192e4e6a4c3b85014",
+      "recommended": true,
+      "use": "替换仅标题的 Night.Market 红横幅，展示六个优惠的真实UI",
+      "notes": "来源图片由当前Riot Support文章公开正文引用。文章数据另存 night-market-support-data.json。2025只是文章更新年，不能称此图是2025活动。",
+      "processing": "原样下载/原样复制，未生成、未裁切、未放大、未重绘"
+    },
+    {
+      "filename": "battlepass-official-2020.jpg",
+      "local_path": "assets/battlepass-official-2020.jpg",
+      "source_page_url": "https://playvalorant.com/en-us/news/game-updates/what-is-the-valorant-battlepass/",
+      "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/cc67e0a264f22732aad748c26542f70be47ef879-3840x2160.jpg",
+      "official": true,
+      "publisher": "Riot Games",
+      "content": "IGNITION ACT 1 Battle Pass；DOT EXE VANDAL、Premium层级与免费章节奖励",
+      "content_year": "2020-06-02 官方文章；2020 Act 1",
+      "dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "mime_format": "JPEG",
+      "bytes": 391423,
+      "sha256": "672631301986b3353b3012a8c2f30a5c1605dd60dff5486cdd1db70b0c3f624a",
+      "recommended": true,
+      "use": "Battle Pass 章节真实机制UI；也可展示Vandal与奖励轨道关系",
+      "notes": "3840×2160原图。必须标注2020 Act 1官方示例；不是2026通行证。",
+      "processing": "原样下载/原样复制，未生成、未裁切、未放大、未重绘"
+    },
+    {
+      "filename": "team-capsules-2026-pacific.jpg",
+      "local_path": "assets/team-capsules-2026-pacific.jpg",
+      "source_page_url": "https://valorantesports.com/en-US/news/valorant-champions-tour-2026-team-capsules",
+      "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/c9d25d418afd74a65efd68708b4662da640fa51d-1920x1080.jpg",
+      "official": true,
+      "publisher": "Riot Games",
+      "content": "VCT PACIFIC 2026 COLLECTION；Classic、枪挂和选手卡组合",
+      "content_year": "2026-01-06 官方发布",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "mime_format": "JPEG",
+      "bytes": 246740,
+      "sha256": "f7cd1b1b19f826b9a35287307568dbbb0d970715460f43de4fb30e68261cbf97",
+      "recommended": true,
+      "use": "保留现有 Team Capsules 实物组合图",
+      "notes": "现有图已核实属于2026官方胶囊发布页；不是2025图。适合不裁切全图；限定太平洋赛区，不应称包含全部赛区。",
+      "processing": "原样下载/原样复制，未生成、未裁切、未放大、未重绘"
+    },
+    {
+      "filename": "vct-stage-official-2025.jpg",
+      "local_path": "assets/vct-stage-official-2025.jpg",
+      "source_page_url": "https://valorantesports.com/en-US/news/first-look-at-valorant-champions-tour-2026-",
+      "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/1d08e43683089b8330e022e00f732d686902adb5-2047x1365.jpg",
+      "official": true,
+      "publisher": "Riot Games",
+      "content": "VCT Pacific真实赛事舞台、转播大屏及观众",
+      "content_year": "2025-10-03 官方文章刊载；拍摄日未注明",
+      "dimensions": {
+        "width": 2047,
+        "height": 1365
+      },
+      "mime_format": "JPEG",
+      "bytes": 424041,
+      "sha256": "6af80556073890a57562f5a7e3237fe3c08bb92939bda78e7c2ca41eec333051",
+      "recommended": true,
+      "use": "电竞生态章节较暗背景",
+      "notes": "替换原先错误放在esports-bg的2020 Closed Beta角色海报。",
+      "processing": "原样下载/原样复制，未生成、未裁切、未放大、未重绘"
+    },
+    {
+      "filename": "ascent-official-4k.png",
+      "local_path": "assets/ascent-official-4k.png",
+      "source_page_url": "https://playvalorant.com/en-us/maps/",
+      "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/5cb7e65c04a489eccd725ce693fdc11e99982e10-3840x2160.png",
+      "official": true,
+      "publisher": "Riot Games",
+      "content": "ASCENT／亚海悬城官方地图全景",
+      "content_year": "原始图年份未注明；现行官网地图页，核验2026-09-07",
+      "dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "mime_format": "PNG",
+      "bytes": 2554828,
+      "sha256": "34825b02e664472e7cea10246a39a4d6b42c43debc93f7ee0b698e7fcef90b81",
+      "recommended": true,
+      "use": "首页或结束页暗背景",
+      "notes": "4K官网原始图；保留其本身的拼块美术效果，未编辑。",
+      "processing": "原样下载/原样复制，未生成、未裁切、未放大、未重绘"
+    },
+    {
+      "filename": "jett-fullportrait-thirdparty.png",
+      "local_path": "assets/jett-fullportrait-thirdparty.png",
+      "source_page_url": "https://valorant-api.com/",
+      "original_image_url": "https://media.valorant-api.com/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/fullportrait.png",
+      "official": false,
+      "publisher": "Valorant-API 非官方素材API",
+      "content": "Jett 既有全身透明角色图",
+      "content_year": "素材日期未注明",
+      "dimensions": {
+        "width": 2048,
+        "height": 1860
+      },
+      "mime_format": "PNG",
+      "bytes": 628364,
+      "sha256": "4b103d4002ec803d0905a53b18ad1f7a37daf05a45dbfb37b1008345b83f6d10",
+      "recommended": false,
+      "use": "需要完整角色站姿时保留原有素材",
+      "notes": "2048×1860透明图。来源网站明确说明非官方且未获Riot背书；不可标作官方发布图片。",
+      "processing": "原样下载/原样复制，未生成、未裁切、未放大、未重绘"
+    },
+    {
+      "filename": "reaver-vandal-collection-official-hd.jpg",
+      "source_page_url": "https://playvalorant.com/en-us/news/dev/true-to-form-the-story-of-reaver/",
+      "content": "Reaver 1.0整套官方商品宣传图；前景主要武器为Reaver Vandal，画面含Operator、Guardian、Sheriff和近战",
+      "content_year": "2022-08-09官方开发文章刊载；内容为Reaver 1.0商品资产，图片制作日期未单独注明",
+      "use": "替换首页512px狂徒图，作为完整高清主武器商品视觉",
+      "notes": "官方正文img alt明确为Reaver-1_0-store-asset.jpg。原始1648×805，保留整幅画面与左下角官方水印；不是Kuronami，也不是2026新品或游戏商店UI。建议题注：REAVER COLLECTION｜官方商品宣传图（2022文章刊载）。",
+      "local_path": "assets/reaver-vandal-collection-official-hd.jpg",
+      "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/62575f4d67618ae0a7f31a1a684db38599a32346-1648x805.jpg",
+      "official": true,
+      "publisher": "Riot Games",
+      "dimensions": {
+        "width": 1648,
+        "height": 805
+      },
+      "mime_format": "JPEG",
+      "bytes": 138595,
+      "sha256": "6c5cf1462bf3ec3910a263336be0398bdccac7f401e670f36f8bc29e8dc07c34",
+      "recommended": true,
+      "processing": "原样网络下载，未生成、未重绘、未裁切、未放大"
+    },
+    {
+      "filename": "valorant-symbol-official.png",
+      "source_page_url": "https://playvalorant.com/en-us/arsenal/",
+      "content": "VALORANT红色V符号，透明背景",
+      "content_year": "现行官网HTML公开引用；核验2026-09-07",
+      "use": "页面顶栏小尺寸官方标志",
+      "notes": "从实际已访问官网HTML的JSON-LD logo/站点图片URL下载；非猜测历史路径。原始128×128，仅V符号，不含VALORANT字标。建议显示24至32px。",
+      "local_path": "assets/valorant-symbol-official.png",
+      "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/cbf4460132cdfeb2a97fad5f9dd25ba0bc058f76-128x128.png?accountingTag=VAL",
+      "official": true,
+      "publisher": "Riot Games",
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "mime_format": "PNG",
+      "bytes": 872,
+      "sha256": "d947a1f3afddaa19a0405cd900ec63efeb813dea4993f30a2153fed4dbc5e364",
+      "recommended": true,
+      "processing": "原样网络下载，未生成、未重绘、未裁切、未放大"
+    }
+  ]
+}

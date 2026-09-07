@@ -1,0 +1,378 @@
+{
+  "date": "2026-09-07",
+  "method": "Chromium实际iframe布局视口；页面正常纵向滚动，不是截图缩放模拟响应式。",
+  "checks": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "documentWidth": 1425,
+      "scenes": [
+        {
+          "id": "scene01",
+          "height": 623,
+          "textOverflow": []
+        },
+        {
+          "id": "scene02",
+          "height": 1031,
+          "textOverflow": []
+        },
+        {
+          "id": "scene03",
+          "height": 1098,
+          "textOverflow": []
+        },
+        {
+          "id": "scene04",
+          "height": 829,
+          "textOverflow": []
+        },
+        {
+          "id": "scene05",
+          "height": 835,
+          "textOverflow": []
+        },
+        {
+          "id": "scene06",
+          "height": 1073,
+          "textOverflow": []
+        },
+        {
+          "id": "scene07",
+          "height": 925,
+          "textOverflow": []
+        },
+        {
+          "id": "scene08",
+          "height": 1564,
+          "textOverflow": []
+        },
+        {
+          "id": "scene09",
+          "height": 891,
+          "textOverflow": []
+        },
+        {
+          "id": "scene10",
+          "height": 769,
+          "textOverflow": []
+        },
+        {
+          "id": "scene11",
+          "height": 956,
+          "textOverflow": []
+        },
+        {
+          "id": "scene12",
+          "height": 949,
+          "textOverflow": []
+        },
+        {
+          "id": "scene13",
+          "height": 827,
+          "textOverflow": []
+        },
+        {
+          "id": "scene14",
+          "height": 1359,
+          "textOverflow": []
+        },
+        {
+          "id": "scene15",
+          "height": 1115,
+          "textOverflow": []
+        },
+        {
+          "id": "scene16",
+          "height": 1005,
+          "textOverflow": []
+        },
+        {
+          "id": "scene17",
+          "height": 1191,
+          "textOverflow": []
+        },
+        {
+          "id": "scene18",
+          "height": 761,
+          "textOverflow": []
+        },
+        {
+          "id": "scene19",
+          "height": 1042,
+          "textOverflow": []
+        },
+        {
+          "id": "scene20",
+          "height": 1124,
+          "textOverflow": []
+        },
+        {
+          "id": "scene21",
+          "height": 1102,
+          "textOverflow": []
+        },
+        {
+          "id": "scene22",
+          "height": 926,
+          "textOverflow": []
+        },
+        {
+          "id": "scene23",
+          "height": 2158,
+          "textOverflow": []
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "documentWidth": 1351,
+      "scenes": [
+        {
+          "id": "scene01",
+          "height": 618,
+          "textOverflow": []
+        },
+        {
+          "id": "scene02",
+          "height": 1029,
+          "textOverflow": []
+        },
+        {
+          "id": "scene03",
+          "height": 1097,
+          "textOverflow": []
+        },
+        {
+          "id": "scene04",
+          "height": 828,
+          "textOverflow": []
+        },
+        {
+          "id": "scene05",
+          "height": 833,
+          "textOverflow": []
+        },
+        {
+          "id": "scene06",
+          "height": 1071,
+          "textOverflow": []
+        },
+        {
+          "id": "scene07",
+          "height": 922,
+          "textOverflow": []
+        },
+        {
+          "id": "scene08",
+          "height": 1545,
+          "textOverflow": []
+        },
+        {
+          "id": "scene09",
+          "height": 889,
+          "textOverflow": []
+        },
+        {
+          "id": "scene10",
+          "height": 791,
+          "textOverflow": []
+        },
+        {
+          "id": "scene11",
+          "height": 929,
+          "textOverflow": []
+        },
+        {
+          "id": "scene12",
+          "height": 923,
+          "textOverflow": []
+        },
+        {
+          "id": "scene13",
+          "height": 825,
+          "textOverflow": []
+        },
+        {
+          "id": "scene14",
+          "height": 1337,
+          "textOverflow": []
+        },
+        {
+          "id": "scene15",
+          "height": 1114,
+          "textOverflow": []
+        },
+        {
+          "id": "scene16",
+          "height": 1002,
+          "textOverflow": []
+        },
+        {
+          "id": "scene17",
+          "height": 1208,
+          "textOverflow": []
+        },
+        {
+          "id": "scene18",
+          "height": 759,
+          "textOverflow": []
+        },
+        {
+          "id": "scene19",
+          "height": 1074,
+          "textOverflow": []
+        },
+        {
+          "id": "scene20",
+          "height": 1117,
+          "textOverflow": []
+        },
+        {
+          "id": "scene21",
+          "height": 1099,
+          "textOverflow": []
+        },
+        {
+          "id": "scene22",
+          "height": 950,
+          "textOverflow": []
+        },
+        {
+          "id": "scene23",
+          "height": 2258,
+          "textOverflow": []
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 375,
+      "scenes": [
+        {
+          "id": "scene01",
+          "height": 914,
+          "textOverflow": []
+        },
+        {
+          "id": "scene02",
+          "height": 1890,
+          "textOverflow": []
+        },
+        {
+          "id": "scene03",
+          "height": 2117,
+          "textOverflow": []
+        },
+        {
+          "id": "scene04",
+          "height": 1263,
+          "textOverflow": []
+        },
+        {
+          "id": "scene05",
+          "height": 1464,
+          "textOverflow": []
+        },
+        {
+          "id": "scene06",
+          "height": 1981,
+          "textOverflow": []
+        },
+        {
+          "id": "scene07",
+          "height": 1496,
+          "textOverflow": []
+        },
+        {
+          "id": "scene08",
+          "height": 3114,
+          "textOverflow": []
+        },
+        {
+          "id": "scene09",
+          "height": 1813,
+          "textOverflow": []
+        },
+        {
+          "id": "scene10",
+          "height": 1113,
+          "textOverflow": []
+        },
+        {
+          "id": "scene11",
+          "height": 1335,
+          "textOverflow": []
+        },
+        {
+          "id": "scene12",
+          "height": 1337,
+          "textOverflow": []
+        },
+        {
+          "id": "scene13",
+          "height": 1310,
+          "textOverflow": []
+        },
+        {
+          "id": "scene14",
+          "height": 2806,
+          "textOverflow": []
+        },
+        {
+          "id": "scene15",
+          "height": 1716,
+          "textOverflow": []
+        },
+        {
+          "id": "scene16",
+          "height": 1269,
+          "textOverflow": []
+        },
+        {
+          "id": "scene17",
+          "height": 1725,
+          "textOverflow": []
+        },
+        {
+          "id": "scene18",
+          "height": 1361,
+          "textOverflow": []
+        },
+        {
+          "id": "scene19",
+          "height": 1595,
+          "textOverflow": []
+        },
+        {
+          "id": "scene20",
+          "height": 1612,
+          "textOverflow": []
+        },
+        {
+          "id": "scene21",
+          "height": 1476,
+          "textOverflow": []
+        },
+        {
+          "id": "scene22",
+          "height": 1349,
+          "textOverflow": []
+        },
+        {
+          "id": "scene23",
+          "height": 4273,
+          "textOverflow": []
+        }
+      ]
+    }
+  ]
+}

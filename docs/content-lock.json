@@ -1,0 +1,17 @@
+{
+  "status": "CONTENT LOCKED",
+  "locked_date": "2026-09-07",
+  "baseline_file": "无畏契约端手游商业化与电竞生态分析(2).docx",
+  "baseline_sha256": "8af4e50f0abab7c7532e5d5bcb0725daa38b119a61a4d15d61adcf8128ffd7ca",
+  "baseline_source": "libfile_06ffe4a8f2e88191b76863b917fb855f",
+  "v5_git_commit": "54c63b18b7f25277f7a78b9c45fad673ac4d45d1",
+  "locked_content_sha256": "c780f7bc3450df0115030d410b9afa8a41093c3e5833bec4cc96583c4d0dafc4",
+  "scenes": 23,
+  "fact_cutoff": "2026-09-02",
+  "limitations": [
+    "图2A只有题注，网页使用终稿已有图1与图2B，不补造图片。"
+  ],
+  "post_lock_changes": "仅视觉、素材、响应式、可访问性与来源题注；不改变研究结论。",
+  "final_html_sha256": "fa37dc39d20bae73d218bf0e98b045b70bf4aa2f07d45564bcb24c0b0eb0a187",
+  "post_lock_review": "素材题注回归通过；研究正文无新增P0/P1，23 Scene映射一致。"
+}
