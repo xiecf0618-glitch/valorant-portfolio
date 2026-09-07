@@ -1,0 +1,42 @@
+[
+  {
+    "test": "drawer opens with focus inside",
+    "pass": true
+  },
+  {
+    "test": "reverse focus wrap",
+    "pass": true
+  },
+  {
+    "test": "forward focus wrap",
+    "pass": true
+  },
+  {
+    "test": "escape closes and returns focus",
+    "pass": true
+  },
+  {
+    "test": "FPS user tab",
+    "pass": true
+  },
+  {
+    "test": "user tabs arrow key",
+    "pass": true
+  },
+  {
+    "test": "college esports tab",
+    "pass": true
+  },
+  {
+    "test": "mobile directory jump",
+    "pass": true
+  },
+  {
+    "test": "mechanism expands",
+    "pass": true
+  },
+  {
+    "test": "conclusion without artwork",
+    "pass": true
+  }
+]

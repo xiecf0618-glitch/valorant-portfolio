@@ -5,6 +5,7 @@ const all = (s, root = document) => [...root.querySelectorAll(s)];
 
 function enhanceTabs(buttonSelector, panelSelector, key) {
   const buttons = all(buttonSelector), panels = all(panelSelector);
+  if (!buttons.length) return;
   function select(index, focus = false) {
     buttons.forEach((button, i) => {
       button.setAttribute('aria-selected', String(i === index));
@@ -34,6 +35,9 @@ const chapters = all('.chapter');
 function expandChapter(chapter, open) {
   chapter.classList.toggle('open', open);
   one('.chapter-head', chapter).setAttribute('aria-expanded', String(open));
+  const subnav = one('.subnav', chapter);
+  subnav.inert = !open;
+  subnav.setAttribute('aria-hidden', String(!open));
 }
 chapters.forEach((chapter, i) => {
   const button = one('.chapter-head', chapter), subnav = one('.subnav', chapter);
@@ -43,39 +47,65 @@ chapters.forEach((chapter, i) => {
   button.addEventListener('click', () => expandChapter(chapter, !chapter.classList.contains('open')));
 });
 
-const side = one('#sideNav'), menuButtons = [one('#menuBtn'), one('#dockMenu')];
-const mobile = matchMedia('(max-width: 900px)');
+const side = one('#sideNav'), menuButtons = [one('#menuBtn'), one('#dockMenu')].filter(Boolean);
+const backdrop = one('#menuBackdrop');
 let lastMenuButton;
+const isVisible = element => element && element.isConnected && element.getClientRects().length && getComputedStyle(element).visibility !== 'hidden';
+function menuFocusables() {
+  return all('a[href],button,input,select,textarea,[tabindex]', side).filter(element =>
+    !element.disabled && element.tabIndex >= 0 && !element.closest('[inert]') && isVisible(element)
+  );
+}
+side.setAttribute('role', 'dialog');
+side.tabIndex = -1;
 function setMenu(open, returnFocus = false) {
+  if (!open && (returnFocus || side.contains(document.activeElement))) {
+    const target = isVisible(lastMenuButton) ? lastMenuButton : menuButtons.find(isVisible);
+    target?.focus({ preventScroll: true });
+  }
   side.classList.toggle('open', open);
-  document.body.classList.toggle('menu-open', open && mobile.matches);
-  side.inert = mobile.matches && !open;
+  document.body.classList.toggle('menu-open', open);
+  side.inert = !open;
+  side.setAttribute('aria-hidden', String(!open));
+  if (open) side.setAttribute('aria-modal', 'true'); else side.removeAttribute('aria-modal');
+  backdrop?.setAttribute('aria-hidden', String(!open));
   menuButtons.forEach(button => {
     button.setAttribute('aria-expanded', String(open));
     button.setAttribute('aria-controls', 'sideNav');
+    button.setAttribute('aria-label', open ? '关闭目录' : '打开目录');
   });
-  if (open && mobile.matches) one('.chapter-head', side).focus();
-  if (!open && returnFocus && lastMenuButton) lastMenuButton.focus();
+  if (open) {
+    const currentChapter = one('.chapter.active', side);
+    if (currentChapter) expandChapter(currentChapter, true);
+    const target = (currentChapter && one('.chapter-head', currentChapter)) || menuFocusables()[0] || side;
+    requestAnimationFrame(() => { if (side.classList.contains('open')) target.focus({ preventScroll: true }); });
+  }
 }
 menuButtons.forEach(button => button.addEventListener('click', () => {
   lastMenuButton = button; setMenu(!side.classList.contains('open'));
 }));
-mobile.addEventListener('change', () => setMenu(false));
 setMenu(false);
-one('#menuBackdrop')?.addEventListener('click', () => setMenu(false, true));
+backdrop?.addEventListener('click', () => setMenu(false, true));
+one('#drawerClose')?.addEventListener('click', () => setMenu(false, true));
 document.addEventListener('keydown', event => {
-  if (!mobile.matches || !side.classList.contains('open')) return;
-  if (event.key === 'Escape') setMenu(false, true);
+  if (!side.classList.contains('open')) return;
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    setMenu(false, true);
+  }
   if (event.key === 'Tab') {
-    const focusable = all('button,a[href]', side).filter(element => element.getClientRects().length);
+    const focusable = menuFocusables();
     const first = focusable[0], last = focusable.at(-1);
-    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    if (!first) { event.preventDefault(); side.focus(); }
+    else if (!focusable.includes(document.activeElement)) { event.preventDefault(); (event.shiftKey ? last : first).focus(); }
+    else if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
     else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
   }
 });
-all('.subnav a').forEach(link => link.addEventListener('click', () => {
+all('a[href^="#"]', side).forEach(link => link.addEventListener('click', event => {
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
   setMenu(false);
-  const section = one(link.hash);
+  const section = document.getElementById(decodeURIComponent(link.hash.slice(1)));
   if (section) { section.tabIndex = -1; section.focus({ preventScroll: true }); }
 }));
 
@@ -112,7 +142,7 @@ function updateMotion() {
   document.documentElement.dataset.reduceMotion = String(reduced);
   motionButton.setAttribute('aria-pressed', String(reduced));
   motionButton.setAttribute('aria-label', reduced ? '启用动效' : '减少动效');
-  motionButton.textContent = reduced ? '○' : '◉';
+  motionButton.textContent = reduced ? '开启平滑滚动' : '减少滚动动效';
 }
 motionButton.addEventListener('click', () => { reduced = !reduced; updateMotion(); });
 updateMotion();
