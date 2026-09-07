@@ -1,0 +1,179 @@
+{
+  "checked_utc": "2026-09-07T08:06:40.179816+00:00",
+  "release_commit": "d3c1dc24d21bacffca6f130ec655346394b24f40",
+  "actions_run": 34098669316,
+  "actions_conclusion": "success",
+  "public_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/",
+  "anonymous_requests": true,
+  "resources": [
+    {
+      "file": "index.html",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/",
+      "content_type": "text/html",
+      "bytes": 79834,
+      "sha256": "fa37dc39d20bae73d218bf0e98b045b70bf4aa2f07d45564bcb24c0b0eb0a187",
+      "matches_build": true
+    },
+    {
+      "file": "app.js",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/app.js",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/app.js",
+      "content_type": "application/javascript",
+      "bytes": 5892,
+      "sha256": "38f44f7dc4f4f17068de4767b2b0f71cbdddc498609190211d71f2bf706c5991",
+      "matches_build": true
+    },
+    {
+      "file": "styles.css",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/styles.css",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/styles.css",
+      "content_type": "text/css",
+      "bytes": 34015,
+      "sha256": "2513d627aff4a1539a5ad7964a4335fb31b01ad95d18f2105d20dc6a81501dab",
+      "matches_build": true
+    },
+    {
+      "file": "assets/valorant-symbol-official.png",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/valorant-symbol-official.png",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/valorant-symbol-official.png",
+      "content_type": "image/png",
+      "bytes": 872,
+      "sha256": "d947a1f3afddaa19a0405cd900ec63efeb813dea4993f30a2153fed4dbc5e364",
+      "matches_build": true
+    },
+    {
+      "file": "assets/reaver-vandal-collection-official-hd.jpg",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/reaver-vandal-collection-official-hd.jpg",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/reaver-vandal-collection-official-hd.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 138595,
+      "sha256": "6c5cf1462bf3ec3910a263336be0398bdccac7f401e670f36f8bc29e8dc07c34",
+      "matches_build": true
+    },
+    {
+      "file": "assets/night-market-official-2025.png",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/night-market-official-2025.png",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/night-market-official-2025.png",
+      "content_type": "image/png",
+      "bytes": 1056433,
+      "sha256": "c448cac2b2f198ea9eac616aefc7d1b42dcc3b22af62b6b192e4e6a4c3b85014",
+      "matches_build": true
+    },
+    {
+      "file": "assets/ascent-official-4k.png",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/ascent-official-4k.png",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/ascent-official-4k.png",
+      "content_type": "image/png",
+      "bytes": 2554828,
+      "sha256": "34825b02e664472e7cea10246a39a4d6b42c43debc93f7ee0b698e7fcef90b81",
+      "matches_build": true
+    },
+    {
+      "file": "assets/report.pdf",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/report.pdf",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/report.pdf",
+      "content_type": "application/pdf",
+      "bytes": 2815464,
+      "sha256": "3884973695883ebf78f0189a2201d187f00b28b2440c10a1a3523fc158b2fee5",
+      "matches_build": true
+    },
+    {
+      "file": "assets/vct-stage-official-2025.jpg",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/vct-stage-official-2025.jpg",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/vct-stage-official-2025.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 424041,
+      "sha256": "6af80556073890a57562f5a7e3237fe3c08bb92939bda78e7c2ca41eec333051",
+      "matches_build": true
+    },
+    {
+      "file": "assets/data-acceptance.png",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/data-acceptance.png",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/data-acceptance.png",
+      "content_type": "image/png",
+      "bytes": 157488,
+      "sha256": "8086d8ee37a52cd2aa1fafb8fb13b5d45b479841b3c51e5de15f0e684e82a9c9",
+      "matches_build": true
+    },
+    {
+      "file": "assets/jett-fullportrait-thirdparty.png",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/jett-fullportrait-thirdparty.png",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/jett-fullportrait-thirdparty.png",
+      "content_type": "image/png",
+      "bytes": 628364,
+      "sha256": "4b103d4002ec803d0905a53b18ad1f7a37daf05a45dbfb37b1008345b83f6d10",
+      "matches_build": true
+    },
+    {
+      "file": "assets/team-capsules-2026-pacific.jpg",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/team-capsules-2026-pacific.jpg",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/team-capsules-2026-pacific.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 246740,
+      "sha256": "f7cd1b1b19f826b9a35287307568dbbb0d970715460f43de4fb30e68261cbf97",
+      "matches_build": true
+    },
+    {
+      "file": "assets/battlepass-official-2020.jpg",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/battlepass-official-2020.jpg",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/battlepass-official-2020.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 391423,
+      "sha256": "672631301986b3353b3012a8c2f30a5c1605dd60dff5486cdd1db70b0c3f624a",
+      "matches_build": true
+    },
+    {
+      "file": "assets/commercial-review.jpeg",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/commercial-review.jpeg",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/commercial-review.jpeg",
+      "content_type": "image/jpeg",
+      "bytes": 209617,
+      "sha256": "9cb790a2982327cfd236082dda642cfb1dc55e56d484bbd7b0306922860a3811",
+      "matches_build": true
+    },
+    {
+      "file": "assets/store-official-2020.jpg",
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/store-official-2020.jpg",
+      "status": 200,
+      "final_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/store-official-2020.jpg",
+      "content_type": "image/jpeg",
+      "bytes": 124258,
+      "sha256": "c3ffbfff86346c2b66f26c3c9ba39f275821b77adf56c1fd4828160bc499d58c",
+      "matches_build": true
+    }
+  ],
+  "passed": true,
+  "browser": {
+    "desktop_direct_public_url": true,
+    "mobile_public_iframe_viewport": [
+      390,
+      844
+    ],
+    "login_required": false,
+    "notes": "浏览器实际打开公开站点；进一步场景与交互复核记录在发布说明。",
+    "checked_public_scenes": [
+      "scene01",
+      "scene11",
+      "scene17",
+      "scene22"
+    ],
+    "mobile_menu_open_close": "passed",
+    "work_image_link": "opened new tab at public assets/data-acceptance.png, intrinsic 1429×663",
+    "not_found": false
+  }
+}

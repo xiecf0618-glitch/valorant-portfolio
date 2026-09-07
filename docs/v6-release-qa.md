@@ -59,3 +59,9 @@
 - 产物约8.9 MB，含2.82 MB完整PDF及原分辨率素材；HTML+CSS+JS约120 KB。未编造Lighthouse分数或网速成绩。
 
 浏览器为Chromium，未将本地视口检查冒称为真实iOS/Android设备覆盖。上线后另做匿名公网、资源状态及公开URL手机iframe验收。
+
+## 公网验收结果
+
+V6提交 `d3c1dc24d21bacffca6f130ec655346394b24f40` 的 [GitHub Actions 34098669316](https://github.com/xiecf0618-glitch/valorant-portfolio/actions/runs/34098669316) 成功。固定地址匿名返回200，无重定向到登录页。首页、CSS、JS、PDF和全部图片共15个文件均返回200，SHA-256全部与本地dist一致。
+
+实际浏览器访问了公网首页与商店页；公网390×844 iframe检查赛事矩阵、手机目录和数据验收页。工作原图链接正常打开公开PNG（1429×663）。完整响应、MIME和校验值保存在 `deployment-qa.json`。该记录的后续文档提交不会改变dist内容。
