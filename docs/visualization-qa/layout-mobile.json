@@ -1,0 +1,393 @@
+{
+  "viewport": [
+    390,
+    844
+  ],
+  "documentWidth": 375,
+  "scenes": [
+    {
+      "id": "scene01",
+      "width": 375,
+      "height": 709,
+      "title": "无畏契约",
+      "headingFont": "58px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/ascent-official-4k.png",
+          "loaded": true,
+          "natural": [
+            3840,
+            2160
+          ],
+          "display": [
+            375,
+            708
+          ]
+        },
+        {
+          "src": "assets/reaver-vandal-collection-official-hd.jpg",
+          "loaded": true,
+          "natural": [
+            1648,
+            805
+          ],
+          "display": [
+            335,
+            164
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene02",
+      "width": 375,
+      "height": 2078,
+      "title": "同一 IP，哪些要一致，哪些需要分别设计？",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    },
+    {
+      "id": "scene03",
+      "width": 375,
+      "height": 2038,
+      "title": "手游降低的是开局前成本，竞技标准仍需守住。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    },
+    {
+      "id": "scene04",
+      "width": 375,
+      "height": 1392,
+      "title": "手游上线后，用户最先需要解决的问题并不相同。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    },
+    {
+      "id": "scene05",
+      "width": 375,
+      "height": 1989,
+      "title": "先回应疑虑，再安排首次行动。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    },
+    {
+      "id": "scene06",
+      "width": 375,
+      "height": 2389,
+      "title": "关系是否沉淀，不能只看好友数。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    },
+    {
+      "id": "scene07",
+      "width": 375,
+      "height": 2170,
+      "title": "手游把资产从“自己使用”延伸到“被好友和访客看见”。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    },
+    {
+      "id": "scene08",
+      "width": 375,
+      "height": 3006,
+      "title": "商品先要在使用中成立，再讨论展示、关系与身份价值。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/reaver-vandal-collection-official-hd.jpg",
+          "loaded": true,
+          "natural": [
+            1648,
+            805
+          ],
+          "display": [
+            335,
+            164
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene09",
+      "width": 375,
+      "height": 1236,
+      "title": "商品生命周期里的四种运营任务",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    },
+    {
+      "id": "scene10",
+      "width": 375,
+      "height": 1078,
+      "title": "新品首发首先解决“确定供给”，而不是把最高意愿需求交给随机轮换。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    },
+    {
+      "id": "scene11",
+      "width": 375,
+      "height": 1381,
+      "title": "日常商店随机的是“展示什么”，不是“付款后得到什么”。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/store-official-2020.jpg",
+          "loaded": true,
+          "natural": [
+            1280,
+            720
+          ],
+          "display": [
+            335,
+            188
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene12",
+      "width": 375,
+      "height": 1412,
+      "title": "夜市多了一层折扣，因此更接近对未转化需求的再次唤回。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/night-market-official-2025.png",
+          "loaded": true,
+          "natural": [
+            2484,
+            1369
+          ],
+          "display": [
+            335,
+            185
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene13",
+      "width": 375,
+      "height": 1431,
+      "title": "瓦谷处理的是“获得之后”：重复资产、交换、收藏补全与展示互动。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    },
+    {
+      "id": "scene14",
+      "width": 375,
+      "height": 3063,
+      "title": "商品同时争夺预算与注意力，节奏就需要取舍。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/battlepass-official-2020.jpg",
+          "loaded": true,
+          "natural": [
+            3840,
+            2160
+          ],
+          "display": [
+            335,
+            188
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene15",
+      "width": 375,
+      "height": 3263,
+      "title": "收入来自新增需求，还是其他商品的转移？",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    },
+    {
+      "id": "scene16",
+      "width": 375,
+      "height": 1478,
+      "title": "一套电竞生态同时要回答：谁展示最高水平，以及普通玩家怎样进入比赛。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/vct-stage-official-2025.jpg",
+          "loaded": true,
+          "natural": [
+            2047,
+            1365
+          ],
+          "display": [
+            375,
+            1477
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene17",
+      "width": 375,
+      "height": 2064,
+      "title": "双端都需要竞技高度与大众参与，差异在于当前各层级承担什么任务。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    },
+    {
+      "id": "scene18",
+      "width": 375,
+      "height": 1298,
+      "title": "合作资源的价值，要继续验证实际参与。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    },
+    {
+      "id": "scene19",
+      "width": 375,
+      "height": 1803,
+      "title": "战队胶囊把赛事身份直接接入商品，让“支持”变成可装备、可重复展示的资产。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/team-capsules-2026-pacific.jpg",
+          "loaded": true,
+          "natural": [
+            1920,
+            1080
+          ],
+          "display": [
+            335,
+            188
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene20",
+      "width": 375,
+      "height": 1136,
+      "title": "新增场景只有转化为持续行为，才会成为双端共同增长的一部分。",
+      "headingFont": "32px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/ascent-official-4k.png",
+          "loaded": true,
+          "natural": [
+            3840,
+            2160
+          ],
+          "display": [
+            375,
+            1135
+          ]
+        },
+        {
+          "src": "assets/jett-fullportrait-thirdparty.png",
+          "loaded": true,
+          "natural": [
+            2048,
+            1860
+          ],
+          "display": [
+            430,
+            390
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene21",
+      "width": 375,
+      "height": 1562,
+      "title": "商业化判断最终要落成评审问题，而不是停留在“看起来合理”。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/commercial-review.jpeg",
+          "loaded": false,
+          "natural": [
+            0,
+            0
+          ],
+          "display": [
+            335,
+            194
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene22",
+      "width": 375,
+      "height": 2464,
+      "title": "结果事件要能对应业务结果，也要能验收异常。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/data-acceptance.png",
+          "loaded": true,
+          "natural": [
+            1429,
+            663
+          ],
+          "display": [
+            335,
+            155
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene23",
+      "width": 375,
+      "height": 5510,
+      "title": "公开事实有出处，分析判断有边界。",
+      "headingFont": "30px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": []
+    }
+  ]
+}

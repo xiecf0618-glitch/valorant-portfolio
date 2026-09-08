@@ -4,6 +4,8 @@ Date: 2026-09-07
 
 **final result: passed**
 
+Latest scoped update, 2026-09-08: the user approved the existing text and requested diagrams, tables and continuous backgrounds. Eight Scenes now use semantic visual structures, with no change to the research baseline. Three viewport checks and independent content/visual reviews passed; two table/connector P2 issues were fixed. The complete current record is [visualization-content-and-qa.md](docs/visualization-content-and-qa.md). The September 7 approved-scale comparison below remains the historical design baseline.
+
 ## Scope and reference
 
 The user approved the reduced-scale commerce concept after reviewing the larger first draft. The selected reference is `exec-bbbfe02c-3156-4c2b-a337-d7fe5fb9ffce.png` (1586 × 992), generated in this conversation. It guides type scale, open rows, dark palette, red accents and the relative prominence of the main conclusion. Existing official game assets and the locked research remain authoritative for actual content.
