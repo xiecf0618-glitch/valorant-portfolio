@@ -1,0 +1,128 @@
+{
+  "checkedAt": "2026-09-08T08:59:14.083Z",
+  "page": "http://terminal.local:4173/__qa",
+  "checks": {
+    "selection": "pass: click and ArrowLeft/ArrowRight/Home/End update src, labels, aria-pressed and roving tabindex",
+    "motionToggle": "pass: disabled/cue state sync; motion-off still permits weapon selection",
+    "nativeKeyboard": "pass: Jett Enter/Space and pointer clicks start animations",
+    "mobile": "pass: 390px controls fit; weapon options 106x113px; viewer 335x193px; Jett 180x411.8px",
+    "scroll": "pass: pointer over gun region, scrollTop 230 to 660 for +430px wheel; touch-action pan-y",
+    "animationPlayback": "unconfirmed: WAAPI is running but currentTime remains zero in this browser. Frames show visible document; event binding is confirmed. Do not claim visual playback passed."
+  },
+  "weapon": {
+    "control": "weapon",
+    "reduced": "false",
+    "samples": [
+      {
+        "ms": 986,
+        "visibility": "visible",
+        "elements": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ms": 1460,
+        "visibility": "visible",
+        "elements": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "jett": {
+    "control": "jett",
+    "reduced": "false",
+    "samples": [
+      {
+        "ms": 938,
+        "visibility": "visible",
+        "elements": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ]
+          },
+          {
+            "transform": "matrix(0.749107, -0.333524, 0.333524, 0.749107, 0, 10)",
+            "opacity": "0",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ]
+          },
+          {
+            "transform": "matrix(0.939693, -0.34202, 0.34202, 0.939693, 0, 0)",
+            "opacity": "0",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ms": 1585,
+        "visibility": "visible",
+        "elements": [
+          {
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "opacity": "1",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ]
+          },
+          {
+            "transform": "matrix(0.749107, -0.333524, 0.333524, 0.749107, 0, 10)",
+            "opacity": "0",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ]
+          },
+          {
+            "transform": "matrix(0.939693, -0.34202, 0.34202, 0.939693, 0, 0)",
+            "opacity": "0",
+            "animations": [
+              {
+                "time": 0,
+                "state": "running"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

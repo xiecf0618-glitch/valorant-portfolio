@@ -1,0 +1,1260 @@
+{
+  "checked": "2026-09-08",
+  "scope": "DOM geometry for all 23 scenes at three actual iframe viewport sizes. Lazy images outside viewport are not failed loads.",
+  "reports": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "documentWidth": 1425,
+      "scenes": [
+        {
+          "id": "scene01",
+          "width": 1425,
+          "height": 648,
+          "title": "无畏契约",
+          "headingFont": "87.84px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/weapon-reaver-vandal.png",
+              "loaded": true,
+              "natural": [
+                512,
+                156
+              ],
+              "display": [
+                512,
+                156
+              ]
+            },
+            {
+              "src": "assets/weapon-reaver-vandal.png",
+              "loaded": true,
+              "natural": [
+                512,
+                156
+              ],
+              "display": [
+                132,
+                42
+              ]
+            },
+            {
+              "src": "assets/weapon-prime-vandal.png",
+              "loaded": true,
+              "natural": [
+                512,
+                148
+              ],
+              "display": [
+                132,
+                42
+              ]
+            },
+            {
+              "src": "assets/weapon-oni-phantom.png",
+              "loaded": true,
+              "natural": [
+                512,
+                116
+              ],
+              "display": [
+                132,
+                42
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene02",
+          "width": 1425,
+          "height": 1219,
+          "title": "同一 IP，哪些要一致，哪些需要分别设计？",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene03",
+          "width": 1425,
+          "height": 1289,
+          "title": "手游降低的是开局前成本，竞技标准仍需守住。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene04",
+          "width": 1425,
+          "height": 1028,
+          "title": "手游上线后，用户最先需要解决的问题并不相同。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene05",
+          "width": 1425,
+          "height": 1149,
+          "title": "先回应疑虑，再安排首次行动。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene06",
+          "width": 1425,
+          "height": 1363,
+          "title": "关系是否沉淀，不能只看好友数。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene07",
+          "width": 1425,
+          "height": 1184,
+          "title": "手游把资产从“自己使用”延伸到“被好友和访客看见”。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene08",
+          "width": 1425,
+          "height": 1714,
+          "title": "商品先要在使用中成立，再讨论展示、关系与身份价值。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/oni-collection-official-hd.webp",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                593,
+                334
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene09",
+          "width": 1425,
+          "height": 1059,
+          "title": "商品生命周期里的四种运营任务",
+          "headingFont": "60.48px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene10",
+          "width": 1425,
+          "height": 1097,
+          "title": "新品首发首先解决“确定供给”，而不是把最高意愿需求交给随机轮换。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/prime-collection-official-hd.webp",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                689,
+                388
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene11",
+          "width": 1425,
+          "height": 1152,
+          "title": "日常商店随机的是“展示什么”，不是“付款后得到什么”。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/store-official-2020.jpg",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                687,
+                387
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene12",
+          "width": 1425,
+          "height": 1144,
+          "title": "夜市多了一层折扣，因此更接近对未转化需求的再次唤回。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/night-market-official-2025.png",
+              "loaded": true,
+              "natural": [
+                2484,
+                1369
+              ],
+              "display": [
+                687,
+                379
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene13",
+          "width": 1425,
+          "height": 1213,
+          "title": "瓦谷处理的是“获得之后”：重复资产、交换、收藏补全与展示互动。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/wagu-summer-promo-2026.webp",
+              "loaded": true,
+              "natural": [
+                1920,
+                1440
+              ],
+              "display": [
+                1611,
+                1208
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene14",
+          "width": 1425,
+          "height": 1794,
+          "title": "商品同时争夺预算与注意力，节奏就需要取舍。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/battlepass-official-2020.jpg",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                627,
+                352
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene15",
+          "width": 1425,
+          "height": 1400,
+          "title": "收入来自新增需求，还是其他商品的转移？",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene16",
+          "width": 1425,
+          "height": 1205,
+          "title": "一套电竞生态同时要回答：谁展示最高水平，以及普通玩家怎样进入比赛。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene17",
+          "width": 1425,
+          "height": 1389,
+          "title": "双端都需要竞技高度与大众参与，差异在于当前各层级承担什么任务。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene18",
+          "width": 1425,
+          "height": 843,
+          "title": "合作资源的价值，要继续验证实际参与。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene19",
+          "width": 1425,
+          "height": 1200,
+          "title": "战队胶囊把赛事身份直接接入商品，让“支持”变成可装备、可重复展示的资产。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/team-capsules-2026-pacific.jpg",
+              "loaded": true,
+              "natural": [
+                1920,
+                1080
+              ],
+              "display": [
+                658,
+                370
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene20",
+          "width": 1425,
+          "height": 815,
+          "title": "新增场景只有转化为持续行为，才会成为双端共同增长的一部分。",
+          "headingFont": "51.12px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/jett-fullportrait-thirdparty.png",
+              "loaded": true,
+              "natural": [
+                2048,
+                1860
+              ],
+              "display": [
+                716,
+                650
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene21",
+          "width": 1425,
+          "height": 1198,
+          "title": "商业化判断最终要落成评审问题，而不是停留在“看起来合理”。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/commercial-review.jpeg",
+              "loaded": true,
+              "natural": [
+                1504,
+                869
+              ],
+              "display": [
+                752,
+                435
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene22",
+          "width": 1425,
+          "height": 1338,
+          "title": "结果事件要能对应业务结果，也要能验收异常。",
+          "headingFont": "54.72px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/data-acceptance.png",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                627,
+                291
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene23",
+          "width": 1425,
+          "height": 2845,
+          "title": "公开事实有出处，分析判断有边界。",
+          "headingFont": "54.72px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "documentWidth": 1351,
+      "scenes": [
+        {
+          "id": "scene01",
+          "width": 1351,
+          "height": 641,
+          "title": "无畏契约",
+          "headingFont": "83.326px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/weapon-reaver-vandal.png",
+              "loaded": true,
+              "natural": [
+                512,
+                156
+              ],
+              "display": [
+                512,
+                156
+              ]
+            },
+            {
+              "src": "assets/weapon-reaver-vandal.png",
+              "loaded": true,
+              "natural": [
+                512,
+                156
+              ],
+              "display": [
+                132,
+                42
+              ]
+            },
+            {
+              "src": "assets/weapon-prime-vandal.png",
+              "loaded": true,
+              "natural": [
+                512,
+                148
+              ],
+              "display": [
+                132,
+                42
+              ]
+            },
+            {
+              "src": "assets/weapon-oni-phantom.png",
+              "loaded": true,
+              "natural": [
+                512,
+                116
+              ],
+              "display": [
+                132,
+                42
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene02",
+          "width": 1351,
+          "height": 1215,
+          "title": "同一 IP，哪些要一致，哪些需要分别设计？",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene03",
+          "width": 1351,
+          "height": 1326,
+          "title": "手游降低的是开局前成本，竞技标准仍需守住。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene04",
+          "width": 1351,
+          "height": 1058,
+          "title": "手游上线后，用户最先需要解决的问题并不相同。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene05",
+          "width": 1351,
+          "height": 1145,
+          "title": "先回应疑虑，再安排首次行动。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene06",
+          "width": 1351,
+          "height": 1360,
+          "title": "关系是否沉淀，不能只看好友数。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene07",
+          "width": 1351,
+          "height": 1176,
+          "title": "手游把资产从“自己使用”延伸到“被好友和访客看见”。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene08",
+          "width": 1351,
+          "height": 1719,
+          "title": "商品先要在使用中成立，再讨论展示、关系与身份价值。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/oni-collection-official-hd.webp",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                558,
+                314
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene09",
+          "width": 1351,
+          "height": 1055,
+          "title": "商品生命周期里的四种运营任务",
+          "headingFont": "57.372px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene10",
+          "width": 1351,
+          "height": 1067,
+          "title": "新品首发首先解决“确定供给”，而不是把最高意愿需求交给随机轮换。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/prime-collection-official-hd.webp",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                649,
+                365
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene11",
+          "width": 1351,
+          "height": 1122,
+          "title": "日常商店随机的是“展示什么”，不是“付款后得到什么”。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/store-official-2020.jpg",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                646,
+                364
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene12",
+          "width": 1351,
+          "height": 1114,
+          "title": "夜市多了一层折扣，因此更接近对未转化需求的再次唤回。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/night-market-official-2025.png",
+              "loaded": true,
+              "natural": [
+                2484,
+                1369
+              ],
+              "display": [
+                646,
+                356
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene13",
+          "width": 1351,
+          "height": 1205,
+          "title": "瓦谷处理的是“获得之后”：重复资产、交换、收藏补全与展示互动。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/wagu-summer-promo-2026.webp",
+              "loaded": true,
+              "natural": [
+                1920,
+                1440
+              ],
+              "display": [
+                1611,
+                1208
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene14",
+          "width": 1351,
+          "height": 1857,
+          "title": "商品同时争夺预算与注意力，节奏就需要取舍。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/battlepass-official-2020.jpg",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                590,
+                332
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene15",
+          "width": 1351,
+          "height": 1397,
+          "title": "收入来自新增需求，还是其他商品的转移？",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene16",
+          "width": 1351,
+          "height": 1197,
+          "title": "一套电竞生态同时要回答：谁展示最高水平，以及普通玩家怎样进入比赛。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene17",
+          "width": 1351,
+          "height": 1422,
+          "title": "双端都需要竞技高度与大众参与，差异在于当前各层级承担什么任务。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene18",
+          "width": 1351,
+          "height": 839,
+          "title": "合作资源的价值，要继续验证实际参与。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene19",
+          "width": 1351,
+          "height": 1204,
+          "title": "战队胶囊把赛事身份直接接入商品，让“支持”变成可装备、可重复展示的资产。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/team-capsules-2026-pacific.jpg",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                619,
+                348
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene20",
+          "width": 1351,
+          "height": 815,
+          "title": "新增场景只有转化为持续行为，才会成为双端共同增长的一部分。",
+          "headingFont": "48.493px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/jett-fullportrait-thirdparty.png",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                716,
+                650
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene21",
+          "width": 1351,
+          "height": 1191,
+          "title": "商业化判断最终要落成评审问题，而不是停留在“看起来合理”。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/commercial-review.jpeg",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                708,
+                409
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene22",
+          "width": 1351,
+          "height": 1334,
+          "title": "结果事件要能对应业务结果，也要能验收异常。",
+          "headingFont": "51.908px",
+          "minBodyFont": 17,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/data-acceptance.png",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                590,
+                274
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene23",
+          "width": 1351,
+          "height": 2876,
+          "title": "公开事实有出处，分析判断有边界。",
+          "headingFont": "51.908px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        }
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 375,
+      "scenes": [
+        {
+          "id": "scene01",
+          "width": 375,
+          "height": 875,
+          "title": "无畏契约",
+          "headingFont": "58px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/weapon-reaver-vandal.png",
+              "loaded": true,
+              "natural": [
+                512,
+                156
+              ],
+              "display": [
+                313,
+                95
+              ]
+            },
+            {
+              "src": "assets/weapon-reaver-vandal.png",
+              "loaded": true,
+              "natural": [
+                512,
+                156
+              ],
+              "display": [
+                90,
+                34
+              ]
+            },
+            {
+              "src": "assets/weapon-prime-vandal.png",
+              "loaded": true,
+              "natural": [
+                512,
+                148
+              ],
+              "display": [
+                90,
+                34
+              ]
+            },
+            {
+              "src": "assets/weapon-oni-phantom.png",
+              "loaded": true,
+              "natural": [
+                512,
+                116
+              ],
+              "display": [
+                90,
+                34
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene02",
+          "width": 375,
+          "height": 2077,
+          "title": "同一 IP，哪些要一致，哪些需要分别设计？",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene03",
+          "width": 375,
+          "height": 2026,
+          "title": "手游降低的是开局前成本，竞技标准仍需守住。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene04",
+          "width": 375,
+          "height": 1445,
+          "title": "手游上线后，用户最先需要解决的问题并不相同。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene05",
+          "width": 375,
+          "height": 1988,
+          "title": "先回应疑虑，再安排首次行动。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene06",
+          "width": 375,
+          "height": 2388,
+          "title": "关系是否沉淀，不能只看好友数。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene07",
+          "width": 375,
+          "height": 2169,
+          "title": "手游把资产从“自己使用”延伸到“被好友和访客看见”。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene08",
+          "width": 375,
+          "height": 3025,
+          "title": "商品先要在使用中成立，再讨论展示、关系与身份价值。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/oni-collection-official-hd.webp",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                179,
+                101
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene09",
+          "width": 375,
+          "height": 1234,
+          "title": "商品生命周期里的四种运营任务",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene10",
+          "width": 375,
+          "height": 1371,
+          "title": "新品首发首先解决“确定供给”，而不是把最高意愿需求交给随机轮换。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/prime-collection-official-hd.webp",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                333,
+                187
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene11",
+          "width": 375,
+          "height": 1422,
+          "title": "日常商店随机的是“展示什么”，不是“付款后得到什么”。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/store-official-2020.jpg",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                333,
+                187
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene12",
+          "width": 375,
+          "height": 1452,
+          "title": "夜市多了一层折扣，因此更接近对未转化需求的再次唤回。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/night-market-official-2025.png",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                333,
+                184
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene13",
+          "width": 375,
+          "height": 1583,
+          "title": "瓦谷处理的是“获得之后”：重复资产、交换、收藏补全与展示互动。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/wagu-summer-promo-2026.webp",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                1254,
+                940
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene14",
+          "width": 375,
+          "height": 3103,
+          "title": "商品同时争夺预算与注意力，节奏就需要取舍。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/battlepass-official-2020.jpg",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                333,
+                187
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene15",
+          "width": 375,
+          "height": 3262,
+          "title": "收入来自新增需求，还是其他商品的转移？",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene16",
+          "width": 375,
+          "height": 1509,
+          "title": "一套电竞生态同时要回答：谁展示最高水平，以及普通玩家怎样进入比赛。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene17",
+          "width": 375,
+          "height": 2063,
+          "title": "双端都需要竞技高度与大众参与，差异在于当前各层级承担什么任务。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene18",
+          "width": 375,
+          "height": 1297,
+          "title": "合作资源的价值，要继续验证实际参与。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        },
+        {
+          "id": "scene19",
+          "width": 375,
+          "height": 1843,
+          "title": "战队胶囊把赛事身份直接接入商品，让“支持”变成可装备、可重复展示的资产。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/team-capsules-2026-pacific.jpg",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                333,
+                187
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene20",
+          "width": 375,
+          "height": 1198,
+          "title": "新增场景只有转化为持续行为，才会成为双端共同增长的一部分。",
+          "headingFont": "32px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/jett-fullportrait-thirdparty.png",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                430,
+                390
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene21",
+          "width": 375,
+          "height": 1603,
+          "title": "商业化判断最终要落成评审问题，而不是停留在“看起来合理”。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/commercial-review.jpeg",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                333,
+                192
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene22",
+          "width": 375,
+          "height": 2505,
+          "title": "结果事件要能对应业务结果，也要能验收异常。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": [
+            {
+              "src": "assets/data-acceptance.png",
+              "loaded": false,
+              "natural": [
+                0,
+                0
+              ],
+              "display": [
+                333,
+                154
+              ]
+            }
+          ]
+        },
+        {
+          "id": "scene23",
+          "width": 375,
+          "height": 5490,
+          "title": "公开事实有出处，分析判断有边界。",
+          "headingFont": "30px",
+          "minBodyFont": 16,
+          "overflow": [],
+          "images": []
+        }
+      ]
+    }
+  ]
+}

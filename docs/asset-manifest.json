@@ -154,7 +154,7 @@
       "source_page_url": "https://playvalorant.com/en-us/news/dev/true-to-form-the-story-of-reaver/",
       "content": "Reaver 1.0整套官方商品宣传图；前景主要武器为Reaver Vandal，画面含Operator、Guardian、Sheriff和近战",
       "content_year": "2022-08-09官方开发文章刊载；内容为Reaver 1.0商品资产，图片制作日期未单独注明",
-      "use": "替换首页512px狂徒图，作为完整高清主武器商品视觉",
+      "use": "历史首页宣传素材；当前首页改为透明枪械交互",
       "notes": "官方正文img alt明确为Reaver-1_0-store-asset.jpg。原始1648×805，保留整幅画面与左下角官方水印；不是Kuronami，也不是2026新品或游戏商店UI。建议题注：REAVER COLLECTION｜官方商品宣传图（2022文章刊载）。",
       "local_path": "assets/reaver-vandal-collection-official-hd.jpg",
       "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/62575f4d67618ae0a7f31a1a684db38599a32346-1648x805.jpg",
@@ -167,8 +167,9 @@
       "mime_format": "JPEG",
       "bytes": 138595,
       "sha256": "6c5cf1462bf3ec3910a263336be0398bdccac7f401e670f36f8bc29e8dc07c34",
-      "recommended": true,
-      "processing": "原样网络下载，未生成、未重绘、未裁切、未放大"
+      "recommended": false,
+      "processing": "原样网络下载，未生成、未重绘、未裁切、未放大",
+      "active": false
     },
     {
       "filename": "valorant-symbol-official.png",
@@ -364,6 +365,83 @@
       "visual_check": "官方4K原图与最终1920×1080 WebP均已view_image检查：枪械轮廓清楚，全部原画边界和官方标识保留，无网站新增裁切。",
       "active": true,
       "use": "Scene08 商品价值官方配图"
+    },
+    {
+      "filename": "weapon-reaver-vandal.png",
+      "local_path": "assets/weapon-reaver-vandal.png",
+      "source_page_url": "https://valorant-api.com/",
+      "original_image_url": "https://media.valorant-api.com/weaponskinchromas/2bd28382-48c6-8579-83e8-e9b64b783de3/fullrender.png",
+      "official": false,
+      "publisher": "Valorant-API (non-official community asset API; not endorsed by Riot Games)",
+      "content": "Reaver Vandal 游戏原生透明切图",
+      "dimensions": {
+        "width": 512,
+        "height": 156
+      },
+      "bytes": 52327,
+      "sha256": "10a1ddf3a16a9dced7f9b9fc8b0b30bacf6ed820bafb1312f602593fcdfb16ba",
+      "active": true,
+      "use": "首页武器选择与轻量检视",
+      "processing": "原样下载，未生成、未抠图、未重绘或放大",
+      "notes": "第三方游戏资产分发；非Riot官方直接分发。自然宽512px，展示最大512 CSS px。"
+    },
+    {
+      "filename": "weapon-prime-vandal.png",
+      "local_path": "assets/weapon-prime-vandal.png",
+      "source_page_url": "https://valorant-api.com/",
+      "original_image_url": "https://media.valorant-api.com/weaponskinchromas/a26e0d1d-4886-7d62-6b4f-1996e706463d/fullrender.png",
+      "official": false,
+      "publisher": "Valorant-API (non-official community asset API; not endorsed by Riot Games)",
+      "content": "Prime Vandal 游戏原生透明切图",
+      "dimensions": {
+        "width": 512,
+        "height": 148
+      },
+      "bytes": 42900,
+      "sha256": "becbab7eee11f9100db4b79b8d9744f46a5d08027858c64c4cfb8c17fa553154",
+      "active": true,
+      "use": "首页武器选择与轻量检视",
+      "processing": "原样下载，未生成、未抠图、未重绘或放大",
+      "notes": "第三方游戏资产分发；非Riot官方直接分发。自然宽512px，展示最大512 CSS px。"
+    },
+    {
+      "filename": "weapon-oni-phantom.png",
+      "local_path": "assets/weapon-oni-phantom.png",
+      "source_page_url": "https://valorant-api.com/",
+      "original_image_url": "https://media.valorant-api.com/weaponskinchromas/6096a66f-43d2-d4ad-6421-84aee3386921/fullrender.png",
+      "official": false,
+      "publisher": "Valorant-API (non-official community asset API; not endorsed by Riot Games)",
+      "content": "Oni Phantom 游戏原生透明切图",
+      "dimensions": {
+        "width": 512,
+        "height": 116
+      },
+      "bytes": 39023,
+      "sha256": "4dd1bf8afb24f4fa5cadf27aedc4a2eac6c54a2c4546dbb18dfd6c647a74dc95",
+      "active": true,
+      "use": "首页武器选择与轻量检视",
+      "processing": "原样下载，未生成、未抠图、未重绘或放大",
+      "notes": "第三方游戏资产分发；非Riot官方直接分发。自然宽512px，展示最大512 CSS px。"
+    },
+    {
+      "filename": "wagu-summer-promo-2026.webp",
+      "local_path": "assets/wagu-summer-promo-2026.webp",
+      "source_page_url": "https://www.233leyuan.com/post-detail/2059093980424052736",
+      "original_image_url": "https://community-hs.233leyuan.com/community/post/598d925e929a48fba5c025c7cf52ac14_852846220.webp",
+      "cross_reference_url": "https://news.17173.com/content/05252026/201432742.shtml",
+      "official": false,
+      "publisher": "233乐园转载版本宣传图",
+      "content": "2026年6月版本宣传海报，含瓦谷收藏物模块",
+      "dimensions": {
+        "width": 1920,
+        "height": 1440
+      },
+      "bytes": 235254,
+      "sha256": "6e6e24647f2a8678a15000a00ba8c192d473899fc79c5b4e08264f6fe6d8f940",
+      "active": true,
+      "use": "Scene13 瓦谷收藏物宣传示例",
+      "processing": "本地文件原样保留；CSS展示第五模块，点击打开完整原图",
+      "notes": "不是腾讯官网直接资产；不是交换/个性广场实机UI，不作为1.24.0交换功能图像证据。"
     }
   ]
 }
