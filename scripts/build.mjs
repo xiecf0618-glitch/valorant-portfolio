@@ -2,6 +2,7 @@ import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 const root = process.cwd(), dist = path.join(root, 'dist');
 const html = await readFile('index.html', 'utf8');
+const css = await readFile('styles.css', 'utf8');
 const ids = [...html.matchAll(/id="(scene\d+)"/g)].map(match=>match[1]);
 if (ids.length !== 23 || new Set(ids).size !== 23) throw new Error('Expected 23 unique scene anchors.');
 if (/DecompressionStream|V5 ONLINE|VISUAL INTEGRATION|data:image\/svg\+xml;charset/.test(html)) throw new Error('Legacy loader or placeholder remains.');
@@ -10,6 +11,10 @@ const anchorIds = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(match=>match
 for (const [, anchor] of html.matchAll(/href="#([^"]+)"/g)) if (!anchorIds.has(anchor)) throw new Error(`Broken anchor ${anchor}`);
 const refs = [...html.matchAll(/(?:src|href)="([^"#][^"]*)"/g)].map(match=>match[1]).filter(ref=>!ref.startsWith('http')&&!ref.startsWith('data:'));
 for (const ref of refs) await readFile(ref.split('#')[0]);
+for (const [, ref] of css.matchAll(/url\(['"]?([^'"\)]+)['"]?\)/g)) {
+  if (/^https?:/.test(ref)) throw new Error(`External background image ${ref}`);
+  if (!ref.startsWith('data:')) await readFile(ref);
+}
 const sources = JSON.parse(await readFile('docs/source-links.json','utf8')).sources;
 for (const source of sources) if (!html.includes(source.url.replaceAll('&','&amp;'))) throw new Error(`Source ${source.id} not linked`);
 await rm(dist, { recursive:true, force:true });

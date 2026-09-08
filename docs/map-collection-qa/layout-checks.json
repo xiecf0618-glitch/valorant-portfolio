@@ -1,0 +1,1601 @@
+[
+  {
+    "backgrounds": [
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "87.84px",
+        "id": "scene01",
+        "layer": "0",
+        "opacity": "0.28"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene02",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene03",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene04",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene05",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene06",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene07",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene08",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "60.48px",
+        "id": "scene09",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene10",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene11",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene12",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene13",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene14",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene15",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-icebox-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene16",
+        "layer": "0",
+        "opacity": "0.19"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-icebox-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene17",
+        "layer": "0",
+        "opacity": "0.19"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-icebox-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene18",
+        "layer": "0",
+        "opacity": "0.19"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-icebox-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene19",
+        "layer": "0",
+        "opacity": "0.19"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "51.12px",
+        "id": "scene20",
+        "layer": "0",
+        "opacity": "0.28"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene21",
+        "layer": "0",
+        "opacity": "0.15"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene22",
+        "layer": "0",
+        "opacity": "0.15"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "54.72px",
+        "id": "scene23",
+        "layer": "0",
+        "opacity": "0.15"
+      }
+    ],
+    "documentWidth": 1425,
+    "scenes": [
+      {
+        "headingFont": "87.84px",
+        "height": 647,
+        "id": "scene01",
+        "images": [
+          {
+            "display": [
+              599,
+              292
+            ],
+            "loaded": true,
+            "natural": [
+              1648,
+              805
+            ],
+            "src": "assets/reaver-vandal-collection-official-hd.jpg"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "无畏契约",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1218,
+        "id": "scene02",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "同一 IP，哪些要一致，哪些需要分别设计？",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1334,
+        "id": "scene03",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "手游降低的是开局前成本，竞技标准仍需守住。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1011,
+        "id": "scene04",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "手游上线后，用户最先需要解决的问题并不相同。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1148,
+        "id": "scene05",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "先回应疑虑，再安排首次行动。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1362,
+        "id": "scene06",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "关系是否沉淀，不能只看好友数。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1183,
+        "id": "scene07",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "手游把资产从“自己使用”延伸到“被好友和访客看见”。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1671,
+        "id": "scene08",
+        "images": [
+          {
+            "display": [
+              595,
+              335
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/oni-collection-official-hd.webp"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "商品先要在使用中成立，再讨论展示、关系与身份价值。",
+        "width": 1425
+      },
+      {
+        "headingFont": "60.48px",
+        "height": 1057,
+        "id": "scene09",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "商品生命周期里的四种运营任务",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1055,
+        "id": "scene10",
+        "images": [
+          {
+            "display": [
+              691,
+              389
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/prime-collection-official-hd.webp"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "新品首发首先解决“确定供给”，而不是把最高意愿需求交给随机轮换。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1109,
+        "id": "scene11",
+        "images": [
+          {
+            "display": [
+              689,
+              388
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/store-official-2020.jpg"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "日常商店随机的是“展示什么”，不是“付款后得到什么”。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1101,
+        "id": "scene12",
+        "images": [
+          {
+            "display": [
+              689,
+              380
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/night-market-official-2025.png"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "夜市多了一层折扣，因此更接近对未转化需求的再次唤回。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 956,
+        "id": "scene13",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "瓦谷处理的是“获得之后”：重复资产、交换、收藏补全与展示互动。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1793,
+        "id": "scene14",
+        "images": [
+          {
+            "display": [
+              629,
+              354
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/battlepass-official-2020.jpg"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "商品同时争夺预算与注意力，节奏就需要取舍。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1399,
+        "id": "scene15",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "收入来自新增需求，还是其他商品的转移？",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1172,
+        "id": "scene16",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "一套电竞生态同时要回答：谁展示最高水平，以及普通玩家怎样进入比赛。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1388,
+        "id": "scene17",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "双端都需要竞技高度与大众参与，差异在于当前各层级承担什么任务。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 842,
+        "id": "scene18",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "合作资源的价值，要继续验证实际参与。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1157,
+        "id": "scene19",
+        "images": [
+          {
+            "display": [
+              660,
+              371
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/team-capsules-2026-pacific.jpg"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "战队胶囊把赛事身份直接接入商品，让“支持”变成可装备、可重复展示的资产。",
+        "width": 1425
+      },
+      {
+        "headingFont": "51.12px",
+        "height": 897,
+        "id": "scene20",
+        "images": [
+          {
+            "display": [
+              896,
+              814
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/jett-fullportrait-thirdparty.png"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "新增场景只有转化为持续行为，才会成为双端共同增长的一部分。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1197,
+        "id": "scene21",
+        "images": [
+          {
+            "display": [
+              754,
+              436
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/commercial-review.jpeg"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "商业化判断最终要落成评审问题，而不是停留在“看起来合理”。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 1337,
+        "id": "scene22",
+        "images": [
+          {
+            "display": [
+              629,
+              292
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/data-acceptance.png"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "结果事件要能对应业务结果，也要能验收异常。",
+        "width": 1425
+      },
+      {
+        "headingFont": "54.72px",
+        "height": 2861,
+        "id": "scene23",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "公开事实有出处，分析判断有边界。",
+        "width": 1425
+      }
+    ],
+    "size": "1440×900",
+    "viewport": [
+      1440,
+      900
+    ]
+  },
+  {
+    "backgrounds": [
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "83.326px",
+        "id": "scene01",
+        "layer": "0",
+        "opacity": "0.28"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene02",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene03",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene04",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene05",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene06",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene07",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene08",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "57.372px",
+        "id": "scene09",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene10",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene11",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene12",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene13",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene14",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene15",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-icebox-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene16",
+        "layer": "0",
+        "opacity": "0.19"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-icebox-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene17",
+        "layer": "0",
+        "opacity": "0.19"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-icebox-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene18",
+        "layer": "0",
+        "opacity": "0.19"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-icebox-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene19",
+        "layer": "0",
+        "opacity": "0.19"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "48.493px",
+        "id": "scene20",
+        "layer": "0",
+        "opacity": "0.28"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene21",
+        "layer": "0",
+        "opacity": "0.15"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene22",
+        "layer": "0",
+        "opacity": "0.15"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "51.908px",
+        "id": "scene23",
+        "layer": "0",
+        "opacity": "0.15"
+      }
+    ],
+    "documentWidth": 1351,
+    "scenes": [
+      {
+        "headingFont": "83.326px",
+        "height": 640,
+        "id": "scene01",
+        "images": [
+          {
+            "display": [
+              563,
+              275
+            ],
+            "loaded": true,
+            "natural": [
+              1648,
+              805
+            ],
+            "src": "assets/reaver-vandal-collection-official-hd.jpg"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "无畏契约",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1214,
+        "id": "scene02",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "同一 IP，哪些要一致，哪些需要分别设计？",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1330,
+        "id": "scene03",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "手游降低的是开局前成本，竞技标准仍需守住。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1041,
+        "id": "scene04",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "手游上线后，用户最先需要解决的问题并不相同。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1144,
+        "id": "scene05",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "先回应疑虑，再安排首次行动。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1359,
+        "id": "scene06",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "关系是否沉淀，不能只看好友数。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1175,
+        "id": "scene07",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "手游把资产从“自己使用”延伸到“被好友和访客看见”。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1677,
+        "id": "scene08",
+        "images": [
+          {
+            "display": [
+              560,
+              315
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/oni-collection-official-hd.webp"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "商品先要在使用中成立，再讨论展示、关系与身份价值。",
+        "width": 1351
+      },
+      {
+        "headingFont": "57.372px",
+        "height": 1053,
+        "id": "scene09",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "商品生命周期里的四种运营任务",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1024,
+        "id": "scene10",
+        "images": [
+          {
+            "display": [
+              651,
+              366
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/prime-collection-official-hd.webp"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "新品首发首先解决“确定供给”，而不是把最高意愿需求交给随机轮换。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1079,
+        "id": "scene11",
+        "images": [
+          {
+            "display": [
+              648,
+              365
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/store-official-2020.jpg"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "日常商店随机的是“展示什么”，不是“付款后得到什么”。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1071,
+        "id": "scene12",
+        "images": [
+          {
+            "display": [
+              648,
+              357
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/night-market-official-2025.png"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "夜市多了一层折扣，因此更接近对未转化需求的再次唤回。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 948,
+        "id": "scene13",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "瓦谷处理的是“获得之后”：重复资产、交换、收藏补全与展示互动。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1856,
+        "id": "scene14",
+        "images": [
+          {
+            "display": [
+              592,
+              333
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/battlepass-official-2020.jpg"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "商品同时争夺预算与注意力，节奏就需要取舍。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1396,
+        "id": "scene15",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "收入来自新增需求，还是其他商品的转移？",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1164,
+        "id": "scene16",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "一套电竞生态同时要回答：谁展示最高水平，以及普通玩家怎样进入比赛。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1421,
+        "id": "scene17",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "双端都需要竞技高度与大众参与，差异在于当前各层级承担什么任务。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 838,
+        "id": "scene18",
+        "images": [],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "合作资源的价值，要继续验证实际参与。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1186,
+        "id": "scene19",
+        "images": [
+          {
+            "display": [
+              621,
+              349
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/team-capsules-2026-pacific.jpg"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "战队胶囊把赛事身份直接接入商品，让“支持”变成可装备、可重复展示的资产。",
+        "width": 1351
+      },
+      {
+        "headingFont": "48.493px",
+        "height": 854,
+        "id": "scene20",
+        "images": [
+          {
+            "display": [
+              843,
+              766
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/jett-fullportrait-thirdparty.png"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "新增场景只有转化为持续行为，才会成为双端共同增长的一部分。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1190,
+        "id": "scene21",
+        "images": [
+          {
+            "display": [
+              710,
+              410
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/commercial-review.jpeg"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "商业化判断最终要落成评审问题，而不是停留在“看起来合理”。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 1333,
+        "id": "scene22",
+        "images": [
+          {
+            "display": [
+              592,
+              274
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/data-acceptance.png"
+          }
+        ],
+        "minBodyFont": 17,
+        "overflow": [],
+        "title": "结果事件要能对应业务结果，也要能验收异常。",
+        "width": 1351
+      },
+      {
+        "headingFont": "51.908px",
+        "height": 2892,
+        "id": "scene23",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "公开事实有出处，分析判断有边界。",
+        "width": 1351
+      }
+    ],
+    "size": "1366×768",
+    "viewport": [
+      1366,
+      768
+    ]
+  },
+  {
+    "backgrounds": [
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "58px",
+        "id": "scene01",
+        "layer": "0",
+        "opacity": "0.28"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "30px",
+        "id": "scene02",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "30px",
+        "id": "scene03",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "30px",
+        "id": "scene04",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "30px",
+        "id": "scene05",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "30px",
+        "id": "scene06",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "30px",
+        "id": "scene07",
+        "layer": "0",
+        "opacity": "0.23"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "30px",
+        "id": "scene08",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "30px",
+        "id": "scene09",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "30px",
+        "id": "scene10",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "30px",
+        "id": "scene11",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "30px",
+        "id": "scene12",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "30px",
+        "id": "scene13",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "30px",
+        "id": "scene14",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-lotus-official.webp\")",
+        "heading": "30px",
+        "id": "scene15",
+        "layer": "0",
+        "opacity": "0.2"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-icebox-official.webp\")",
+        "heading": "30px",
+        "id": "scene16",
+        "layer": "0",
+        "opacity": "0.19"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-icebox-official.webp\")",
+        "heading": "30px",
+        "id": "scene17",
+        "layer": "0",
+        "opacity": "0.19"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-icebox-official.webp\")",
+        "heading": "30px",
+        "id": "scene18",
+        "layer": "0",
+        "opacity": "0.19"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-icebox-official.webp\")",
+        "heading": "30px",
+        "id": "scene19",
+        "layer": "0",
+        "opacity": "0.19"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-haven-official.webp\")",
+        "heading": "32px",
+        "id": "scene20",
+        "layer": "0",
+        "opacity": "0.28"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "30px",
+        "id": "scene21",
+        "layer": "0",
+        "opacity": "0.15"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "30px",
+        "id": "scene22",
+        "layer": "0",
+        "opacity": "0.15"
+      },
+      {
+        "background": "url(\"http://terminal.local:4173/assets/map-sunset-official.webp\")",
+        "heading": "30px",
+        "id": "scene23",
+        "layer": "0",
+        "opacity": "0.15"
+      }
+    ],
+    "documentWidth": 375,
+    "scenes": [
+      {
+        "headingFont": "58px",
+        "height": 709,
+        "id": "scene01",
+        "images": [
+          {
+            "display": [
+              335,
+              164
+            ],
+            "loaded": true,
+            "natural": [
+              1648,
+              805
+            ],
+            "src": "assets/reaver-vandal-collection-official-hd.jpg"
+          }
+        ],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "无畏契约",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 2078,
+        "id": "scene02",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "同一 IP，哪些要一致，哪些需要分别设计？",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 2038,
+        "id": "scene03",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "手游降低的是开局前成本，竞技标准仍需守住。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 1392,
+        "id": "scene04",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "手游上线后，用户最先需要解决的问题并不相同。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 1989,
+        "id": "scene05",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "先回应疑虑，再安排首次行动。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 2389,
+        "id": "scene06",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "关系是否沉淀，不能只看好友数。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 2170,
+        "id": "scene07",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "手游把资产从“自己使用”延伸到“被好友和访客看见”。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 2984,
+        "id": "scene08",
+        "images": [
+          {
+            "display": [
+              181,
+              102
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/oni-collection-official-hd.webp"
+          }
+        ],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "商品先要在使用中成立，再讨论展示、关系与身份价值。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 1236,
+        "id": "scene09",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "商品生命周期里的四种运营任务",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 1330,
+        "id": "scene10",
+        "images": [
+          {
+            "display": [
+              335,
+              188
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/prime-collection-official-hd.webp"
+          }
+        ],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "新品首发首先解决“确定供给”，而不是把最高意愿需求交给随机轮换。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 1381,
+        "id": "scene11",
+        "images": [
+          {
+            "display": [
+              335,
+              188
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/store-official-2020.jpg"
+          }
+        ],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "日常商店随机的是“展示什么”，不是“付款后得到什么”。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 1412,
+        "id": "scene12",
+        "images": [
+          {
+            "display": [
+              335,
+              185
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/night-market-official-2025.png"
+          }
+        ],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "夜市多了一层折扣，因此更接近对未转化需求的再次唤回。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 1431,
+        "id": "scene13",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "瓦谷处理的是“获得之后”：重复资产、交换、收藏补全与展示互动。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 3063,
+        "id": "scene14",
+        "images": [
+          {
+            "display": [
+              335,
+              188
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/battlepass-official-2020.jpg"
+          }
+        ],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "商品同时争夺预算与注意力，节奏就需要取舍。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 3263,
+        "id": "scene15",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "收入来自新增需求，还是其他商品的转移？",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 1478,
+        "id": "scene16",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "一套电竞生态同时要回答：谁展示最高水平，以及普通玩家怎样进入比赛。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 2064,
+        "id": "scene17",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "双端都需要竞技高度与大众参与，差异在于当前各层级承担什么任务。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 1298,
+        "id": "scene18",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "合作资源的价值，要继续验证实际参与。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 1803,
+        "id": "scene19",
+        "images": [
+          {
+            "display": [
+              335,
+              188
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/team-capsules-2026-pacific.jpg"
+          }
+        ],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "战队胶囊把赛事身份直接接入商品，让“支持”变成可装备、可重复展示的资产。",
+        "width": 375
+      },
+      {
+        "headingFont": "32px",
+        "height": 1136,
+        "id": "scene20",
+        "images": [
+          {
+            "display": [
+              430,
+              390
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/jett-fullportrait-thirdparty.png"
+          }
+        ],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "新增场景只有转化为持续行为，才会成为双端共同增长的一部分。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 1562,
+        "id": "scene21",
+        "images": [
+          {
+            "display": [
+              335,
+              194
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/commercial-review.jpeg"
+          }
+        ],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "商业化判断最终要落成评审问题，而不是停留在“看起来合理”。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 2464,
+        "id": "scene22",
+        "images": [
+          {
+            "display": [
+              335,
+              155
+            ],
+            "loaded": false,
+            "natural": [
+              0,
+              0
+            ],
+            "src": "assets/data-acceptance.png"
+          }
+        ],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "结果事件要能对应业务结果，也要能验收异常。",
+        "width": 375
+      },
+      {
+        "headingFont": "30px",
+        "height": 5510,
+        "id": "scene23",
+        "images": [],
+        "minBodyFont": 16,
+        "overflow": [],
+        "title": "公开事实有出处，分析判断有边界。",
+        "width": 375
+      }
+    ],
+    "size": "390×844",
+    "viewport": [
+      390,
+      844
+    ]
+  }
+]

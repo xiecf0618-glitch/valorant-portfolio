@@ -100,10 +100,11 @@
       "mime_format": "JPEG",
       "bytes": 424041,
       "sha256": "6af80556073890a57562f5a7e3237fe3c08bb92939bda78e7c2ca41eec333051",
-      "recommended": true,
-      "use": "电竞生态章节较暗背景",
+      "recommended": false,
+      "use": "历史版本素材保留；当前页面不再引用",
       "notes": "替换原先错误放在esports-bg的2020 Closed Beta角色海报。",
-      "processing": "原样下载/原样复制，未生成、未裁切、未放大、未重绘"
+      "processing": "原样下载/原样复制，未生成、未裁切、未放大、未重绘",
+      "active": false
     },
     {
       "filename": "ascent-official-4k.png",
@@ -121,10 +122,11 @@
       "mime_format": "PNG",
       "bytes": 2554828,
       "sha256": "34825b02e664472e7cea10246a39a4d6b42c43debc93f7ee0b698e7fcef90b81",
-      "recommended": true,
-      "use": "首页或结束页暗背景",
+      "recommended": false,
+      "use": "历史版本素材保留；当前页面不再引用",
       "notes": "4K官网原始图；保留其本身的拼块美术效果，未编辑。",
-      "processing": "原样下载/原样复制，未生成、未裁切、未放大、未重绘"
+      "processing": "原样下载/原样复制，未生成、未裁切、未放大、未重绘",
+      "active": false
     },
     {
       "filename": "jett-fullportrait-thirdparty.png",
@@ -188,6 +190,180 @@
       "sha256": "d947a1f3afddaa19a0405cd900ec63efeb813dea4993f30a2153fed4dbc5e364",
       "recommended": true,
       "processing": "原样网络下载，未生成、未重绘、未裁切、未放大"
+    },
+    {
+      "filename": "map-sunset-official.webp",
+      "local_path": "assets/map-sunset-official.webp",
+      "source_page_url": "https://playvalorant.com/en-us/maps/",
+      "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/c59a3da3382bf203c6bda22af892834508377ef3-753x424.webp?accountingTag=VAL",
+      "official": true,
+      "publisher": "Riot Games",
+      "content": "SUNSET／日落之城 官方地图图集第3张真实三维环境截图；无HUD、非俯视战术图、非拼块宣传画",
+      "content_year": "原图日期未注明；官方地图页核验2026-09-08",
+      "original_dimensions": {
+        "width": 753,
+        "height": 424
+      },
+      "dimensions": {
+        "width": 753,
+        "height": 424
+      },
+      "mime_format": "WEBP",
+      "bytes": 49818,
+      "sha256": "c253c7b83f646af99eb388abc6458278617936de6156a6ec6e37ac493e32ea88",
+      "original_sha256": "4ed70a2a48e22b3afd4685a07f7cf0e570cf910df1fc06102280dcc206df3bcc",
+      "use": "社交、工作产出、来源章节装饰背景",
+      "notes": "仅作为环境气氛背景；不作为文章分析的事实证据，不声称是手游截图或当前赛事地图池。",
+      "processing": "从官网真实图片URL下载，转WebP品质85，保留原比例，仅Icebox等比缩至1920宽；未生成、未重绘、未裁切、未放大。",
+      "recommended": true,
+      "visual_checked": true,
+      "active": true
+    },
+    {
+      "filename": "map-lotus-official.webp",
+      "local_path": "assets/map-lotus-official.webp",
+      "source_page_url": "https://playvalorant.com/en-us/maps/",
+      "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/cad0b406c5924614083a8dc9846b0a8746a20bda-703x396.webp?accountingTag=VAL",
+      "official": true,
+      "publisher": "Riot Games",
+      "content": "LOTUS／莲华古城 官方地图图集第3张真实三维环境截图；无HUD、非俯视战术图、非拼块宣传画",
+      "content_year": "原图日期未注明；官方地图页核验2026-09-08",
+      "original_dimensions": {
+        "width": 703,
+        "height": 396
+      },
+      "dimensions": {
+        "width": 703,
+        "height": 396
+      },
+      "mime_format": "WEBP",
+      "bytes": 46136,
+      "sha256": "2edb775a23571a071c1accb0af576ea79cc66ec17bb601ec723f1f88ef59db8e",
+      "original_sha256": "47c377c83d42b5d8b7ece2b0e53f0d40aa672724b57412705317709bcd39252f",
+      "use": "商业化章节",
+      "notes": "仅作为环境气氛背景；不作为文章分析的事实证据，不声称是手游截图或当前赛事地图池。",
+      "processing": "从官网真实图片URL下载，转WebP品质85，保留原比例，仅Icebox等比缩至1920宽；未生成、未重绘、未裁切、未放大。",
+      "recommended": true,
+      "visual_checked": true,
+      "active": true
+    },
+    {
+      "filename": "map-icebox-official.webp",
+      "local_path": "assets/map-icebox-official.webp",
+      "source_page_url": "https://playvalorant.com/en-us/maps/",
+      "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/91422206c56df7177495b96a26021d6379de8079-1980x1083.jpg?accountingTag=VAL",
+      "official": true,
+      "publisher": "Riot Games",
+      "content": "ICEBOX／森寒冬港 官方地图图集第3张真实三维环境截图；无HUD、非俯视战术图、非拼块宣传画",
+      "content_year": "原图日期未注明；官方地图页核验2026-09-08",
+      "original_dimensions": {
+        "width": 1980,
+        "height": 1083
+      },
+      "dimensions": {
+        "width": 1920,
+        "height": 1050
+      },
+      "mime_format": "WEBP",
+      "bytes": 127046,
+      "sha256": "5a9ed5123691ca70c07b06dbf5a2703961680fcdc61193687bb5ae4ae7cf19e5",
+      "original_sha256": "26ef7f9052eee978a9c76d235f8a223548f35a9176fbe14234cc6464ce4aff12",
+      "use": "电竞章节",
+      "notes": "仅作为环境气氛背景；不作为文章分析的事实证据，不声称是手游截图或当前赛事地图池。",
+      "processing": "从官网真实图片URL下载，转WebP品质85，保留原比例，仅Icebox等比缩至1920宽；未生成、未重绘、未裁切、未放大。",
+      "recommended": true,
+      "visual_checked": true,
+      "active": true
+    },
+    {
+      "filename": "map-haven-official.webp",
+      "local_path": "assets/map-haven-official.webp",
+      "source_page_url": "https://playvalorant.com/en-us/maps/",
+      "original_image_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/b52bc228f7f8fd2b891870303c1c4d7284a89d3f-914x514.jpg?accountingTag=VAL",
+      "official": true,
+      "publisher": "Riot Games",
+      "content": "HAVEN／隐世修所 官方地图图集第3张真实三维环境截图；无HUD、非俯视战术图、非拼块宣传画",
+      "content_year": "原图日期未注明；官方地图页核验2026-09-08",
+      "original_dimensions": {
+        "width": 914,
+        "height": 514
+      },
+      "dimensions": {
+        "width": 914,
+        "height": 514
+      },
+      "mime_format": "WEBP",
+      "bytes": 79310,
+      "sha256": "618d8c97c1c3a9a9cea550d32b2e1ea968c21c714696f59e66b8d37a43dbe197",
+      "original_sha256": "0d29e90497feceedd9c47c06f79acab9c0b3104b74ed62498762391aeaf14d9d",
+      "use": "首页、产品、结论",
+      "notes": "仅作为环境气氛背景；不作为文章分析的事实证据，不声称是手游截图或当前赛事地图池。",
+      "processing": "从官网真实图片URL下载，转WebP品质85，保留原比例，仅Icebox等比缩至1920宽；未生成、未重绘、未裁切、未放大。",
+      "recommended": true,
+      "visual_checked": true,
+      "active": true
+    },
+    {
+      "filename": "prime-collection-official-hd.webp",
+      "local_path": "assets/prime-collection-official-hd.webp",
+      "source_page_url": "https://playvalorant.com/en-us/media/",
+      "source_title": "Prime Wallpaper",
+      "download_archive_url": "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/f724ae6d9fb947e6a21ef1232f8ae8b33d7f0f5c.zip",
+      "archive_member": "Prime/ValorantWallpaper_Prime.jpg",
+      "official": true,
+      "publisher": "Riot Games",
+      "content": "Prime 套系官方高清宣传壁纸；完整套系画面，非商店 UI",
+      "content_year": "官网媒体页现行公开素材；页面记录时间2024-05-31，原图制作日期未单独注明",
+      "verified_date": "2026-09-08",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "mime_format": "WEBP",
+      "bytes": 117296,
+      "sha256": "fa35d8ee2bff4e7819c86289a7c309b99853b1f5b8232b25136a27e2cba163bf",
+      "original_sha256": "2f13779015747de6d01d61bea909f701392f0ea96e2e3cb0ab6c570044b8f15a",
+      "processing": "官方4K原图等比例缩小至1920×1080并转WebP；未生成、未重绘、未裁切、未去除原生标识",
+      "recommended": true,
+      "notes": "保留完整16:9画面，建议object-fit:contain；仅为商品美术实例，不表示当前在售、不表示手游已上架，不用于证明转化表现。",
+      "visual_check": "官方4K原图与最终1920×1080 WebP均已view_image检查：枪械轮廓清楚，全部原画边界和官方标识保留，无网站新增裁切。",
+      "active": true,
+      "use": "Scene10 套系外观官方配图"
+    },
+    {
+      "filename": "oni-collection-official-hd.webp",
+      "local_path": "assets/oni-collection-official-hd.webp",
+      "source_page_url": "https://playvalorant.com/en-us/media/",
+      "source_title": "Oni Wallpaper",
+      "download_archive_url": "https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/3ad71861c79dbef91fb278ea176d41b09c6e0dfe.zip",
+      "archive_member": "Oni/ValorantWallpaper_Oni.jpg",
+      "official": true,
+      "publisher": "Riot Games",
+      "content": "Oni 套系官方高清宣传壁纸；完整套系画面，非商店 UI",
+      "content_year": "官网媒体页现行公开素材；页面记录时间2024-05-31，原图制作日期未单独注明",
+      "verified_date": "2026-09-08",
+      "original_dimensions": {
+        "width": 3840,
+        "height": 2160
+      },
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "mime_format": "WEBP",
+      "bytes": 201888,
+      "sha256": "c56724000610ce161a412c574c153331da92b3893037f3f8edc352115693806d",
+      "original_sha256": "caafa71d2b93021c1a46aa4f4368c509e0adde4f9b4f0458a0b60fe4e07168fd",
+      "processing": "官方4K原图等比例缩小至1920×1080并转WebP；未生成、未重绘、未裁切、未去除原生标识",
+      "recommended": true,
+      "notes": "保留完整16:9画面，建议object-fit:contain；仅为商品美术实例，不表示当前在售、不表示手游已上架，不用于证明转化表现。",
+      "visual_check": "官方4K原图与最终1920×1080 WebP均已view_image检查：枪械轮廓清楚，全部原画边界和官方标识保留，无网站新增裁切。",
+      "active": true,
+      "use": "Scene08 商品价值官方配图"
     }
   ]
 }
