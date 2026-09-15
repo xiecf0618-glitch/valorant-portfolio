@@ -1,6 +1,6 @@
 <!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>Portfolio QA</title><style>
-*{box-sizing:border-box}body{margin:0;overflow:hidden;background:#c8ced6;font:12px Arial;color:#12202d}header{display:flex;align-items:center;gap:10px;padding:8px;height:48px;background:white}button,select,input{font:inherit;padding:5px}#canvas{position:relative;margin:8px;width:calc(100vw - 16px)}iframe{display:block;border:0;transform-origin:top left;background:#070b11}#report{max-width:1280px;white-space:pre-wrap;margin:10px;padding:12px;background:#fff;max-height:200px;overflow:auto}label{display:flex;gap:5px;align-items:center}
-</style><header><label>视口<select id="viewport"><option>1440×900</option><option>1586×992</option><option>1366×768</option><option>390×844</option></select></label><label>Scene<select id="scene"></select></label><button id="previous">上一页</button><button id="next">下一页</button><button id="lower">向下半屏</button><button id="inspect">检查布局</button><button id="media">图像与证据</button><button id="record-motion">记录下一次动效</button><label><input type="checkbox" id="artoff">隐藏背景美术</label><label><input type="checkbox" id="fit">展开完整Scene</label></header><div id="canvas"><iframe id="site" title="作品集实际视口" src="index.html"></iframe></div><pre id="report">载入中</pre><script>
+*{box-sizing:border-box}body{margin:0;overflow:hidden;background:#c8ced6;font:12px Arial;color:#12202d}header{display:flex;align-items:center;gap:10px;padding:8px;height:48px;background:white}button,select,input{font:inherit;padding:5px}#canvas{position:relative;margin:8px;width:calc(100vw - 16px)}iframe{display:block;border:0;transform-origin:top left;background:#070b11}#report{max-width:1280px;white-space:pre-wrap;margin:10px;padding:12px;background:#fff;max-height:300px;overflow:auto}label{display:flex;gap:5px;align-items:center}
+</style><header><label>视口<select id="viewport"><option>1440×900</option><option>2560×1440</option><option>360×800</option><option>1586×992</option><option>1366×768</option><option>390×844</option></select></label><label>Scene<select id="scene"></select></label><button id="previous">上一页</button><button id="next">下一页</button><button id="lower">向下半屏</button><button id="inspect">检查布局</button><button id="media">图像与证据</button><button id="record-motion">记录下一次动效</button><label><input type="checkbox" id="artoff">隐藏背景美术</label><label><input type="checkbox" id="fit">展开完整Scene</label></header><div id="canvas"><iframe id="site" title="作品集实际视口" src="index.html"></iframe></div><pre id="report">载入中</pre><script>
 const frame=document.querySelector('#site'), viewport=document.querySelector('#viewport'), scene=document.querySelector('#scene'), canvas=document.querySelector('#canvas');
 for(let i=1;i<=23;i++){const o=document.createElement('option');o.value='scene'+String(i).padStart(2,'0');o.textContent=String(i).padStart(2,'0');scene.append(o)}
 function dimensions(){return viewport.value.split('×').map(Number)}
@@ -21,13 +21,13 @@ document.querySelector('#record-motion').onclick=()=>{
  function start(event){
   controls.forEach(control=>control.removeEventListener('click',start));
   const button=event.currentTarget,isWeapon=button.hasAttribute('data-weapon-inspect');
-  const animated=isWeapon?[d.querySelector('[data-weapon-stage]')].filter(Boolean):[d.querySelector('[data-jett-portrait]'),...d.querySelectorAll('.jett-flow,.jett-speed,.jett-echo')];
+  const animated=isWeapon?[d.querySelector('[data-weapon-stage]')]:[d.querySelector('[data-jett-portrait]'),d.querySelector('.jett-speed'),d.querySelector('.jett-scenery')];
   const report={control:isWeapon?'weapon':'jett',reduced:d.documentElement.dataset.reduceMotion,samples:[]};
   const started=w.performance.now();
   function sample(){
    const elapsed=w.performance.now()-started;
-   report.samples.push({ms:Math.round(elapsed),visibility:d.visibilityState,state:d.querySelector('[data-jett-showcase]')?.dataset.jettState,elements:animated.map(e=>({transform:w.getComputedStyle(e).transform,opacity:w.getComputedStyle(e).opacity,animations:e.getAnimations().map(a=>({time:a.currentTime,state:a.playState}))}))});
-   if(elapsed<1600)w.setTimeout(()=>w.requestAnimationFrame(sample),90);
+   report.samples.push({ms:Math.round(elapsed),visibility:d.visibilityState,state:isWeapon?d.querySelector('[data-weapon-showcase]').dataset.inspectState:d.querySelector('[data-jett-showcase]').dataset.jettState,progress:d.querySelector('#inspectProgress')?.value,elements:animated.map(e=>({transform:w.getComputedStyle(e).transform,opacity:w.getComputedStyle(e).opacity,animations:e.getAnimations().map(a=>({time:a.currentTime,state:a.playState}))}))});
+   if(elapsed<6000)w.setTimeout(()=>w.requestAnimationFrame(sample),90);
    else output.textContent=JSON.stringify(report,null,2);
   }
   w.requestAnimationFrame(sample);

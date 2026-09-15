@@ -152,188 +152,197 @@ motionButton.addEventListener('click', () => { reduced = !reduced; updateMotion(
 systemMotionPreference.addEventListener('change', event => { reduced = event.matches; updateMotion(); });
 updateMotion();
 
-/*
- * Tailwind-inspired webpage recreation, using the existing unmodified portrait.
- * Reference: https://playvalorant.com/en-us/agents/jett/
- * Two deliberate presses: prepare the wind, then dash. Timing/return are adapted
- * for the portfolio; this is not a recording or the game's skeletal animation.
- * Integration: remove the previous Jett IIFE, then include this after app.js.
- */
+/* Reaver inspect: pose order checked against the Riot skin preview at 5.4–10.3s.
+ * This is a bounded 2.5D cutout, not a reconstructed model or video player. */
 (() => {
-  'use strict';
-  const root = document.querySelector('[data-jett-showcase]');
-  const button = root?.querySelector('[data-jett-interact]');
-  const portrait = root?.querySelector('[data-jett-portrait]');
-  const cue = root?.querySelector('[data-jett-cue]');
-  if (!root || !button || !portrait || !cue || root.dataset.jettMounted) return;
-  root.dataset.jettMounted = 'true';
-  root.classList.add('jett-tailwind');
-  root.querySelectorAll('.jett-wind').forEach(node => node.remove());
-  const stage = document.createElement('span');
-  stage.className = 'jett-motion-stage';
-  stage.setAttribute('aria-hidden', 'true');
-  portrait.before(stage);
-  stage.append(portrait);
-  for (let i = 1; i <= 3; i += 1) {
-    const echo = portrait.cloneNode(true);
-    echo.removeAttribute('data-jett-portrait');
-    echo.classList.add('jett-echo', `jett-echo-${i}`);
-    echo.setAttribute('aria-hidden', 'true');
-    echo.querySelectorAll('[id]').forEach(node => node.removeAttribute('id'));
-    echo.querySelectorAll('img').forEach(img => { img.alt = ''; img.loading = 'eager'; });
-    stage.prepend(echo);
-  }
-  const svgNS = 'http://www.w3.org/2000/svg';
-  const flow = document.createElementNS(svgNS, 'svg');
-  flow.classList.add('jett-flow');
-  flow.setAttribute('viewBox', '0 0 320 618');
-  flow.setAttribute('aria-hidden', 'true');
-  [
-    'M104 568 C36 511 203 506 151 427',
-    'M110 561 C48 510 184 501 143 437',
-    'M229 558 C281 503 147 481 219 407',
-    'M234 552 C272 503 161 476 222 420',
-    'M120 604 C81 576 93 548 137 540',
-    'M250 527 C299 469 223 449 250 390'
-  ].forEach(d => { const path = document.createElementNS(svgNS, 'path'); path.setAttribute('d', d); flow.append(path); });
-  stage.append(flow);
-  const speed = document.createElement('span');
-  speed.className = 'jett-speed';
-  speed.setAttribute('aria-hidden', 'true');
-  const lines = [
-    [17,83,2,0,.62],[23,114,1,24,.45],[31,92,3,-20,.8],[39,121,2,3,.5],
-    [47,101,4,-10,.92],[52,87,1,22,.65],[59,117,3,-14,.75],
-    [64,80,2,36,.8],[73,126,2,-7,.72],[80,100,4,-22,.86],[88,88,1,20,.6]
+  const root = one('[data-weapon-showcase]'), trigger = one('[data-weapon-inspect]');
+  const rig = one('[data-weapon-stage]'), slider = one('#inspectProgress');
+  if (!root || !trigger || !rig || !slider) return;
+  const cue = one('[data-weapon-cue]'), phase = one('[data-weapon-phase]');
+  const reset = one('[data-weapon-reset]');
+  const duration = 4900;
+  // Lift to the side, dwell, roll to the narrower top edge, dwell, lower.
+  // Angle values are presentation choices; no unseen weapon surfaces are drawn.
+  const poses = [
+    [0, 0, 0, 0, 0, 0, 1], [.11, -2, -14, 8, -15, 9, 1.04],
+    [.24, -3, -24, 12, -19, 14, 1.07], [.43, -3, -24, 12, -19, 14, 1.07],
+    [.57, 3, -25, 57, 13, 34, 1.07], [.74, 3, -25, 57, 13, 34, 1.07],
+    [.86, 1, -12, 24, 5, 20, 1.02], [1, 0, 0, 0, 0, 0, 1]
   ];
-  lines.forEach(([y,width,thick,shift,alpha]) => {
+  let raf = 0, progress = 0, start = 0, pointer = null, suppressClick = false;
+  const isReduced = () => document.documentElement.dataset.reduceMotion === 'true';
+  const labels = p => p === 0 || p === 1 ? '持枪' : p < .11 ? '抬枪' : p < .46 ? '侧看枪身' : p < .78 ? '翻转检视' : '收枪复位';
+  function pose(p) {
+    progress = Math.max(0, Math.min(1, p));
+    let i = poses.findIndex(k => k[0] >= progress);
+    if (i < 1) i = 1;
+    const a = poses[i - 1], b = poses[i];
+    let t = (progress - a[0]) / (b[0] - a[0]);
+    t = t * t * (3 - 2 * t);
+    const v = a.slice(1).map((n, j) => n + (b[j + 1] - n) * t);
+    rig.style.transform = `translate3d(${v[0]}%,${v[1]}px,0) rotateZ(${v[4]}deg) rotateY(${v[3]}deg) rotateX(${v[2]}deg) scale(${v[5]})`;
+    const label = labels(progress);
+    if (phase.textContent !== label) phase.textContent = label;
+    slider.value = String(Math.round(progress * 100));
+    slider.setAttribute('aria-valuetext', label);
+    root.style.setProperty('--inspect-progress', `${progress * 100}%`);
+  }
+  function stop() { cancelAnimationFrame(raf); raf = 0; }
+  function neutral() {
+    stop(); pointer = null; pose(0); root.dataset.inspectState = 'idle';
+    cue.textContent = isReduced() ? '拖动进度查看' : '点击检视 · 拖动查看';
+    trigger.setAttribute('aria-busy', 'false');
+  }
+  function tick(now) {
+    if (document.hidden || isReduced()) { neutral(); return; }
+    pose((now - start) / duration);
+    if (progress >= 1) { neutral(); return; }
+    raf = requestAnimationFrame(tick);
+  }
+  function play() {
+    if (isReduced()) { pose(progress < .45 ? .3 : progress < .75 ? .65 : 0); return; }
+    stop(); root.dataset.inspectState = 'playing'; trigger.setAttribute('aria-busy', 'true');
+    cue.textContent = '检视中 · 拖动可接管'; start = performance.now();
+    raf = requestAnimationFrame(tick);
+  }
+  trigger.addEventListener('click', () => { if (suppressClick) { suppressClick = false; return; } play(); });
+  trigger.addEventListener('pointerdown', event => {
+    if (event.button !== 0) return;
+    pointer = { id: event.pointerId, x: event.clientX, y: event.clientY, p: progress, drag: false };
+    suppressClick = false;
+  });
+  trigger.addEventListener('pointermove', event => {
+    if (!pointer || event.pointerId !== pointer.id) return;
+    const dx = event.clientX - pointer.x, dy = event.clientY - pointer.y;
+    if (!pointer.drag) {
+      if (Math.abs(dy) > 10 && Math.abs(dy) > Math.abs(dx)) { pointer = null; return; }
+      if (Math.abs(dx) < 7) return;
+      pointer.drag = true; stop(); trigger.setPointerCapture(event.pointerId);
+      root.dataset.inspectState = 'scrubbing'; cue.textContent = '松开后自然复位';
+      trigger.setAttribute('aria-busy', 'false');
+    }
+    pose(pointer.p + dx / (trigger.clientWidth * .8));
+  });
+  function release(event) {
+    if (!pointer || (event && event.pointerId !== pointer.id)) return;
+    const wasDrag = pointer.drag; pointer = null;
+    if (!wasDrag) return;
+    suppressClick = true;
+    if (event && trigger.hasPointerCapture(event.pointerId)) trigger.releasePointerCapture(event.pointerId);
+    if (isReduced()) return;
+    // Resume the inspected pose through the remaining authored sequence.
+    root.dataset.inspectState = 'playing'; start = performance.now() - progress * duration;
+    raf = requestAnimationFrame(tick);
+  }
+  trigger.addEventListener('pointerup', release);
+  trigger.addEventListener('pointercancel', () => { suppressClick = true; neutral(); });
+  trigger.addEventListener('lostpointercapture', () => { if (pointer?.drag) { suppressClick = true; neutral(); } });
+  slider.addEventListener('input', () => { stop(); pointer = null; root.dataset.inspectState = 'scrubbing'; cue.textContent = '点击继续检视 · 复位归零'; pose(Number(slider.value) / 100); });
+  reset.addEventListener('click', neutral);
+  root.addEventListener('keydown', event => {
+    if (event.key === 'Escape') { event.preventDefault(); neutral(); }
+    if (event.target === trigger && event.key.toLowerCase() === 'y' && !event.repeat) { event.preventDefault(); play(); }
+  });
+  addEventListener('portfolio:motion-change', neutral);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) neutral(); });
+  addEventListener('pagehide', neutral);
+  new IntersectionObserver(entries => { if (!entries[0].isIntersecting) neutral(); }).observe(root);
+  neutral();
+})();
+
+/* Official Tailwind demo: horizontal environment sweep and brief cyan-white
+ * streaks. First-person hand/body animation cannot be reproduced by this PNG.
+ * 1000/7500ms from Riot 7.04; burst and presentation reset are web timings. */
+(() => {
+  const root = one('[data-jett-showcase]');
+  if (!root) return;
+  const button = one('[data-jett-interact]', root), cue = one('[data-jett-cue]', root);
+  const status = one('[data-jett-status]', root), directions = all('[data-jett-direction]', root);
+  const stage = one('.jett-motion-stage', root), speed = one('.jett-speed', root);
+  [[16,88,1,.5],[25,100,2,.6],[37,80,1,.8],[45,98,3,1],[51,78,1,.8],[59,95,2,.9],[68,86,1,.7],[76,100,3,.9],[85,73,1,.55]].forEach(([y,length,weight,alpha]) => {
     const line = document.createElement('i');
-    line.style.cssText = `--line-y:${y}%;--line-width:${width}%;--line-thick:${thick}px;--line-shift:${shift}px;--line-alpha:${alpha}`;
+    line.style.cssText = `--y:${y}%;--length:${length}%;--weight:${weight}px;--alpha:${alpha}`;
     speed.append(line);
   });
-  stage.append(speed);
-  const cueIcon = cue.previousElementSibling;
-  if (cueIcon) { cueIcon.textContent = 'E'; cueIcon.classList.add('jett-key'); }
-  const status = document.createElement('span');
-  status.className = 'jett-motion-status';
-  status.setAttribute('role', 'status');
-  status.setAttribute('aria-live', 'polite');
-  root.append(status);
-
-  const systemMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const reduced = () => systemMotion.matches || document.documentElement.dataset.reduceMotion === 'true';
-  let state = 'idle';
-  let startTime = 0;
-  let raf = 0;
-  let direction = 1;
-  let width = 0;
-  let queuedDash = false;
-  const primeDuration = 700;
-  const readyDuration = 7500;
-  const dashDuration = 400;
-  const returnDuration = 450;
-  const set = (name, value) => root.style.setProperty(`--jett-${name}`, String(value));
-  const clamp = value => Math.max(0, Math.min(1, value));
-  const labels = {
-    idle: ['点击 · 蓄风', '与捷风互动：点击蓄风，然后再次点击发动逐风'],
-    priming: ['蓄风中…', '捷风正在蓄风，可以再次点击发动逐风'],
-    ready: ['再次点击 · 逐风', '逐风已就绪，再次点击冲刺；也可用方向键选择方向'],
-    dashing: ['逐风', '捷风正在逐风冲刺'],
-    returning: ['逐风', '捷风互动即将复位']
-  };
-  function change(next, now = performance.now()) {
-    state = next;
-    startTime = now;
-    root.dataset.jettState = next;
-    cue.textContent = labels[next][0];
-    button.setAttribute('aria-label', labels[next][1]);
-    button.setAttribute('aria-pressed', String(next === 'priming' || next === 'ready'));
-    if (next === 'ready') status.textContent = '逐风已就绪。再次点击即可冲刺。';
-    if (next === 'dashing') status.textContent = direction > 0 ? '捷风向右冲刺。' : '捷风向左冲刺。';
+  let state = 'idle', direction = 1, raf = 0, started = 0, queued = false, distance = 0;
+  const set = (key,value) => root.style.setProperty(`--jett-${key}`,String(value));
+  const clamp = t => Math.max(0,Math.min(1,t));
+  const reduced = () => document.documentElement.dataset.reduceMotion === 'true';
+  function change(next,now=performance.now()) {
+    state = next; started = now; root.dataset.jettState = next;
+    const active = next === 'dashing' || next === 'settling' || next === 'resetting';
+    button.disabled = active || reduced();
+    directions.forEach(b => b.disabled = active || reduced());
+    button.setAttribute('aria-pressed',String(next==='priming'||next==='ready'));
   }
-  function neutral() {
-    set('x', '0px'); set('opacity', 1); set('blur', '0px'); set('wind', 0);
-    set('trail', 0); set('charge', 0); set('streak-x', '0px');
-    for (const name of ['one', 'two', 'three']) set(`ghost-${name}`, '0px');
+  function neutral(message = '捷风 · 逐风') {
+    cancelAnimationFrame(raf); raf=0; queued=false;
+    ['x','echo-x','bg'].forEach(k=>set(k,'0px'));
+    ['trail','wind','meter'].forEach(k=>set(k,0));
+    set('opacity',1);set('fade',1);set('lean','0deg');set('smear',1);
+    change('idle'); cue.textContent=reduced()?'动效已关闭':'点击 · 准备逐风';
+    button.setAttribute('aria-label',reduced()?'捷风立绘，动效已关闭':`捷风逐风：点击准备，再次点击向${direction>0?'右':'左'}冲刺`);
+    status.textContent=message;
   }
-  function cancel() {
-    cancelAnimationFrame(raf);
-    raf = 0;
-    queuedDash = false;
-    neutral();
-    change('idle');
-    status.textContent = '';
-    if (reduced()) { cue.textContent = '动效已关闭'; button.setAttribute('aria-label', '捷风立绘，动效已关闭'); }
-  }
-  function beginDash(now) {
-    width = stage.getBoundingClientRect().width;
-    set('direction', direction);
-    queuedDash = false;
-    change('dashing', now);
+  function dash(now) {
+    distance=stage.clientWidth*.23*direction;
+    queued=false;set('direction',direction);set('meter',0);change('dashing',now);
+    cue.textContent=direction>0?'向右逐风':'向左逐风';status.textContent='冲刺中';
   }
   function frame(now) {
-    raf = 0;
-    if (reduced() || document.hidden) { cancel(); return; }
-    const elapsed = now - startTime;
-    if (state === 'priming') {
-      const t = clamp(elapsed / primeDuration);
-      set('wind', .9 * Math.sin(Math.PI * .5 * t));
-      set('charge', t);
-      if (t === 1) { change('ready', now); if (queuedDash) beginDash(now); }
-    } else if (state === 'ready') {
-      set('wind', .68 + .18 * Math.sin(elapsed / 200));
-      set('charge', .8 + .2 * Math.sin(elapsed / 250));
-      if (elapsed > readyDuration) { cancel(); return; }
-    } else if (state === 'dashing') {
-      const t = clamp(elapsed / dashDuration);
-      const distance = width * 1.2;
-      const x = direction * distance * (1 - Math.pow(1 - t, 2));
-      set('x', `${x.toFixed(2)}px`);
-      set('opacity', 1 - clamp((t - .25) / .5));
-      set('blur', `${(Math.sin(t * Math.PI) * 1.6).toFixed(2)}px`);
-      set('wind', (1 - t) * .6);
-      set('charge', 0);
-      set('trail', Math.sin(Math.PI * t));
-      set('streak-x', `${(direction * width * .36 * t).toFixed(2)}px`);
-      ['one','two','three'].forEach((name, index) => set(`ghost-${name}`, `${(x - direction * width * (.12 + index * .11) * Math.sin(t * Math.PI)).toFixed(2)}px`));
-      if (t === 1) { neutral(); set('opacity', 0); change('returning', now); }
-    } else if (state === 'returning') {
-      const t = clamp(elapsed / returnDuration);
-      // Soft return belongs to webpage reset, not a second invented game ability.
-      set('opacity', t * t * (3 - 2 * t));
-      if (t === 1) { cancel(); direction *= -1; return; }
+    if(reduced()||document.hidden){neutral();return;}
+    const elapsed=now-started;
+    if(state==='priming'){
+      const t=clamp(elapsed/1000);set('wind',t*.7);set('meter',t);
+      if(t===1){change('ready',now);cue.textContent='再次点击 · 逐风';button.setAttribute('aria-label',`逐风就绪，再次点击向${direction>0?'右':'左'}冲刺`);status.textContent='逐风就绪 · 7.5 秒';if(queued)dash(now);}
+    }else if(state==='ready'){
+      const remaining=Math.max(0,7.5-elapsed/1000);
+      set('meter',remaining/7.5);set('wind',.5+.15*Math.sin(elapsed/170));
+      const label=`逐风就绪 · ${remaining.toFixed(1)} 秒`;
+      // Countdown is visible, while the live status announces only meaningful states.
+      root.setAttribute('data-ready-seconds',remaining.toFixed(1));
+      if(elapsed>=7500){neutral('准备窗口结束');return;}
+    }else if(state==='dashing'){
+      const t=clamp(elapsed/280), x=distance*(1-Math.pow(1-t,2));
+      const burst=Math.sin(Math.PI*t);
+      set('x',`${x}px`);set('echo-x',`${x-distance*.65*burst}px`);
+      set('bg',`${-x*.35}px`);set('trail',burst);set('wind',1-t);
+      set('lean',`${direction*-9*burst}deg`);set('smear',1+.12*burst);set('opacity',1-.25*burst);
+      if(t===1){set('lean','0deg');set('smear',1);set('trail',0);set('wind',0);set('opacity',1);change('settling',now);cue.textContent='逐风结束';status.textContent='已停稳 · 即将复位';}
+    }else if(state==='settling'){
+      if(elapsed>=1000){change('resetting',now);status.textContent='演示复位';}
+    }else if(state==='resetting'){
+      const t=clamp(elapsed/500);
+      set('fade',Math.abs(2*t-1));
+      if(t>=.5){set('x','0px');set('bg','0px');}
+      if(t===1){neutral();return;}
     }
-    if (state !== 'idle') raf = requestAnimationFrame(frame);
+    if(state!=='idle')raf=requestAnimationFrame(frame);
   }
-  function activate() {
-    if (reduced() || document.hidden) return;
-    if (state === 'idle') {
-      neutral(); change('priming');
-      status.textContent = '开始蓄风。再次点击发动逐风。';
-      raf = requestAnimationFrame(frame);
-    } else if (state === 'priming') queuedDash = true;
-    else if (state === 'ready') beginDash(performance.now());
+  function activate(){
+    if(reduced()||document.hidden)return;
+    if(state==='idle'){neutral();change('priming');cue.textContent='准备中…';status.textContent='准备逐风';raf=requestAnimationFrame(frame);}
+    else if(state==='priming'){queued=true;cue.textContent='就绪后冲刺';}
+    else if(state==='ready')dash(performance.now());
   }
-  button.addEventListener('click', activate);
-  button.addEventListener('keydown', event => {
-    if (event.key === 'Escape') { cancel(); return; }
-    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-      event.preventDefault();
-      direction = event.key === 'ArrowLeft' ? -1 : 1;
-      if (state === 'ready') status.textContent = `${direction < 0 ? '向左' : '向右'}逐风。按回车或空格发动。`;
-    }
-    if (event.key.toLowerCase() === 'e' && !event.repeat) { event.preventDefault(); activate(); }
+  function choose(value){
+    direction=value;
+    directions.forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.jettDirection)===value)));
+    if(state==='idle')neutral();
+    else if(state==='ready'){button.setAttribute('aria-label',`逐风就绪，再次点击向${direction>0?'右':'左'}冲刺`);status.textContent=`逐风就绪 · 向${value>0?'右':'左'}`;}
+  }
+  button.addEventListener('click',activate);
+  directions.forEach(b=>b.addEventListener('click',()=>choose(Number(b.dataset.jettDirection))));
+  one('[data-jett-reset]',root).addEventListener('click',()=>neutral());
+  root.addEventListener('keydown',event=>{
+    if(event.key==='Escape'){event.preventDefault();neutral();return;}
+    if(button.disabled)return;
+    if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();choose(event.key==='ArrowLeft'?-1:1);}
+    if(event.key.toLowerCase()==='e'&&!event.repeat){event.preventDefault();activate();}
   });
-  function syncMotion() {
-    cancel();
-    button.disabled = reduced();
-    if (reduced()) { cue.textContent = '动效已关闭'; button.setAttribute('aria-label', '捷风立绘，动效已关闭'); }
-  }
-  window.addEventListener('portfolio:motion-change', syncMotion);
-  systemMotion.addEventListener('change', syncMotion);
-  document.addEventListener('visibilitychange', () => { if (document.hidden) cancel(); });
-  window.addEventListener('pagehide', cancel);
-  if ('IntersectionObserver' in window) new IntersectionObserver(entries => {
-    if (!entries[0].isIntersecting && state !== 'idle') cancel();
-  }, { threshold: .01 }).observe(root);
-  syncMotion();
+  addEventListener('portfolio:motion-change',()=>neutral());
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)neutral();});
+  addEventListener('pagehide',()=>neutral());
+  new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)neutral();}).observe(root);
+  neutral();
 })();
