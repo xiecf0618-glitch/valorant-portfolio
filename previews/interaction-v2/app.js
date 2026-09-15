@@ -265,6 +265,14 @@ updateMotion();
     speed.append(line);
   });
   let state = 'idle', direction = 1, raf = 0, started = 0, queued = false, distance = 0;
+  const activeAnimations = new Set();
+  const nativeMotion = typeof stage.animate === 'function';
+  function animate(element, frames, duration, easing='linear') {
+    const animation=element.animate(frames,{duration,easing,iterations:1});
+    activeAnimations.add(animation);
+    animation.finished.then(()=>activeAnimations.delete(animation),()=>activeAnimations.delete(animation));
+    return animation;
+  }
   const set = (key,value) => root.style.setProperty(`--jett-${key}`,String(value));
   const clamp = t => Math.max(0,Math.min(1,t));
   const reduced = () => document.documentElement.dataset.reduceMotion === 'true';
@@ -277,6 +285,7 @@ updateMotion();
   }
   function neutral(message = '捷风 · 逐风') {
     cancelAnimationFrame(raf); raf=0; queued=false;
+    activeAnimations.forEach(a=>a.cancel());activeAnimations.clear();
     ['x','echo-x','bg'].forEach(k=>set(k,'0px'));
     ['trail','wind','meter'].forEach(k=>set(k,0));
     set('opacity',1);set('fade',1);set('lean','0deg');set('smear',1);
@@ -288,6 +297,32 @@ updateMotion();
     distance=stage.clientWidth*.23*direction;
     queued=false;one('[data-jett-countdown]',root).textContent='';set('direction',direction);set('meter',0);change('dashing',now);
     cue.textContent=direction>0?'向右逐风':'向左逐风';status.textContent='冲刺中';
+    if(nativeMotion){
+      // Compositor animations keep the short burst intact when JS frames throttle.
+      set('x',`${distance}px`);set('bg',`${-distance*.35}px`);set('wind',0);
+      const motion=animate(one('[data-jett-portrait]',root),[
+        {transform:'translateX(0)',opacity:1},
+        {transform:`translateX(${distance*.68}px) skewX(${-8*direction}deg) scaleX(1.1)`,opacity:.8,offset:.5},
+        {transform:`translateX(${distance}px)`,opacity:1}
+      ],280,'cubic-bezier(.16,.65,.2,1)');
+      animate(one('[data-jett-echo]',root),[
+        {transform:'translateX(0) scaleX(1.1)',opacity:.25},
+        {transform:`translateX(${distance*.4}px) scaleX(1.25)`,opacity:.3,offset:.45},
+        {transform:`translateX(${distance*.65}px)`,opacity:0}
+      ],380);
+      animate(speed,[{opacity:.7},{opacity:1,offset:.25},{opacity:0}],420);
+      animate(one('.jett-wind-field',root),[{opacity:.8},{opacity:0}],380);
+      animate(one('.jett-ground',root),[{opacity:.5},{opacity:.8,offset:.3},{opacity:0}],450);
+      animate(one('.jett-scenery',root),[
+        {transform:'translateX(0)',filter:'blur(0px)'},
+        {transform:`translateX(${-distance*.23}px)`,filter:'blur(1.5px)',offset:.6},
+        {transform:`translateX(${-distance*.35}px)`,filter:'blur(0px)'}
+      ],280);
+      motion.finished.then(()=>{
+        if(state!=='dashing')return;
+        change('settling');cue.textContent='逐风结束';status.textContent='已停稳 · 即将复位';
+      },()=>{});
+    }
   }
   function frame(now) {
     if(reduced()||document.hidden){neutral();return;}
@@ -302,7 +337,7 @@ updateMotion();
       // Countdown is visible, while the live status announces only meaningful states.
       root.setAttribute('data-ready-seconds',remaining.toFixed(1));
       if(elapsed>=7500){neutral('准备窗口结束');return;}
-    }else if(state==='dashing'){
+    }else if(state==='dashing'&&!nativeMotion){
       const t=clamp(elapsed/280), x=distance*(1-Math.pow(1-t,2));
       const burst=Math.sin(Math.PI*t);
       set('x',`${x}px`);set('echo-x',`${x-distance*.65*burst}px`);
