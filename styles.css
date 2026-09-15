@@ -192,6 +192,8 @@ html[data-reduce-motion="true"]{scroll-behavior:auto}html[data-reduce-motion="tr
 .weapon-display-heading{display:flex;align-items:center;gap:18px;padding:0 12px;color:var(--muted);font-size:20px;line-height:1.5}
 .weapon-display-rule{height:1px;flex:1;background:linear-gradient(90deg,var(--line),transparent)}
 .weapon-viewer,.jett-interaction{display:flex;flex-direction:column;align-items:center;width:100%;padding:0;border:0;background:transparent;color:var(--cyan);font:inherit;cursor:pointer;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.weapon-viewer{position:relative}
+.weapon-viewer .interaction-hint{position:absolute;bottom:20px}
 .weapon-space{display:grid;place-items:center;width:100%;height:360px;perspective:850px;pointer-events:none}
 .weapon-rig{display:block;width:88%;max-width:512px;transform-origin:58% 48%;transform-style:preserve-3d;filter:drop-shadow(0 24px 16px #0009)}
 .weapon-cutout{display:block;width:100%;height:auto;pointer-events:none;-webkit-user-drag:none}
@@ -199,13 +201,13 @@ html[data-reduce-motion="true"]{scroll-behavior:auto}html[data-reduce-motion="tr
 .weapon-viewer:hover .interaction-hint,.jett-interaction:hover .interaction-hint{color:white;border-color:white}
 .weapon-viewer:focus-visible,.jett-interaction:focus-visible{outline:2px solid var(--cyan);outline-offset:5px}
 [data-inspect-state=playing] .weapon-rig,[data-inspect-state=scrubbing] .weapon-rig{will-change:transform}
-[data-inspect-state=playing] .interaction-hint{border-bottom-color:transparent;color:#a9c2cc}
+[data-inspect-state=playing] .interaction-hint,[data-inspect-state=scrubbing] .interaction-hint{opacity:0}
 
 /* Tailwind has one automatic prepare / burst / stop / presentation-reset cycle. */
 .conclusion-inner{grid-template-columns:minmax(0,1fr) minmax(320px,.55fr);gap:36px}
 .jett-showcase{width:100%;max-width:420px;min-width:0;align-self:center;justify-self:center}
 .jett-motion-stage{display:block;position:relative;width:100%;height:490px;isolation:isolate;overflow:hidden;mask-image:linear-gradient(transparent,#000 8%,#000 92%,transparent);pointer-events:none}
-.jett-scenery{position:absolute;inset:0 -100px;background:linear-gradient(180deg,#0c182800,rgba(11,23,34,.35)),url('assets/map-haven-official.webp') 50% 50%/auto 105%;opacity:.3;mask-image:linear-gradient(90deg,transparent,#000 25%,#000 75%,transparent)}
+.jett-scenery{position:absolute;inset:0 -100px;background:linear-gradient(180deg,#0c182800,rgba(11,23,34,.35)),url('assets/map-haven-official.webp') 50% 50%/auto 105%;opacity:0;mask-image:linear-gradient(90deg,transparent,#000 25%,#000 75%,transparent)}
 .jett-showcase .agent-stage{position:absolute;display:block;left:14%;top:18px;width:52%;height:auto;aspect-ratio:858/1658;margin:0;z-index:2;pointer-events:none;transform-origin:50% 65%}
 .jett-showcase [data-jett-portrait]{filter:drop-shadow(0 12px 14px #0006)}
 .jett-showcase .jett-echo{z-index:1;opacity:0;filter:blur(6px) brightness(2) saturate(.15);mix-blend-mode:screen}

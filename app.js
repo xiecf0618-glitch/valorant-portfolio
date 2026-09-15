@@ -257,7 +257,7 @@ updateMotion();
       animate(echo,[{transform:'translateX(0)',opacity:.4},{transform:`translateX(${x*.35}px)`,opacity:.22,offset:.5},{transform:`translateX(${x*.6}px)`,opacity:0}],340);
       animate(speed,[{opacity:.8,transform:'translateX(-14%)'},{opacity:1,offset:.15},{opacity:0,transform:'translateX(24%)'}],340);
       animate(ground,[{opacity:.6},{opacity:1,offset:.2},{opacity:0}],380);
-      animate(scenery,[{transform:'translateX(0)',filter:'blur(0)'},{transform:`translateX(${-x*.6}px)`,filter:'blur(3px)',offset:.45},{transform:`translateX(${-x*.7}px)`,filter:'blur(0)'}],280,'cubic-bezier(.12,.7,.2,1)');
+      animate(scenery,[{transform:'translateX(0)',filter:'blur(0)',opacity:0},{transform:`translateX(${-x*.6}px)`,filter:'blur(3px)',opacity:.4,offset:.45},{transform:`translateX(${-x*.7}px)`,filter:'blur(0)',opacity:0}],280,'cubic-bezier(.12,.7,.2,1)');
       await animate(portrait,[{transform:'translateX(0)',opacity:1},{transform:`translateX(${x*.75}px)`,opacity:.3,offset:.45},{transform:`translateX(${x}px)`,opacity:1}],280,'cubic-bezier(.12,.7,.2,1)').finished;
       if(!valid())return;change('settling','逐风');
       await animate(portrait,[{transform:`translateX(${x}px)`},{transform:`translateX(${x}px)`}],650).finished;
