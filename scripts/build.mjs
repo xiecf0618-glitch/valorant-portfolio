@@ -33,5 +33,23 @@ await writeFile(path.join(dist,'index.html'), publishedHtml);
 await mkdir(path.join(dist,'scripts'), { recursive: true });
 await cp('scripts/qa.html', path.join(dist,'scripts/qa.html'));
 await writeFile(path.join(dist,'.nojekyll'),'');
+// Review iterations live at separate URLs; publishing one never replaces index.
+const previewRoot = 'previews';
+for (const entry of await readdir(previewRoot, { withFileTypes: true }).catch(error => {
+  if (error.code === 'ENOENT') return [];
+  throw error;
+})) {
+  if (!entry.isDirectory()) continue;
+  const input = path.join(previewRoot, entry.name);
+  const output = path.join(dist, previewRoot, entry.name);
+  await cp(input, output, { recursive: true });
+  const previewHtml = await readFile(path.join(input, 'index.html'), 'utf8');
+  const previewCss = await readFile(path.join(input, 'styles.css'), 'utf8');
+  const previewJs = await readFile(path.join(input, 'app.js'), 'utf8');
+  const versionedPreview = previewHtml
+    .replace('href="styles.css"', `href="styles.css?v=${revision(previewCss)}"`)
+    .replace('src="app.js"', `src="app.js?v=${revision(previewJs)}"`);
+  await writeFile(path.join(output, 'index.html'), versionedPreview);
+}
 async function size(dir) { let bytes=0,files=0; for(const entry of await readdir(dir,{withFileTypes:true})) {const p=path.join(dir,entry.name); if(entry.isDirectory()){const s=await size(p);bytes+=s.bytes;files+=s.files;}else{bytes+=(await readFile(p)).length;files++;}} return {bytes,files}; }
 console.log(JSON.stringify({scenes:ids.length,sourceEntries:sources.length,output:'dist',revisions,...await size(dist)}));
