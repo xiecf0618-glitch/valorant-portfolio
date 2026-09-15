@@ -1,0 +1,43 @@
+{
+  "baseline": "840a622",
+  "candidate": "cbc4abc",
+  "changedScenes": [
+    "scene01",
+    "scene15",
+    "scene16",
+    "scene20",
+    "scene23"
+  ],
+  "sceneCount": 23,
+  "singleHeroSkin": true,
+  "videoElements": 0,
+  "models": 0,
+  "researchHeadingsAndTablePreserved": true,
+  "otherSectionsByteIdentical": true,
+  "assetsUnchanged": {
+    "night-market-official-2025.png": "c448cac2b2f198ea9eac616aefc7d1b42dcc3b22af62b6b192e4e6a4c3b85014",
+    "reaver-vandal-collection-official-hd.jpg": "6c5cf1462bf3ec3910a263336be0398bdccac7f401e670f36f8bc29e8dc07c34",
+    "reaver-inspect-poster.jpg": "1925ac3ee4ac50071894ea45da3664f114e95c7a87884b0d747a859a57de7700",
+    "valorant-symbol-official.png": "d947a1f3afddaa19a0405cd900ec63efeb813dea4993f30a2153fed4dbc5e364",
+    "weapon-oni-phantom.png": "4dd1bf8afb24f4fa5cadf27aedc4a2eac6c54a2c4546dbb18dfd6c647a74dc95",
+    "team-capsules-2026-pacific.jpg": "f7cd1b1b19f826b9a35287307568dbbb0d970715460f43de4fb30e68261cbf97",
+    "report.pdf": "3884973695883ebf78f0189a2201d187f00b28b2440c10a1a3523fc158b2fee5",
+    "map-lotus-official.webp": "2edb775a23571a071c1accb0af576ea79cc66ec17bb601ec723f1f88ef59db8e",
+    "store-official-2020.jpg": "c3ffbfff86346c2b66f26c3c9ba39f275821b77adf56c1fd4828160bc499d58c",
+    "vct-stage-official-2025.jpg": "6af80556073890a57562f5a7e3237fe3c08bb92939bda78e7c2ca41eec333051",
+    "data-acceptance.png": "8086d8ee37a52cd2aa1fafb8fb13b5d45b479841b3c51e5de15f0e684e82a9c9",
+    "weapon-reaver-vandal.png": "10a1ddf3a16a9dced7f9b9fc8b0b30bacf6ed820bafb1312f602593fcdfb16ba",
+    "jett-fullportrait-thirdparty.png": "4b103d4002ec803d0905a53b18ad1f7a37daf05a45dbfb37b1008345b83f6d10",
+    "commercial-review.jpeg": "9cb790a2982327cfd236082dda642cfb1dc55e56d484bbd7b0306922860a3811",
+    "map-icebox-official.webp": "5a9ed5123691ca70c07b06dbf5a2703961680fcdc61193687bb5ae4ae7cf19e5",
+    "prime-collection-official-hd.webp": "fa35d8ee2bff4e7819c86289a7c309b99853b1f5b8232b25136a27e2cba163bf",
+    "reaver-inspect.mp4": "8bbeb5f20e4627c35950ab4006a7766ebb2a39768198dfecf4d15d5548187ed6",
+    "map-haven-official.webp": "618d8c97c1c3a9a9cea550d32b2e1ea968c21c714696f59e66b8d37a43dbe197",
+    "ascent-official-4k.png": "34825b02e664472e7cea10246a39a4d6b42c43debc93f7ee0b698e7fcef90b81",
+    "weapon-prime-vandal.png": "becbab7eee11f9100db4b79b8d9744f46a5d08027858c64c4cfb8c17fa553154",
+    "map-sunset-official.webp": "c253c7b83f646af99eb388abc6458278617936de6156a6ec6e37ac493e32ea88",
+    "oni-collection-official-hd.webp": "c56724000610ce161a412c574c153331da92b3893037f3f8edc352115693806d",
+    "wagu-summer-promo-2026.webp": "6e6e24647f2a8678a15000a00ba8c192d473899fc79c5b4e08264f6fe6d8f940",
+    "battlepass-official-2020.jpg": "672631301986b3353b3012a8c2f30a5c1605dd60dff5486cdd1db70b0c3f624a"
+  }
+}

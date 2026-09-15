@@ -1,0 +1,227 @@
+{
+  "control": "weapon",
+  "reduced": "false",
+  "samples": [
+    {
+      "ms": 261,
+      "visibility": "visible",
+      "state": "playing",
+      "progress": "70",
+      "elements": [
+        {
+          "transform": "matrix3d(0.918402, 0.428258, -0.233949, 0, -0.184754, 0.766616, 0.67806, 0, 0.434295, -0.535789, 0.724098, 0, 14.872, -8, 0, 1)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 268,
+      "visibility": "visible",
+      "state": "playing",
+      "progress": "70",
+      "elements": [
+        {
+          "transform": "matrix3d(0.918402, 0.428258, -0.233949, 0, -0.184754, 0.766616, 0.67806, 0, 0.434295, -0.535789, 0.724098, 0, 14.872, -8, 0, 1)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 285,
+      "visibility": "visible",
+      "state": "playing",
+      "progress": "71",
+      "elements": [
+        {
+          "transform": "matrix3d(0.918402, 0.428258, -0.233949, 0, -0.184754, 0.766616, 0.67806, 0, 0.434295, -0.535789, 0.724098, 0, 14.872, -8, 0, 1)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 333,
+      "visibility": "visible",
+      "state": "playing",
+      "progress": "71",
+      "elements": [
+        {
+          "transform": "matrix3d(0.918402, 0.428258, -0.233949, 0, -0.184754, 0.766616, 0.67806, 0, 0.434295, -0.535789, 0.724098, 0, 14.872, -8, 0, 1)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 335,
+      "visibility": "visible",
+      "state": "playing",
+      "progress": "72",
+      "elements": [
+        {
+          "transform": "matrix3d(0.918402, 0.428258, -0.233949, 0, -0.184754, 0.766616, 0.67806, 0, 0.434295, -0.535789, 0.724098, 0, 14.872, -8, 0, 1)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 348,
+      "visibility": "visible",
+      "state": "playing",
+      "progress": "72",
+      "elements": [
+        {
+          "transform": "matrix3d(0.918402, 0.428258, -0.233949, 0, -0.184754, 0.766616, 0.67806, 0, 0.434295, -0.535789, 0.724098, 0, 14.872, -8, 0, 1)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 365,
+      "visibility": "visible",
+      "state": "playing",
+      "progress": "72",
+      "elements": [
+        {
+          "transform": "matrix3d(0.918402, 0.428258, -0.233949, 0, -0.184754, 0.766616, 0.67806, 0, 0.434295, -0.535789, 0.724098, 0, 14.872, -8, 0, 1)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 381,
+      "visibility": "visible",
+      "state": "playing",
+      "progress": "73",
+      "elements": [
+        {
+          "transform": "matrix3d(0.918402, 0.428258, -0.233949, 0, -0.184754, 0.766616, 0.67806, 0, 0.434295, -0.535789, 0.724098, 0, 14.872, -8, 0, 1)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 399,
+      "visibility": "visible",
+      "state": "playing",
+      "progress": "73",
+      "elements": [
+        {
+          "transform": "matrix3d(0.918402, 0.428258, -0.233949, 0, -0.184754, 0.766616, 0.67806, 0, 0.434295, -0.535789, 0.724098, 0, 14.872, -8, 0, 1)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 414,
+      "visibility": "visible",
+      "state": "playing",
+      "progress": "73",
+      "elements": [
+        {
+          "transform": "matrix3d(0.918402, 0.428258, -0.233949, 0, -0.184754, 0.766616, 0.67806, 0, 0.434295, -0.535789, 0.724098, 0, 14.872, -8, 0, 1)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 431,
+      "visibility": "visible",
+      "state": "playing",
+      "progress": "74",
+      "elements": [
+        {
+          "transform": "matrix3d(0.918402, 0.428258, -0.233949, 0, -0.184754, 0.766616, 0.67806, 0, 0.434295, -0.535789, 0.724098, 0, 14.872, -8, 0, 1)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 1449,
+      "visibility": "visible",
+      "state": "playing",
+      "progress": "94",
+      "elements": [
+        {
+          "transform": "matrix3d(0.99922, 0.119989, -0.0300777, 0, -0.114542, 0.989916, 0.143836, 0, 0.0463955, -0.138377, 0.989292, 0, 1.69725, -4.10846, 0, 1)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 2467,
+      "visibility": "visible",
+      "state": "idle",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 3481,
+      "visibility": "visible",
+      "state": "idle",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 4497,
+      "visibility": "visible",
+      "state": "idle",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 5514,
+      "visibility": "visible",
+      "state": "idle",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 6530,
+      "visibility": "visible",
+      "state": "idle",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": []
+        }
+      ]
+    }
+  ]
+}

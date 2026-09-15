@@ -1,0 +1,10 @@
+{
+  "browser": "Chrome, responsive iframe",
+  "motionReducedDisablesJett": true,
+  "motionCanBeEnabledAgain": true,
+  "escapeClosesMenu": true,
+  "manualResetReturnsIdle": true,
+  "mobileEcosystemTabSwitches": true,
+  "weaponPointerDragEntersInspect": true,
+  "scope": "Observed through actual browser interactions; lifecycle handlers separately code reviewed"
+}

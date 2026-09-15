@@ -1,0 +1,289 @@
+{
+  "control": "jett",
+  "reduced": "false",
+  "samples": [
+    {
+      "ms": 133,
+      "visibility": "visible",
+      "state": "priming",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0.24",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 158,
+      "visibility": "visible",
+      "state": "priming",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0.24",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 174,
+      "visibility": "visible",
+      "state": "priming",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0.24",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 189,
+      "visibility": "visible",
+      "state": "priming",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0.24",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 206,
+      "visibility": "visible",
+      "state": "priming",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0.24",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 1252,
+      "visibility": "visible",
+      "state": "dashing",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": [
+            {
+              "time": 0,
+              "state": "running"
+            }
+          ]
+        },
+        {
+          "transform": "matrix(-1, 0, 0, 1, 0, 0)",
+          "opacity": "0.7",
+          "animations": [
+            {
+              "time": 0,
+              "state": "running"
+            }
+          ]
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0.24",
+          "animations": [
+            {
+              "time": 0,
+              "state": "running"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ms": 2248,
+      "visibility": "visible",
+      "state": "dashing",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": [
+            {
+              "time": 0,
+              "state": "running"
+            }
+          ]
+        },
+        {
+          "transform": "matrix(-1, 0, 0, 1, 0, 0)",
+          "opacity": "0.7",
+          "animations": [
+            {
+              "time": 0,
+              "state": "running"
+            }
+          ]
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0.24",
+          "animations": [
+            {
+              "time": 0,
+              "state": "running"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ms": 3255,
+      "visibility": "visible",
+      "state": "settling",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, -96.6, 0)",
+          "opacity": "1",
+          "animations": []
+        },
+        {
+          "transform": "matrix(-1, 0, 0, 1, 0, 0)",
+          "opacity": "0",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 33.81, 0)",
+          "opacity": "0.24",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 4272,
+      "visibility": "visible",
+      "state": "resetting",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, -96.6, 0)",
+          "opacity": "1",
+          "animations": []
+        },
+        {
+          "transform": "matrix(-1, 0, 0, 1, 0, 0)",
+          "opacity": "0",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 33.81, 0)",
+          "opacity": "0.24",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 5288,
+      "visibility": "visible",
+      "state": "idle",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": []
+        },
+        {
+          "transform": "matrix(-1, 0, 0, 1, 0, 0)",
+          "opacity": "0",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0.24",
+          "animations": []
+        }
+      ]
+    },
+    {
+      "ms": 6304,
+      "visibility": "visible",
+      "state": "idle",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "animations": []
+        },
+        {
+          "transform": "matrix(-1, 0, 0, 1, 0, 0)",
+          "opacity": "0",
+          "animations": []
+        },
+        {
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "0.24",
+          "animations": []
+        }
+      ]
+    }
+  ]
+}
