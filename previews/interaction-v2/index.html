@@ -84,10 +84,9 @@
     <span class="weapon-space" aria-hidden="true"><span class="weapon-rig" data-weapon-stage>
       <img class="weapon-cutout" src="../../assets/weapon-reaver-vandal.png" alt="" width="512" height="156" fetchpriority="high" decoding="async">
     </span></span>
-    <span class="weapon-inspect-cue"><kbd>Y</kbd><span data-weapon-cue>点击检视 · 拖动查看</span></span>
+    <span class="interaction-hint" aria-hidden="true"><span data-weapon-cue>点击枪械 · 检视</span></span>
   </button>
-  <div class="weapon-timeline"><label class="sr-only" for="inspectProgress">拖动检视进度</label><input id="inspectProgress" type="range" min="0" max="100" value="0" step="1" aria-valuetext="持枪"><button type="button" data-weapon-reset>复位</button></div>
-  <p class="weapon-phase" data-weapon-phase role="status">持枪</p>
+  <p class="sr-only" data-weapon-phase role="status">掠影狂徒，可以检视</p>
 </div>
 </div>
 </section><section class="scene" data-chapter="project" data-scene-name="DUAL-END THESIS" id="scene02" data-baseline="P008–P014" data-information-type="analysis">
@@ -840,19 +839,16 @@
 <p class="closing-logic">使用条件 → 用户承接 → 社交关系 → 商品价值与节奏 → 赛事任务。新增参与场景能否形成持续行为，决定它们能否成为双端共同增长的一部分。</p></details><details class="scene-details"><summary>来源与依据</summary><p><a href="../../assets/report.pdf#page=9" target="_blank" rel="noopener">完整报告对应章节 ↗</a>　</p></details>
 </div>
 <div class="jett-showcase" data-jett-showcase>
-  <div class="jett-motion-stage" aria-hidden="true">
-    <div class="jett-scenery"></div><div class="jett-wind-field"></div>
-    <span class="agent-stage jett-echo" data-jett-echo><img alt="" class="a1" src="../../assets/jett-fullportrait-thirdparty.png" width="2048" height="1860" decoding="async" loading="lazy"></span>
-    <span class="agent-stage" data-jett-portrait><img alt="" class="a1" src="../../assets/jett-fullportrait-thirdparty.png" width="2048" height="1860" decoding="async" loading="lazy"></span>
-    <div class="jett-speed"></div><div class="jett-ground"></div>
-  </div>
-  <div class="jett-ready-meter" aria-hidden="true"><span></span></div>
-  <div class="jett-controls">
-    <button type="button" data-jett-direction="-1" aria-label="向左逐风" aria-pressed="false">←</button>
-    <button class="jett-interaction" type="button" data-jett-interact aria-label="捷风逐风：点击准备，再次点击向右冲刺"><kbd>E</kbd><span data-jett-cue>点击 · 准备逐风</span></button>
-    <button type="button" data-jett-direction="1" aria-label="向右逐风" aria-pressed="true">→</button>
-  </div>
-  <div class="jett-feedback"><span data-jett-status role="status">捷风 · 逐风</span><span data-jett-countdown aria-hidden="true"></span><button type="button" data-jett-reset>复位</button></div>
+  <button class="jett-interaction" type="button" data-jett-interact aria-label="点击捷风，演示逐风">
+    <span class="jett-motion-stage" aria-hidden="true">
+      <span class="jett-scenery"></span><span class="jett-wind-field"></span>
+      <span class="agent-stage jett-echo" data-jett-echo><img alt="" class="a1" src="../../assets/jett-fullportrait-thirdparty.png" width="2048" height="1860" decoding="async" loading="lazy"></span>
+      <span class="agent-stage" data-jett-portrait><img alt="" class="a1" src="../../assets/jett-fullportrait-thirdparty.png" width="2048" height="1860" decoding="async" loading="lazy"></span>
+      <span class="jett-speed"></span><span class="jett-ground"></span>
+    </span>
+    <span class="interaction-hint" aria-hidden="true"><img class="ability-icon" src="../../assets/jett-tailwind-icon.png" alt="" width="128" height="128" loading="lazy"><span data-jett-cue>点击捷风 · 逐风</span></span>
+  </button>
+  <span class="sr-only" data-jett-status role="status">捷风，可以演示逐风</span>
 </div>
 </div>
 </section>
@@ -953,7 +949,7 @@
 <details class="asset-credits scene-details"><summary>游戏素材来源与图像说明</summary><p>官方素材：<a href="https://playvalorant.com/en-us/media/" target="_blank" rel="noopener">紫阙金琅 / 般若假面 套系官方壁纸</a>、<a href="https://playvalorant.com/en-us/maps/" target="_blank" rel="noopener">Haven、Sunset、Lotus、Icebox 地图实景</a>、<a href="https://playvalorant.com/en-us/arsenal/" target="_blank" rel="noopener">官网 V 标志</a>、<a href="#source3">商店</a>、<a href="#source5">夜市</a>、<a href="#source4">Battle Pass</a>、<a href="#source10">2026 太平洋赛区战队胶囊</a>及<a href="#source7">VCT 赛事现场</a>。历史界面用于说明对应机制，不表示当前商品或活动。</p>
 <p>地图背景按页面的内容与阅读任务选择；电竞章节使用官方 VCT 赛事现场照片。背景只承担环境氛围，不代表手游场景、当前赛事地图池或商业化效果。</p>
 <p>首页枪械切图与捷风游戏立绘由第三方 <a href="https://valorant-api.com/" target="_blank" rel="noopener">VALORANT-API</a> 托管，非 Riot 官方直接分发。两份工作产出图取自作者终稿嵌图，保留脱敏范围与原始裁切。</p>
-<p>首页掠影狂徒的网页检视参考 <a href="https://valorant.dyn.riotcdn.net/x/videos/release-13.05/b21243ec-4cf0-37c0-43b4-15bf84de9d1d_default_universal.mp4" target="_blank" rel="noopener">Riot CDN 提供的实机片段</a>，以同一透明图模拟抬枪、侧看、翻转与复位；不包含真实三维背面和手部动作。捷风交互参考<a href="https://playvalorant.com/en-us/agents/jett/" target="_blank" rel="noopener">官方逐风演示</a>的准备、二次触发、定向冲刺和停稳反馈，使用立绘与网页风效近似表现，不是游戏骨骼动画。紫阙金琅 与 般若假面 使用官网媒体页提供的套系壁纸，保留完整比例；用于外观内容示例，不代表当前在售、手游已上架或已验证的转化表现。</p>
+<p>首页掠影狂徒的网页检视参考 <a href="https://valorant.dyn.riotcdn.net/x/videos/release-13.05/b21243ec-4cf0-37c0-43b4-15bf84de9d1d_default_universal.mp4" target="_blank" rel="noopener">Riot CDN 提供的实机片段</a>，点击枪械即可自动演示抬升、侧看、斜持与复位；同一侧面图不能显示真实顶部、背面或持枪手部，不等同于实机检视。捷风交互参考<a href="https://playvalorant.com/en-us/agents/jett/" target="_blank" rel="noopener">官方逐风演示</a>的准备、定向冲刺和停稳节奏，点击角色或<a href="https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data/18cb69683c16d11590eda4c5458a7025f0667895-128x128.png" target="_blank" rel="noopener">官方逐风技能图标</a>即可自动演示；单张站姿立绘仅能近似位移与风效，未还原实机的手部、躯干与关节动作。紫阙金琅 与 般若假面 使用官网媒体页提供的套系壁纸，保留完整比例；用于外观内容示例，不代表当前在售、手游已上架或已验证的转化表现。</p>
 <p>瓦谷配图来自 233 乐园转载的 2026 年 6 月版本宣传海报，页面展示其瓦谷模块，点击可查看完整图。它只说明收藏物外观，不作为交换或个性广场界面的证据。</p>
 <p>商店采用 2020 年官方历史截图；夜市采用 Riot 支持页真实界面，该文章于 2025 年更新，截图拍摄日期未确认。两者均用于说明机制，不代表当前商品清单。</p>
 <p>Battle Pass 采用 2020 年 IGNITION Act 1 官方界面；战队胶囊采用 2026 年太平洋赛区官方宣传素材；赛事背景刊载于 2025 年官方文章，拍摄日期未注明。</p></details><div class="footer">谢昌峰 · 游戏运营 / 商业化运营 / 产品发行方向。非 Riot Games 官方项目。本作品集用于研究与求职展示；VALORANT、相关角色、武器、赛事与素材权利归 Riot Games 所有。正文依据作者终稿转为网页表达。公开事实沿用报告的版本与时间范围，分析与策略按页内标签区分。</div>

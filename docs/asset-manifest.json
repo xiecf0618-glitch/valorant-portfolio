@@ -478,6 +478,24 @@
         "width": 1280,
         "height": 720
       }
+    },
+    {
+      "filename": "jett-tailwind-icon.png",
+      "local_path": "assets/jett-tailwind-icon.png",
+      "source_page_url": "https://playvalorant.com/en-us/agents/jett/",
+      "source_url": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data/18cb69683c16d11590eda4c5458a7025f0667895-128x128.png?accountingTag=VAL",
+      "official": true,
+      "publisher": "Riot Games",
+      "active": true,
+      "dimensions": {
+        "width": 128,
+        "height": 128
+      },
+      "bytes": 1397,
+      "sha256": "bf6ba7fdd09b30e725ac4b2baf37cf565ee34d38735e4813e31f8934f7133424",
+      "use": "Scene20 唯一逐风交互入口的官方技能图标；角色区域同样可点击",
+      "processing": "原文件不修改",
+      "rights": "Riot Games 游戏素材；非官方研究与求职展示，与现有素材版权说明一致。并非独立开放授权3D模型。"
     }
   ]
 }

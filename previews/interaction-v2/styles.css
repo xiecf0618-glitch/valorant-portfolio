@@ -187,51 +187,39 @@ html[data-reduce-motion="true"]{scroll-behavior:auto}html[data-reduce-motion="tr
 @media(max-width:560px){#scene15 .purchase-paths{grid-template-columns:1fr;padding-right:24px}#scene15 .purchase-path{display:grid;grid-template-columns:86px 1fr;padding:14px 12px;gap:12px}#scene15 .purchase-path h4{font-size:20px;margin:0}#scene15 .purchase-path p{font-size:17px}#scene15 .purchase-path::after{left:100%;top:50%;width:24px;height:0;border-left:0;border-top:2px solid var(--cyan)}#scene15 .purchase-paths::after{left:auto;right:0;top:16.7%;bottom:16.7%;border-bottom:0;border-right:2px solid var(--cyan)}#scene15 .data-journey{grid-template-columns:1fr;gap:24px}#scene15 .data-journey li:not(:last-child)::after{content:'↓';left:calc(50% - 12px);top:100%}#scene15 .purchase-failure{display:block}#scene15 .purchase-failure h4{margin-bottom:8px}#scene15 .risk-table th,#scene15 .risk-table td{padding:12px 0}#scene16 .eco-controls{gap:10px}#scene16 .eco-tier{min-height:162px;padding:16px 14px 38px}#scene16 .eco-tier strong{font-size:21px}#scene16 .eco-tier small{font-size:16px}#scene16 .eco-panels{padding:22px 20px}#scene16 .eco-info h3{font-size:25px}#scene16 .eco-info p{font-size:18px}}
 
 
-/* Native inspect controls. All poses use the same local transparent artwork. */
-.weapon-showcase{width:100%;max-width:600px;justify-self:center;--inspect-progress:0%}
+/* One direct interaction per artwork; no visitor-facing playback controls. */
+.weapon-showcase{width:100%;max-width:600px;justify-self:center}
 .weapon-display-heading{display:flex;align-items:center;gap:18px;padding:0 12px;color:var(--muted);font-size:20px;line-height:1.5}
 .weapon-display-rule{height:1px;flex:1;background:linear-gradient(90deg,var(--line),transparent)}
-.weapon-viewer{display:flex;flex-direction:column;align-items:center;width:100%;padding:0;border:0;background:transparent;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
-.weapon-viewer:active{cursor:grabbing}
-.weapon-space{display:grid;place-items:center;width:100%;height:280px;perspective:850px;pointer-events:none}
+.weapon-viewer,.jett-interaction{display:flex;flex-direction:column;align-items:center;width:100%;padding:0;border:0;background:transparent;color:var(--cyan);font:inherit;cursor:pointer;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.weapon-space{display:grid;place-items:center;width:100%;height:360px;perspective:850px;pointer-events:none}
 .weapon-rig{display:block;width:88%;max-width:512px;transform-origin:58% 48%;transform-style:preserve-3d;filter:drop-shadow(0 24px 16px #0009)}
 .weapon-cutout{display:block;width:100%;height:auto;pointer-events:none;-webkit-user-drag:none}
-.weapon-inspect-cue{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:10px 18px;border:1px solid #81d3dc;background:#0a1620e0;color:var(--cyan);font-size:16px;line-height:1.5;font-weight:600}
-.weapon-viewer:hover .weapon-inspect-cue,.weapon-viewer:focus-visible .weapon-inspect-cue{background:#254453;color:#fff;border-color:#fff}
-.weapon-viewer:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
-.weapon-inspect-cue kbd,.jett-interaction kbd{display:inline-grid;place-items:center;flex-shrink:0;width:26px;height:26px;border:1px solid currentColor;font:600 14px inherit;line-height:1}
-.weapon-timeline{display:flex;align-items:center;gap:18px;max-width:320px;margin:18px auto 0}
-.weapon-timeline input{min-width:0;flex:1;accent-color:var(--cyan);cursor:ew-resize;height:32px;background:transparent}
-.weapon-timeline button,.jett-feedback button{min-height:44px;padding:8px 12px;background:#122532aa;border:1px solid #668493;color:var(--cyan);font-size:14px}
-.weapon-phase{margin:0!important;text-align:center;font-size:14px!important;color:var(--muted);min-height:26px}
+.interaction-hint{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:8px 4px;border-bottom:1px solid #8ccbd080;color:#c4e5e7;font-size:14px;font-weight:500;line-height:1.5;letter-spacing:.05em;transition:color .18s,border-color .18s}
+.weapon-viewer:hover .interaction-hint,.jett-interaction:hover .interaction-hint{color:white;border-color:white}
+.weapon-viewer:focus-visible,.jett-interaction:focus-visible{outline:2px solid var(--cyan);outline-offset:5px}
 [data-inspect-state=playing] .weapon-rig,[data-inspect-state=scrubbing] .weapon-rig{will-change:transform}
+[data-inspect-state=playing] .interaction-hint{border-bottom-color:transparent;color:#a9c2cc}
 
-/* Tailwind: separate prepare, directional burst and stop. Return is UI reset. */
+/* Tailwind has one automatic prepare / burst / stop / presentation-reset cycle. */
 .conclusion-inner{grid-template-columns:minmax(0,1fr) minmax(320px,.55fr);gap:36px}
-.jett-showcase{width:100%;max-width:420px;min-width:0;align-self:center;justify-self:center;--jett-x:0px;--jett-echo-x:0px;--jett-opacity:1;--jett-trail:0;--jett-wind:0;--jett-meter:0;--jett-bg:0px;--jett-lean:0deg;--jett-smear:1;--jett-direction:1;--jett-fade:1}
-.jett-motion-stage{position:relative;width:100%;height:490px;isolation:isolate;overflow:hidden;mask-image:linear-gradient(transparent,#000 8%,#000 92%,transparent)}
-.jett-scenery{position:absolute;inset:0 -36px;background:linear-gradient(180deg,#0c182800,rgba(11,23,34,.35)),url('../../assets/map-haven-official.webp') 50% 50%/auto 105%;opacity:.24;transform:translateX(var(--jett-bg));mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent)}
-.jett-showcase .agent-stage{position:absolute;display:block;left:23%;top:18px;width:54%;height:auto;aspect-ratio:858/1658;margin:0;z-index:2;pointer-events:none;transform-origin:50% 65%;opacity:var(--jett-fade)}
-.jett-showcase [data-jett-portrait]{transform:translate3d(var(--jett-x),0,0) skewX(var(--jett-lean)) scaleX(var(--jett-smear));opacity:calc(var(--jett-opacity)*var(--jett-fade));filter:drop-shadow(0 12px 14px #0006)}
-.jett-showcase .jett-echo{z-index:1;opacity:calc(var(--jett-trail)*.3);transform:translateX(var(--jett-echo-x)) scaleX(1.12);filter:blur(5px) brightness(2) saturate(.15);mix-blend-mode:screen}
-.jett-wind-field{position:absolute;inset:10% 0 6%;z-index:3;opacity:var(--jett-wind);background:linear-gradient(98deg,transparent 17%,#c9fcff77 17.5%,transparent 18.4%,transparent 84%,#c9fcff77 84.4%,transparent 85%);mask-image:linear-gradient(transparent,#000 50%,transparent);transform:translateY(calc(var(--jett-wind)*-10px))}
-.jett-speed{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:var(--jett-trail);transform:scaleX(var(--jett-direction))}
-.jett-speed i{position:absolute;left:0;top:var(--y);width:var(--length);height:var(--weight);background:linear-gradient(90deg,transparent,#8ee7eeaa 52%,#efffff);transform:translateX(calc(var(--jett-x)*.18));opacity:var(--alpha)}
-.jett-ground{position:absolute;left:8%;right:8%;bottom:7%;height:2px;background:linear-gradient(90deg,transparent,#b5f6ff,transparent);opacity:calc(var(--jett-trail)*.8);filter:blur(1px)}
-.jett-ready-meter{height:3px;background:#90bfcb22;margin:0 20px 14px;overflow:hidden}
-.jett-ready-meter span{display:block;width:100%;height:100%;background:#b8f9ff;transform:scaleX(var(--jett-meter));transform-origin:left}
-.jett-controls{display:flex;justify-content:center;gap:8px}
-.jett-controls button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;min-width:44px;padding:10px;background:#112631dc;border:1px solid #5a8999;color:#cdfaff;font-size:16px;line-height:1.5;cursor:pointer}
-.jett-controls .jett-interaction{flex:1;max-width:260px}
-.jett-controls button:hover,.jett-controls button[aria-pressed=true]{background:#2a4a59;border-color:#b8f9ff}
-.jett-controls button:focus-visible,.jett-feedback button:focus-visible,.weapon-timeline button:focus-visible{outline:2px solid white;outline-offset:3px}
-.jett-controls button:disabled{cursor:default;opacity:.62}
-.jett-feedback{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;color:var(--muted);font-size:14px;min-height:44px}
-[data-jett-state=ready] .jett-interaction{background:#b5f5fa;color:#0b2932;box-shadow:0 0 24px #90eaf633}
+.jett-showcase{width:100%;max-width:420px;min-width:0;align-self:center;justify-self:center}
+.jett-motion-stage{display:block;position:relative;width:100%;height:490px;isolation:isolate;overflow:hidden;mask-image:linear-gradient(transparent,#000 8%,#000 92%,transparent);pointer-events:none}
+.jett-scenery{position:absolute;inset:0 -100px;background:linear-gradient(180deg,#0c182800,rgba(11,23,34,.35)),url('../../assets/map-haven-official.webp') 50% 50%/auto 105%;opacity:.3;mask-image:linear-gradient(90deg,transparent,#000 25%,#000 75%,transparent)}
+.jett-showcase .agent-stage{position:absolute;display:block;left:14%;top:18px;width:52%;height:auto;aspect-ratio:858/1658;margin:0;z-index:2;pointer-events:none;transform-origin:50% 65%}
+.jett-showcase [data-jett-portrait]{filter:drop-shadow(0 12px 14px #0006)}
+.jett-showcase .jett-echo{z-index:1;opacity:0;filter:blur(6px) brightness(2) saturate(.15);mix-blend-mode:screen}
+.jett-wind-field{position:absolute;inset:10% 0 6%;z-index:3;opacity:0;background:linear-gradient(98deg,transparent 17%,#c9fcff77 17.5%,transparent 18.4%,transparent 84%,#c9fcff77 84.4%,transparent 85%);mask-image:linear-gradient(transparent,#000 50%,transparent)}
+.jett-speed{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:0}
+.jett-speed i{position:absolute;left:0;top:var(--y);width:var(--length);height:var(--weight);background:linear-gradient(90deg,transparent,#8ee7eeaa 52%,#efffff);opacity:var(--alpha)}
+.jett-ground{position:absolute;left:8%;right:8%;bottom:7%;height:2px;background:linear-gradient(90deg,transparent,#b5f6ff,transparent);opacity:0;filter:blur(1px)}
+.jett-interaction .interaction-hint{margin-top:-8px;position:relative;z-index:5}
+.ability-icon{display:block;width:24px;height:24px;object-fit:contain}
+[data-jett-state=priming] .interaction-hint,[data-jett-state=dashing] .interaction-hint{color:white;border-color:#b8f9ff}
 [data-jett-state=dashing] [data-jett-portrait],[data-jett-state=dashing] .jett-scenery{will-change:transform}
 @media(max-width:1100px) and (min-width:801px){.conclusion-inner{grid-template-columns:minmax(0,1fr) 320px;gap:24px}.jett-motion-stage{height:390px}}
-@media(max-width:800px){.conclusion-inner{grid-template-columns:1fr}.jett-showcase{max-width:390px}.weapon-space{height:260px}.jett-motion-stage{height:460px}}
-@media(max-width:560px){.weapon-display-heading{font-size:18px;padding:0}.weapon-space{height:220px}.weapon-rig{width:85%}.weapon-inspect-cue{font-size:15px;padding:10px 14px}.weapon-timeline{max-width:280px}.jett-motion-stage{height:410px}.jett-controls button{font-size:14px;padding:10px 8px}.jett-showcase .agent-stage{top:12px}.jett-feedback{font-size:14px}}
-@media(prefers-reduced-motion:reduce){.jett-scenery,.jett-speed,.jett-echo,.jett-wind-field,.jett-ground{display:none!important}}
+@media(max-width:800px){.conclusion-inner{grid-template-columns:1fr}.jett-showcase{max-width:390px}.weapon-space{height:280px}.jett-motion-stage{height:460px}}
+@media(max-width:560px){.weapon-display-heading{font-size:18px;padding:0}.weapon-space{height:260px}.weapon-rig{width:85%}.jett-motion-stage{height:410px}.jett-showcase .agent-stage{top:12px}}
+@media(prefers-reduced-motion:reduce){.interaction-hint{transition:none}.jett-speed,.jett-echo,.jett-wind-field,.jett-ground{display:none!important}}
 html[data-reduce-motion=true] .jett-speed,html[data-reduce-motion=true] .jett-echo,html[data-reduce-motion=true] .jett-wind-field,html[data-reduce-motion=true] .jett-ground{display:none!important}
 @media print{.weapon-showcase,.jett-showcase{display:none!important}}
