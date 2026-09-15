@@ -29,6 +29,9 @@ for (const file of ['index.html','styles.css','app.js','assets']) await cp(file,
 if (!html.includes('href="styles.css"') || !html.includes('src="app.js"')) throw new Error('Expected entry-point stylesheet and script.');
 const publishedHtml = html.replace('href="styles.css"', `href="styles.css?v=${revisions.stylesheet}"`).replace('src="app.js"', `src="app.js?v=${revisions.script}"`);
 await writeFile(path.join(dist,'index.html'), publishedHtml);
+// Keep the existing read-only responsive harness available for release checks.
+await mkdir(path.join(dist,'scripts'), { recursive: true });
+await cp('scripts/qa.html', path.join(dist,'scripts/qa.html'));
 await writeFile(path.join(dist,'.nojekyll'),'');
 async function size(dir) { let bytes=0,files=0; for(const entry of await readdir(dir,{withFileTypes:true})) {const p=path.join(dir,entry.name); if(entry.isDirectory()){const s=await size(p);bytes+=s.bytes;files+=s.files;}else{bytes+=(await readFile(p)).length;files++;}} return {bytes,files}; }
 console.log(JSON.stringify({scenes:ids.length,sourceEntries:sources.length,output:'dist',revisions,...await size(dist)}));

@@ -21,12 +21,12 @@ document.querySelector('#record-motion').onclick=()=>{
  function start(event){
   controls.forEach(control=>control.removeEventListener('click',start));
   const button=event.currentTarget,isWeapon=button.hasAttribute('data-weapon-inspect');
-  const animated=isWeapon?[d.querySelector('[data-weapon-image]')]:[d.querySelector('[data-jett-portrait]'),...d.querySelectorAll('.jett-wind')];
+  const animated=isWeapon?[]:[d.querySelector('[data-jett-portrait]'),...d.querySelectorAll('.jett-wind')];
   const report={control:isWeapon?'weapon':'jett',reduced:d.documentElement.dataset.reduceMotion,samples:[]};
   const started=w.performance.now();
   function sample(){
    const elapsed=w.performance.now()-started;
-   report.samples.push({ms:Math.round(elapsed),visibility:d.visibilityState,elements:animated.map(e=>({transform:w.getComputedStyle(e).transform,opacity:w.getComputedStyle(e).opacity,animations:e.getAnimations().map(a=>({time:a.currentTime,state:a.playState}))}))});
+   report.samples.push({ms:Math.round(elapsed),visibility:d.visibilityState,video:isWeapon?{time:d.querySelector('#inspectVideo').currentTime,paused:d.querySelector('#inspectVideo').paused,readyState:d.querySelector('#inspectVideo').readyState}:null,elements:animated.map(e=>({transform:w.getComputedStyle(e).transform,opacity:w.getComputedStyle(e).opacity,animations:e.getAnimations().map(a=>({time:a.currentTime,state:a.playState}))}))});
    if(elapsed<1100)w.setTimeout(()=>w.requestAnimationFrame(sample),90);
    else output.textContent=JSON.stringify(report,null,2);
   }

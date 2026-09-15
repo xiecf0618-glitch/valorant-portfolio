@@ -152,7 +152,7 @@
     {
       "filename": "reaver-vandal-collection-official-hd.jpg",
       "source_page_url": "https://playvalorant.com/en-us/news/dev/true-to-form-the-story-of-reaver/",
-      "content": "Reaver 1.0整套官方商品宣传图；前景主要武器为Reaver Vandal，画面含Operator、Guardian、Sheriff和近战",
+      "content": "Reaver 1.0整套官方商品宣传图；前景主要武器为掠影狂徒，画面含Operator、Guardian、Sheriff和近战",
       "content_year": "2022-08-09官方开发文章刊载；内容为Reaver 1.0商品资产，图片制作日期未单独注明",
       "use": "历史首页宣传素材；当前首页改为透明枪械交互",
       "notes": "官方正文img alt明确为Reaver-1_0-store-asset.jpg。原始1648×805，保留整幅画面与左下角官方水印；不是Kuronami，也不是2026新品或游戏商店UI。建议题注：REAVER COLLECTION｜官方商品宣传图（2022文章刊载）。",
@@ -373,7 +373,7 @@
       "original_image_url": "https://media.valorant-api.com/weaponskinchromas/2bd28382-48c6-8579-83e8-e9b64b783de3/fullrender.png",
       "official": false,
       "publisher": "Valorant-API (non-official community asset API; not endorsed by Riot Games)",
-      "content": "Reaver Vandal 游戏原生透明切图",
+      "content": "掠影狂徒 游戏原生透明切图",
       "dimensions": {
         "width": 512,
         "height": 156
@@ -381,7 +381,7 @@
       "bytes": 52327,
       "sha256": "10a1ddf3a16a9dced7f9b9fc8b0b30bacf6ed820bafb1312f602593fcdfb16ba",
       "active": true,
-      "use": "首页武器选择与轻量检视",
+      "use": "首页唯一皮肤静态切图；点击另开真实检视视频",
       "processing": "原样下载，未生成、未抠图、未重绘或放大",
       "notes": "第三方游戏资产分发；非Riot官方直接分发。自然宽512px，展示最大512 CSS px。"
     },
@@ -392,15 +392,15 @@
       "original_image_url": "https://media.valorant-api.com/weaponskinchromas/a26e0d1d-4886-7d62-6b4f-1996e706463d/fullrender.png",
       "official": false,
       "publisher": "Valorant-API (non-official community asset API; not endorsed by Riot Games)",
-      "content": "Prime Vandal 游戏原生透明切图",
+      "content": "紫阙金琅狂徒 游戏原生透明切图",
       "dimensions": {
         "width": 512,
         "height": 148
       },
       "bytes": 42900,
       "sha256": "becbab7eee11f9100db4b79b8d9744f46a5d08027858c64c4cfb8c17fa553154",
-      "active": true,
-      "use": "首页武器选择与轻量检视",
+      "active": false,
+      "use": "历史首页选项；2026-09-15移除，正文套系宣传图继续保留。",
       "processing": "原样下载，未生成、未抠图、未重绘或放大",
       "notes": "第三方游戏资产分发；非Riot官方直接分发。自然宽512px，展示最大512 CSS px。"
     },
@@ -411,15 +411,15 @@
       "original_image_url": "https://media.valorant-api.com/weaponskinchromas/6096a66f-43d2-d4ad-6421-84aee3386921/fullrender.png",
       "official": false,
       "publisher": "Valorant-API (non-official community asset API; not endorsed by Riot Games)",
-      "content": "Oni Phantom 游戏原生透明切图",
+      "content": "般若假面幻影 游戏原生透明切图",
       "dimensions": {
         "width": 512,
         "height": 116
       },
       "bytes": 39023,
       "sha256": "4dd1bf8afb24f4fa5cadf27aedc4a2eac6c54a2c4546dbb18dfd6c647a74dc95",
-      "active": true,
-      "use": "首页武器选择与轻量检视",
+      "active": false,
+      "use": "历史首页选项；2026-09-15移除，正文套系宣传图继续保留。",
       "processing": "原样下载，未生成、未抠图、未重绘或放大",
       "notes": "第三方游戏资产分发；非Riot官方直接分发。自然宽512px，展示最大512 CSS px。"
     },
@@ -442,6 +442,42 @@
       "use": "Scene13 瓦谷收藏物宣传示例",
       "processing": "本地文件原样保留；CSS展示第五模块，点击打开完整原图",
       "notes": "不是腾讯官网直接资产；不是交换/个性广场实机UI，不作为1.24.0交换功能图像证据。"
+    },
+    {
+      "active": true,
+      "source_url": "https://valorant.dyn.riotcdn.net/x/videos/release-13.05/b21243ec-4cf0-37c0-43b4-15bf84de9d1d_default_universal.mp4",
+      "discovery_url": "https://valorant-api.com/v1/weapons?language=zh-CN",
+      "source_type": "Riot CDN game skin preview, level 3",
+      "official": true,
+      "retrieved": "2026-09-15",
+      "bytes": 1226528,
+      "sha256": "8bbeb5f20e4627c35950ab4006a7766ebb2a39768198dfecf4d15d5548187ed6",
+      "processing": "Clip 5.4–10.3s, 1280x720 H.264/AAC, original speed/audio/frame composition retained; poster taken at clip 1.4s. No synthetic game UI or generated weapon views.",
+      "use": "Hero user-initiated inspect dialog",
+      "local_path": "assets/reaver-inspect.mp4",
+      "filename": "reaver-inspect.mp4",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "active": true,
+      "source_url": "https://valorant.dyn.riotcdn.net/x/videos/release-13.05/b21243ec-4cf0-37c0-43b4-15bf84de9d1d_default_universal.mp4",
+      "discovery_url": "https://valorant-api.com/v1/weapons?language=zh-CN",
+      "source_type": "Riot CDN game skin preview, level 3",
+      "official": true,
+      "retrieved": "2026-09-15",
+      "bytes": 86729,
+      "sha256": "1925ac3ee4ac50071894ea45da3664f114e95c7a87884b0d747a859a57de7700",
+      "processing": "Clip 5.4–10.3s, 1280x720 H.264/AAC, original speed/audio/frame composition retained; poster taken at clip 1.4s. No synthetic game UI or generated weapon views.",
+      "use": "Inspect dialog poster",
+      "local_path": "assets/reaver-inspect-poster.jpg",
+      "filename": "reaver-inspect-poster.jpg",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      }
     }
   ]
 }

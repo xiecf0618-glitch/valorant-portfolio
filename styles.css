@@ -145,39 +145,35 @@ html[data-reduce-motion="true"]{scroll-behavior:auto}html[data-reduce-motion="tr
 @media(max-width:560px){.top-actions .menu-btn{padding:8px 12px}.scene-details summary{padding:13px 46px 13px 14px;font-size:16px}.scene-details summary::after{right:14px}.scene-details>p,.scene-details>ul,.scene-details>div,.scene-details>article{margin-left:14px;margin-right:14px}.eco-tier{padding-right:72px}.eco-tier::after{right:12px}.wagu-layout .social-chain{gap:20px}.wagu-layout .social-step h3{font-size:21px}.text-link{font-size:16px;padding:10px 14px}}
 @media print{.media-link::after{display:none}.scene-details,.scene-details summary,.media-link{background:white;color:#111;border-color:#aaa}}
 
-/* Native image interactions: transparent game assets, no automatic animation. */
-.weapon-showcase{width:100%;min-width:0;max-width:600px;justify-self:center}
-.weapon-display-heading{display:flex;align-items:center;gap:18px;padding:0 12px;color:var(--muted);font-size:18px;line-height:1.5}
-.weapon-current-label{white-space:nowrap}
+/* A single hero skin; actual inspection is played only on request. */
+.weapon-showcase{width:100%;max-width:600px;justify-self:center}
+.weapon-display-heading{display:flex;align-items:center;gap:18px;padding:0 12px;color:var(--muted);font-size:20px;line-height:1.5}
 .weapon-display-rule{height:1px;flex:1;background:linear-gradient(90deg,var(--line),transparent)}
-.weapon-viewer{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;position:relative;isolation:isolate;width:100%;min-height:250px;padding:24px 20px 18px;border:1px solid transparent;border-radius:0;background:transparent;color:var(--muted);cursor:pointer;touch-action:pan-y;overflow:visible}
-.weapon-viewer::before{content:"";position:absolute;z-index:-1;inset:18% 9% 24%;border-radius:50%;background:radial-gradient(ellipse,rgba(81,204,220,.09),transparent 68%);pointer-events:none}
-.weapon-orbit{display:flex;align-items:center;justify-content:center;width:100%;max-width:512px;min-height:156px;transform:translate(var(--weapon-x,0px),var(--weapon-y,0px)) rotate(var(--weapon-roll,0deg));transition:transform .2s ease-out;pointer-events:none}
-.weapon-cutout{display:block;width:100%;max-width:512px;height:auto;max-height:180px;object-fit:contain;filter:drop-shadow(0 14px 12px rgba(0,0,0,.42));transform-origin:center}
-.weapon-inspect-cue,.jett-interaction-cue{display:inline-flex;justify-content:center;align-items:center;gap:10px;min-height:44px;padding:8px 16px;border:1px solid rgba(129,211,220,.55);background:rgba(10,22,32,.88);color:var(--cyan);font-size:16px;line-height:1.5;font-weight:600;white-space:nowrap}
-.weapon-viewer:hover .weapon-inspect-cue,.jett-interaction:hover .jett-interaction-cue{border-color:var(--cyan);background:#142d3a;color:#e0fbff}
-.weapon-viewer:hover .weapon-cutout{filter:drop-shadow(0 16px 14px rgba(0,0,0,.5))}
-.weapon-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:0 12px}
-.weapon-choice{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;min-width:0;min-height:114px;padding:14px 10px 12px;border:1px solid rgba(188,211,225,.4);border-radius:0;background:rgba(12,25,36,.78);color:var(--muted);cursor:pointer;position:relative;text-align:center;transition:background .18s,border-color .18s,color .18s}
-.weapon-choice img{display:block;width:100%;max-width:132px;height:42px;object-fit:contain;pointer-events:none}
-.weapon-choice>span{font-size:16px;line-height:1.5;font-weight:650}
-.weapon-choice small{display:inline;margin-left:6px;color:inherit;font-size:16px;font-weight:400}
-.weapon-choice[aria-pressed=true]{border-color:var(--red);background:rgba(94,35,47,.42);color:#fff}
-.weapon-choice[aria-pressed=true]::after{content:"";position:absolute;left:18%;right:18%;bottom:-1px;height:3px;background:var(--red)}
-.weapon-choice:hover{background:rgba(39,65,79,.88);border-color:#b8d5df;color:#fff}
-.weapon-viewer:focus-visible,.weapon-choice:focus-visible,.jett-interaction:focus-visible{outline:3px solid var(--cyan);outline-offset:5px}
-.weapon-viewer:disabled,.jett-interaction:disabled{cursor:default}
-.weapon-viewer:disabled .weapon-inspect-cue,.jett-interaction:disabled .jett-interaction-cue{border-color:var(--line);background:rgba(10,22,32,.88);color:var(--dim);font-weight:400}
+.weapon-viewer{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;width:100%;min-height:300px;padding:28px 16px;border:1px solid transparent;background:transparent;touch-action:pan-y}
+.weapon-cutout{display:block;width:100%;max-width:512px;height:auto;object-fit:contain;filter:drop-shadow(0 14px 12px #0007)}
+.weapon-inspect-cue,.jett-interaction-cue{display:inline-flex;justify-content:center;align-items:center;gap:12px;min-height:48px;padding:10px 18px;border:1px solid #81d3dc;background:#0a1620e0;color:var(--cyan);font-size:16px;line-height:1.5;font-weight:600}
+.weapon-viewer:hover .weapon-inspect-cue,.weapon-viewer:focus-visible .weapon-inspect-cue,.jett-interaction:hover .jett-interaction-cue{background:#254453;color:white;border-color:white}
+.weapon-viewer:focus-visible,.jett-interaction:focus-visible{outline:3px solid var(--cyan);outline-offset:5px}
+.inspect-open{overflow:hidden}
+.inspect-dialog{width:min(1000px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);padding:0;border:1px solid #708c9b;background:#0e1c27;color:var(--text);overflow:auto;box-shadow:0 24px 80px #0009}
+.inspect-dialog::backdrop{background:#02080ee6}
+.inspect-dialog-head{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 24px;border-bottom:1px solid var(--line)}
+.inspect-dialog-head h2{font-size:24px;line-height:1.4;margin:0;text-wrap:initial}
+.inspect-dialog button,.inspect-dialog-foot a{min-height:44px;padding:8px 14px;border:1px solid #718593;background:#1b2d3b;font-size:16px;line-height:1.6;display:inline-flex;align-items:center;justify-content:center}
+.inspect-dialog button:hover,.inspect-dialog-foot a:hover{background:#304c5c;border-color:var(--cyan)}
+.inspect-dialog video{display:block;width:100%;height:auto;aspect-ratio:16/9;max-height:calc(100dvh - 205px);object-fit:contain;background:#05090d}
+.inspect-dialog-foot{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:16px 24px;font-size:16px;color:var(--muted)}
+.inspect-dialog-foot>span{margin-right:auto}.inspect-message{margin:0;padding:0 24px 18px;font-size:16px;color:var(--cyan)}
 .jett-showcase{width:100%;max-width:300px;min-width:0;align-self:center;justify-self:center}
 .jett-interaction{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;width:100%;padding:0 0 8px;border:0;border-radius:0;background:transparent;color:var(--cyan);cursor:pointer;touch-action:pan-y}
 .jett-showcase .agent-stage{display:block;width:100%;margin:0;flex:none;pointer-events:none;transform-origin:50% 80%}
+.jett-interaction:disabled{cursor:default}.jett-interaction:disabled .jett-interaction-cue{border-color:var(--line);color:var(--dim);font-weight:400}
 .jett-interaction-cue{position:relative;z-index:3;margin-top:12px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
 .jett-wind{position:absolute;z-index:2;left:2%;right:2%;height:20%;border:2px solid transparent;border-bottom-color:#90eff5;border-right-color:rgba(144,239,245,.55);border-radius:50%;opacity:0;transform:rotate(-20deg);pointer-events:none}
 .jett-wind-one{top:34%}.jett-wind-two{top:58%;left:8%;right:8%;height:16%}
-@media(max-width:1100px){.weapon-viewer{padding-left:16px;padding-right:16px;min-height:235px}.weapon-choices{gap:9px;padding:0}.weapon-choice{padding-left:7px;padding-right:7px}.weapon-choice small{display:block;margin-left:0;font-size:16px}}
-@media(max-width:800px){.weapon-showcase{max-width:590px}.weapon-viewer{min-height:225px}.weapon-choice small{display:inline;margin-left:6px}.jett-showcase{width:200px}.jett-interaction-cue{font-size:16px;padding:9px 13px}}
-@media(max-width:560px){.weapon-display-heading{font-size:16px;padding:0 2px}.weapon-viewer{min-height:190px;padding:14px 10px 16px;gap:12px}.weapon-orbit{min-height:105px}.weapon-choices{gap:8px}.weapon-choice{min-height:108px;padding:10px 7px}.weapon-choice img{height:34px}.weapon-choice>span{font-size:16px}.weapon-choice small{display:block;margin:0;font-size:16px}.weapon-inspect-cue{font-size:16px;min-height:44px}.jett-showcase{width:180px}}
-@media(prefers-reduced-motion:reduce){.weapon-orbit,.weapon-cutout,.jett-showcase .agent-stage,.jett-wind{transform:none!important;transition:none!important;animation:none!important}.jett-wind{opacity:0!important}}
-html[data-reduce-motion=true] .weapon-orbit,html[data-reduce-motion=true] .weapon-cutout,html[data-reduce-motion=true] .jett-showcase .agent-stage{transform:none!important}
-html[data-reduce-motion=true] .jett-wind{opacity:0!important}
-@media print{.weapon-showcase,.jett-showcase{display:none!important}}
+
+@media(max-width:800px){.jett-showcase{width:200px}.jett-interaction-cue{font-size:16px;padding:9px 13px}}
+@media(max-width:560px){.weapon-display-heading{font-size:18px;padding:0 2px}.weapon-viewer{min-height:220px;padding:16px 8px;gap:24px}.jett-showcase{width:180px}.inspect-dialog-head{padding:14px}.inspect-dialog-head h2{font-size:21px}.inspect-dialog-foot{padding:14px;gap:10px}.inspect-dialog-foot>span{width:100%}.inspect-message{padding:0 14px 14px}}
+@media(prefers-reduced-motion:reduce){.jett-showcase .agent-stage,.jett-wind{transform:none!important;transition:none!important;animation:none!important}.jett-wind{opacity:0!important}}
+html[data-reduce-motion=true] .jett-showcase .agent-stage{transform:none!important}html[data-reduce-motion=true] .jett-wind{opacity:0!important}
+@media print{.weapon-showcase,.jett-showcase,.inspect-dialog{display:none!important}}
