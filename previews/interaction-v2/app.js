@@ -202,10 +202,10 @@ updateMotion();
   function play() {
     if (isReduced()) { pose(progress < .45 ? .3 : progress < .75 ? .65 : 0); return; }
     stop(); root.dataset.inspectState = 'playing'; trigger.setAttribute('aria-busy', 'true');
-    cue.textContent = '检视中 · 拖动可接管'; start = performance.now();
+    cue.textContent = '检视中 · 拖动可接管'; start = performance.now() - progress * duration;
     raf = requestAnimationFrame(tick);
   }
-  trigger.addEventListener('click', () => { if (suppressClick) { suppressClick = false; return; } play(); });
+  trigger.addEventListener('click', event => { if (suppressClick && event.detail > 0) { suppressClick = false; return; } suppressClick = false; play(); });
   trigger.addEventListener('pointerdown', event => {
     if (event.button !== 0) return;
     pointer = { id: event.pointerId, x: event.clientX, y: event.clientY, p: progress, drag: false };
@@ -231,13 +231,13 @@ updateMotion();
     if (event && trigger.hasPointerCapture(event.pointerId)) trigger.releasePointerCapture(event.pointerId);
     if (isReduced()) return;
     // Resume the inspected pose through the remaining authored sequence.
-    root.dataset.inspectState = 'playing'; start = performance.now() - progress * duration;
+    root.dataset.inspectState = 'playing'; trigger.setAttribute('aria-busy','true'); start = performance.now() - progress * duration;
     raf = requestAnimationFrame(tick);
   }
   trigger.addEventListener('pointerup', release);
   trigger.addEventListener('pointercancel', () => { suppressClick = true; neutral(); });
   trigger.addEventListener('lostpointercapture', () => { if (pointer?.drag) { suppressClick = true; neutral(); } });
-  slider.addEventListener('input', () => { stop(); pointer = null; root.dataset.inspectState = 'scrubbing'; cue.textContent = '点击继续检视 · 复位归零'; pose(Number(slider.value) / 100); });
+  slider.addEventListener('input', () => { stop(); pointer = null; root.dataset.inspectState = 'scrubbing'; trigger.setAttribute('aria-busy','false'); cue.textContent = '点击继续检视 · 复位归零'; pose(Number(slider.value) / 100); });
   reset.addEventListener('click', neutral);
   root.addEventListener('keydown', event => {
     if (event.key === 'Escape') { event.preventDefault(); neutral(); }
@@ -282,11 +282,11 @@ updateMotion();
     set('opacity',1);set('fade',1);set('lean','0deg');set('smear',1);
     change('idle'); cue.textContent=reduced()?'动效已关闭':'点击 · 准备逐风';
     button.setAttribute('aria-label',reduced()?'捷风立绘，动效已关闭':`捷风逐风：点击准备，再次点击向${direction>0?'右':'左'}冲刺`);
-    status.textContent=message;
+    status.textContent=message;one('[data-jett-countdown]',root).textContent='';
   }
   function dash(now) {
     distance=stage.clientWidth*.23*direction;
-    queued=false;set('direction',direction);set('meter',0);change('dashing',now);
+    queued=false;one('[data-jett-countdown]',root).textContent='';set('direction',direction);set('meter',0);change('dashing',now);
     cue.textContent=direction>0?'向右逐风':'向左逐风';status.textContent='冲刺中';
   }
   function frame(now) {
@@ -294,11 +294,11 @@ updateMotion();
     const elapsed=now-started;
     if(state==='priming'){
       const t=clamp(elapsed/1000);set('wind',t*.7);set('meter',t);
-      if(t===1){change('ready',now);cue.textContent='再次点击 · 逐风';button.setAttribute('aria-label',`逐风就绪，再次点击向${direction>0?'右':'左'}冲刺`);status.textContent='逐风就绪 · 7.5 秒';if(queued)dash(now);}
+      if(t===1){change('ready',now);cue.textContent='再次点击 · 逐风';button.setAttribute('aria-label',`逐风就绪，再次点击向${direction>0?'右':'左'}冲刺`);status.textContent='逐风就绪';if(queued)dash(now);}
     }else if(state==='ready'){
       const remaining=Math.max(0,7.5-elapsed/1000);
       set('meter',remaining/7.5);set('wind',.5+.15*Math.sin(elapsed/170));
-      const label=`逐风就绪 · ${remaining.toFixed(1)} 秒`;
+      one('[data-jett-countdown]',root).textContent=remaining.toFixed(1)+' 秒';
       // Countdown is visible, while the live status announces only meaningful states.
       root.setAttribute('data-ready-seconds',remaining.toFixed(1));
       if(elapsed>=7500){neutral('准备窗口结束');return;}
