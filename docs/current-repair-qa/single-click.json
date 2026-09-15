@@ -1,0 +1,134 @@
+{
+  "testedCode": "9ae6b52",
+  "viewports": [
+    {
+      "viewport": [
+        2560,
+        1440
+      ],
+      "documentWidth": 2545,
+      "scenes": 23,
+      "visibleOverflow": []
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "documentWidth": 1425,
+      "scenes": 23,
+      "visibleOverflow": []
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "documentWidth": 1351,
+      "scenes": 23,
+      "visibleOverflow": []
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 375,
+      "scenes": 23,
+      "visibleOverflow": []
+    },
+    {
+      "viewport": [
+        360,
+        800
+      ],
+      "documentWidth": 345,
+      "scenes": 23,
+      "visibleOverflow": []
+    }
+  ],
+  "mobileJett": {
+    "states": [
+      "priming",
+      "dashing",
+      "settling",
+      "resetting",
+      "idle"
+    ],
+    "end": {
+      "ms": 12012,
+      "visibility": "visible",
+      "state": "idle",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "none",
+          "opacity": "1",
+          "rect": {
+            "top": 243.265625,
+            "bottom": 579.859375,
+            "left": 66.890625,
+            "right": 241.078125
+          },
+          "animations": []
+        },
+        {
+          "transform": "none",
+          "opacity": "0",
+          "rect": {
+            "top": 231.265625,
+            "bottom": 641.265625,
+            "left": 20,
+            "right": 355
+          },
+          "animations": []
+        },
+        {
+          "transform": "none",
+          "opacity": "0",
+          "rect": {
+            "top": 231.265625,
+            "bottom": 641.265625,
+            "left": -80,
+            "right": 455
+          },
+          "animations": []
+        }
+      ]
+    },
+    "maxX": 107.2
+  },
+  "mobileWeapon": {
+    "states": [
+      "playing",
+      "idle"
+    ],
+    "changed": true,
+    "end": {
+      "ms": 12282,
+      "visibility": "visible",
+      "state": "idle",
+      "progress": "0",
+      "elements": [
+        {
+          "transform": "none",
+          "opacity": "1",
+          "rect": {
+            "top": 410.78125,
+            "bottom": 497.53125,
+            "left": 45.125,
+            "right": 329.875
+          },
+          "animations": []
+        }
+      ]
+    }
+  },
+  "controls": {
+    "oneButtonPerModule": true,
+    "noSlidersOrResetOrDirectionControls": true,
+    "actualGunDragProgress": 58,
+    "escapeBoth": "idle",
+    "jettKeyboard": "priming"
+  }
+}
