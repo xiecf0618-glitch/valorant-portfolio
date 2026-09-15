@@ -1,0 +1,87 @@
+{
+  "release_commit": "bc67c1e0feca6251578f2fa12f20609b220e400a",
+  "actions_run": 34959474345,
+  "actions_conclusion": "success",
+  "http": [
+    {
+      "ref": "index.html",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 83566,
+      "sha_match": true,
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/"
+    },
+    {
+      "ref": "styles.css?v=99c124eac786",
+      "status": 200,
+      "type": "text/css; charset=utf-8",
+      "bytes": 55752,
+      "sha_match": true,
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/styles.css?v=99c124eac786"
+    },
+    {
+      "ref": "app.js?v=5e4a6233e6c8",
+      "status": 200,
+      "type": "application/javascript; charset=utf-8",
+      "bytes": 12324,
+      "sha_match": true,
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/app.js?v=5e4a6233e6c8"
+    },
+    {
+      "ref": "assets/reaver-inspect.mp4",
+      "status": 200,
+      "type": "video/mp4",
+      "bytes": 1226528,
+      "sha_match": true,
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/reaver-inspect.mp4"
+    },
+    {
+      "ref": "assets/reaver-inspect-poster.jpg",
+      "status": 200,
+      "type": "image/jpeg",
+      "bytes": 86729,
+      "sha_match": true,
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/assets/reaver-inspect-poster.jpg"
+    },
+    {
+      "ref": "scripts/qa.html",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "bytes": 6983,
+      "sha_match": true,
+      "url": "https://xiecf0618-glitch.github.io/valorant-portfolio/scripts/qa.html"
+    }
+  ],
+  "browser": {
+    "public_url": "https://xiecf0618-glitch.github.io/valorant-portfolio/",
+    "responsive_viewports": [
+      [
+        1440,
+        900
+      ],
+      [
+        1366,
+        768
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "all_scene_horizontal_overflows": 0,
+    "video_duration_seconds": 4.9,
+    "video_reached_ended": true,
+    "mobile_playback_sample_seconds": [
+      0,
+      0.032471,
+      1.113107
+    ],
+    "close_pauses_and_resets": true,
+    "escape_closes_dialog": true,
+    "reduced_motion_waits_for_manual_play": true,
+    "notes": "Actual public site; original game frames inspected through source contact sheets and video player. Not a true-device test.",
+    "focus_returns_to_inspect_button": true,
+    "manual_play_works_with_reduced_motion": true
+  },
+  "passed": true
+}

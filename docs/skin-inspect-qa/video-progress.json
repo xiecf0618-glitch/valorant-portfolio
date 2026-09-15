@@ -1,0 +1,36 @@
+{
+  "control": "weapon",
+  "reduced": "false",
+  "samples": [
+    {
+      "ms": 40,
+      "visibility": "visible",
+      "video": {
+        "time": 0,
+        "paused": false,
+        "readyState": 0
+      },
+      "elements": []
+    },
+    {
+      "ms": 270,
+      "visibility": "visible",
+      "video": {
+        "time": 0.032471,
+        "paused": false,
+        "readyState": 4
+      },
+      "elements": []
+    },
+    {
+      "ms": 1351,
+      "visibility": "visible",
+      "video": {
+        "time": 1.113107,
+        "paused": false,
+        "readyState": 4
+      },
+      "elements": []
+    }
+  ]
+}

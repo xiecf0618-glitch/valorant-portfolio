@@ -1,0 +1,95 @@
+[
+  {
+    "viewport": [
+      390,
+      844
+    ],
+    "documentWidth": 375,
+    "overflows": [],
+    "hero": {
+      "id": "scene01",
+      "width": 375,
+      "height": 792,
+      "title": "无畏契约",
+      "headingFont": "58px",
+      "minBodyFont": 16,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/weapon-reaver-vandal.png",
+          "loaded": true,
+          "natural": [
+            512,
+            156
+          ],
+          "display": [
+            317,
+            97
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "viewport": [
+      1366,
+      768
+    ],
+    "documentWidth": 1351,
+    "overflows": [],
+    "hero": {
+      "id": "scene01",
+      "width": 1351,
+      "height": 641,
+      "title": "无畏契约",
+      "headingFont": "83.326px",
+      "minBodyFont": 17,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/weapon-reaver-vandal.png",
+          "loaded": true,
+          "natural": [
+            512,
+            156
+          ],
+          "display": [
+            512,
+            156
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "viewport": [
+      1440,
+      900
+    ],
+    "documentWidth": 1425,
+    "overflows": [],
+    "hero": {
+      "id": "scene01",
+      "width": 1425,
+      "height": 648,
+      "title": "无畏契约",
+      "headingFont": "87.84px",
+      "minBodyFont": 17,
+      "overflow": [],
+      "images": [
+        {
+          "src": "assets/weapon-reaver-vandal.png",
+          "loaded": true,
+          "natural": [
+            512,
+            156
+          ],
+          "display": [
+            512,
+            156
+          ]
+        }
+      ]
+    }
+  }
+]
