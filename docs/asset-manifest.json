@@ -444,7 +444,7 @@
       "notes": "不是腾讯官网直接资产；不是交换/个性广场实机UI，不作为1.24.0交换功能图像证据。"
     },
     {
-      "active": true,
+      "active": false,
       "source_url": "https://valorant.dyn.riotcdn.net/x/videos/release-13.05/b21243ec-4cf0-37c0-43b4-15bf84de9d1d_default_universal.mp4",
       "discovery_url": "https://valorant-api.com/v1/weapons?language=zh-CN",
       "source_type": "Riot CDN game skin preview, level 3",
@@ -453,7 +453,7 @@
       "bytes": 1226528,
       "sha256": "8bbeb5f20e4627c35950ab4006a7766ebb2a39768198dfecf4d15d5548187ed6",
       "processing": "Clip 5.4–10.3s, 1280x720 H.264/AAC, original speed/audio/frame composition retained; poster taken at clip 1.4s. No synthetic game UI or generated weapon views.",
-      "use": "Hero user-initiated inspect dialog",
+      "use": "Retained reference material only; no longer played or displayed by the website",
       "local_path": "assets/reaver-inspect.mp4",
       "filename": "reaver-inspect.mp4",
       "dimensions": {
@@ -462,7 +462,7 @@
       }
     },
     {
-      "active": true,
+      "active": false,
       "source_url": "https://valorant.dyn.riotcdn.net/x/videos/release-13.05/b21243ec-4cf0-37c0-43b4-15bf84de9d1d_default_universal.mp4",
       "discovery_url": "https://valorant-api.com/v1/weapons?language=zh-CN",
       "source_type": "Riot CDN game skin preview, level 3",
@@ -471,7 +471,7 @@
       "bytes": 86729,
       "sha256": "1925ac3ee4ac50071894ea45da3664f114e95c7a87884b0d747a859a57de7700",
       "processing": "Clip 5.4–10.3s, 1280x720 H.264/AAC, original speed/audio/frame composition retained; poster taken at clip 1.4s. No synthetic game UI or generated weapon views.",
-      "use": "Inspect dialog poster",
+      "use": "Retained reference material only; no longer played or displayed by the website",
       "local_path": "assets/reaver-inspect-poster.jpg",
       "filename": "reaver-inspect-poster.jpg",
       "dimensions": {

@@ -27,7 +27,7 @@ document.querySelector('#record-motion').onclick=()=>{
   function sample(){
    const elapsed=w.performance.now()-started;
    report.samples.push({ms:Math.round(elapsed),visibility:d.visibilityState,state:isWeapon?d.querySelector('[data-weapon-showcase]').dataset.inspectState:d.querySelector('[data-jett-showcase]').dataset.jettState,progress:d.querySelector('#inspectProgress')?.value,elements:animated.map(e=>({transform:w.getComputedStyle(e).transform,opacity:w.getComputedStyle(e).opacity,animations:e.getAnimations().map(a=>({time:a.currentTime,state:a.playState}))}))});
-   if(elapsed<6000)w.setTimeout(()=>w.requestAnimationFrame(sample),90);
+   if(elapsed<6000)w.requestAnimationFrame(sample);
    else output.textContent=JSON.stringify(report,null,2);
   }
   w.requestAnimationFrame(sample);

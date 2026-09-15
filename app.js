@@ -152,86 +152,197 @@ motionButton.addEventListener('click', () => { reduced = !reduced; updateMotion(
 systemMotionPreference.addEventListener('change', event => { reduced = event.matches; updateMotion(); });
 updateMotion();
 
-/* The article uses a real, user-initiated inspect clip, not a rotating cutout. */
+/* Reaver inspect: pose order checked against the Riot skin preview at 5.4–10.3s.
+ * This is a bounded 2.5D cutout, not a reconstructed model or video player. */
 (() => {
-  const trigger = one('[data-weapon-inspect]');
-  const dialog = one('#weaponInspect');
-  const video = one('#inspectVideo');
-  const message = one('[data-inspect-message]');
-  if (!trigger || !dialog || !video) return;
-  function playClip() {
-    message.hidden = true;
-    video.currentTime = 0;
-    video.play().catch(() => {
-      if (!dialog.open) return;
-      message.textContent = '请点击视频播放按钮；如无法加载，可打开视频观看。';
-      message.hidden = false;
-    });
+  const root = one('[data-weapon-showcase]'), trigger = one('[data-weapon-inspect]');
+  const rig = one('[data-weapon-stage]'), slider = one('#inspectProgress');
+  if (!root || !trigger || !rig || !slider) return;
+  const cue = one('[data-weapon-cue]'), phase = one('[data-weapon-phase]');
+  const reset = one('[data-weapon-reset]');
+  const duration = 4900;
+  // Lift to the side, dwell, roll to the narrower top edge, dwell, lower.
+  // Angle values are presentation choices; no unseen weapon surfaces are drawn.
+  const poses = [
+    [0, 0, 0, 0, 0, 0, 1], [.11, -2, -14, 8, -15, 9, 1.04],
+    [.24, -3, -24, 12, -19, 14, 1.07], [.43, -3, -24, 12, -19, 14, 1.07],
+    [.57, 3, -8, 42, 13, 25, 1.04], [.74, 3, -8, 42, 13, 25, 1.04],
+    [.86, 1, -12, 24, 5, 20, 1.02], [1, 0, 0, 0, 0, 0, 1]
+  ];
+  let raf = 0, progress = 0, start = 0, pointer = null, suppressClick = false;
+  const isReduced = () => document.documentElement.dataset.reduceMotion === 'true';
+  const labels = p => p === 0 || p === 1 ? '持枪' : p < .11 ? '抬枪' : p < .46 ? '侧看枪身' : p < .78 ? '翻转检视' : '收枪复位';
+  function pose(p) {
+    progress = Math.max(0, Math.min(1, p));
+    let i = poses.findIndex(k => k[0] >= progress);
+    if (i < 1) i = 1;
+    const a = poses[i - 1], b = poses[i];
+    let t = (progress - a[0]) / (b[0] - a[0]);
+    t = t * t * (3 - 2 * t);
+    const v = a.slice(1).map((n, j) => n + (b[j + 1] - n) * t);
+    rig.style.transform = `translate3d(${v[0]}%,${v[1]}px,0) rotateZ(${v[4]}deg) rotateY(${v[3]}deg) rotateX(${v[2]}deg) scale(${v[5]})`;
+    const label = labels(progress);
+    if (phase.textContent !== label) phase.textContent = label;
+    slider.value = String(Math.round(progress * 100));
+    slider.setAttribute('aria-valuetext', label);
+    root.style.setProperty('--inspect-progress', `${progress * 100}%`);
   }
-  trigger.addEventListener('click', () => {
-    if (!video.getAttribute('src')) video.src = video.dataset.videoSrc;
-    if (typeof dialog.showModal !== 'function') { location.href = video.dataset.videoSrc; return; }
-    dialog.showModal();
-    document.body.classList.add('inspect-open');
-    if (document.documentElement.dataset.reduceMotion !== 'true') playClip();
-    else { message.textContent = '已减少动效。需要观看时，请手动点击播放。'; message.hidden = false; }
+  function stop() { cancelAnimationFrame(raf); raf = 0; }
+  function neutral() {
+    stop(); pointer = null; pose(0); root.dataset.inspectState = 'idle';
+    cue.textContent = isReduced() ? '拖动进度查看' : '点击检视 · 拖动查看';
+    trigger.setAttribute('aria-busy', 'false');
+  }
+  function tick(now) {
+    if (document.hidden || isReduced()) { neutral(); return; }
+    pose((now - start) / duration);
+    if (progress >= 1) { neutral(); return; }
+    raf = requestAnimationFrame(tick);
+  }
+  function play() {
+    if (isReduced()) { pose(progress < .45 ? .3 : progress < .75 ? .65 : 0); return; }
+    stop(); root.dataset.inspectState = 'playing'; trigger.setAttribute('aria-busy', 'true');
+    cue.textContent = '检视中 · 拖动可接管'; start = performance.now() - progress * duration;
+    raf = requestAnimationFrame(tick);
+  }
+  trigger.addEventListener('click', event => { if (suppressClick && event.detail > 0) { suppressClick = false; return; } suppressClick = false; play(); });
+  trigger.addEventListener('pointerdown', event => {
+    if (event.button !== 0) return;
+    pointer = { id: event.pointerId, x: event.clientX, y: event.clientY, p: progress, drag: false };
+    suppressClick = false;
   });
-  one('[data-inspect-close]').addEventListener('click', () => dialog.close());
-  one('[data-inspect-replay]').addEventListener('click', playClip);
-  dialog.addEventListener('click', event => { if (event.target === dialog) {
-    const bounds = dialog.getBoundingClientRect();
-    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
-  }});
-  dialog.addEventListener('close', () => {
-    video.pause(); video.currentTime = 0;
-    document.body.classList.remove('inspect-open');
-    trigger.focus({ preventScroll: true });
+  trigger.addEventListener('pointermove', event => {
+    if (!pointer || event.pointerId !== pointer.id) return;
+    const dx = event.clientX - pointer.x, dy = event.clientY - pointer.y;
+    if (!pointer.drag) {
+      if (Math.abs(dy) > 10 && Math.abs(dy) > Math.abs(dx)) { pointer = null; return; }
+      if (Math.abs(dx) < 7) return;
+      pointer.drag = true; stop(); trigger.setPointerCapture(event.pointerId);
+      root.dataset.inspectState = 'scrubbing'; cue.textContent = '松开后自然复位';
+      trigger.setAttribute('aria-busy', 'false');
+    }
+    pose(pointer.p + dx / (trigger.clientWidth * .8));
   });
-  video.addEventListener('error', () => { message.textContent = '视频暂时无法加载，请稍后重试或打开视频观看。'; message.hidden = false; });
-  document.addEventListener('visibilitychange', () => { if (document.hidden) video.pause(); });
-  window.addEventListener('portfolio:motion-change', () => { if (document.documentElement.dataset.reduceMotion === 'true') video.pause(); });
+  function release(event) {
+    if (!pointer || (event && event.pointerId !== pointer.id)) return;
+    const wasDrag = pointer.drag; pointer = null;
+    if (!wasDrag) return;
+    suppressClick = true;
+    if (event && trigger.hasPointerCapture(event.pointerId)) trigger.releasePointerCapture(event.pointerId);
+    if (isReduced()) return;
+    // Resume the inspected pose through the remaining authored sequence.
+    root.dataset.inspectState = 'playing'; trigger.setAttribute('aria-busy','true'); start = performance.now() - progress * duration;
+    raf = requestAnimationFrame(tick);
+  }
+  trigger.addEventListener('pointerup', release);
+  trigger.addEventListener('pointercancel', () => { suppressClick = true; neutral(); });
+  trigger.addEventListener('lostpointercapture', () => { if (pointer?.drag) { suppressClick = true; neutral(); } });
+  slider.addEventListener('input', () => { stop(); pointer = null; root.dataset.inspectState = 'scrubbing'; trigger.setAttribute('aria-busy','false'); cue.textContent = '点击继续检视 · 复位归零'; pose(Number(slider.value) / 100); });
+  reset.addEventListener('click', neutral);
+  root.addEventListener('keydown', event => {
+    if (event.key === 'Escape') { event.preventDefault(); neutral(); }
+    if (event.target === trigger && event.key.toLowerCase() === 'y' && !event.repeat) { event.preventDefault(); play(); }
+  });
+  addEventListener('portfolio:motion-change', neutral);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) neutral(); });
+  addEventListener('pagehide', neutral);
+  new IntersectionObserver(entries => { if (!entries[0].isIntersecting) neutral(); }).observe(root);
+  neutral();
 })();
 
-/* Conclusion interaction remains a bounded decorative effect. */
+/* Official Tailwind demo: horizontal environment sweep and brief cyan-white
+ * streaks. First-person hand/body animation cannot be reproduced by this PNG.
+ * 1000/7500ms from Riot 7.04; burst and presentation reset are web timings. */
 (() => {
-  const jett = one('[data-jett-showcase]');
-  if (!jett) return;
-  const systemMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  const motionReduced = () => systemMotion.matches || document.documentElement.dataset.reduceMotion === 'true';
-  const activeAnimations = new Set();
-  function cancelAnimations() { activeAnimations.forEach(animation => animation.cancel()); activeAnimations.clear(); }
-  function play(element, frames, duration, delay = 0) {
-    if (!element || motionReduced() || typeof element.animate !== 'function') return;
-    const animation = element.animate(frames, { duration, delay, easing: 'cubic-bezier(.22,.65,.3,1)', iterations: 1 });
-    activeAnimations.add(animation);
-    animation.finished.then(() => activeAnimations.delete(animation), () => activeAnimations.delete(animation));
-  }
-  const jettButton = one('[data-jett-interact]', jett);
-  const jettCue = one('[data-jett-cue]', jett);
-  const jettPortrait = one('[data-jett-portrait]', jett);
-  jettButton?.addEventListener('click', () => {
-    if (motionReduced()) return;
-    cancelAnimations();
-    play(jettPortrait, [
-      { transform: 'translate(0,0) rotate(0deg)' },
-      { transform: 'translate(3px,-4px) rotate(.9deg)', offset: .3 },
-      { transform: 'translate(-2px,-1px) rotate(-.4deg)', offset: .7 },
-      { transform: 'translate(0,0) rotate(0deg)' }
-    ], 820);
-    jett.querySelectorAll('.jett-wind').forEach((wind, i) => play(wind, [
-      { opacity: 0, transform: 'translateY(10px) rotate(-24deg) scale(.82)' },
-      { opacity: .72, transform: 'translateY(0) rotate(-16deg) scale(1)', offset: .4 },
-      { opacity: 0, transform: 'translateY(-15px) rotate(-8deg) scale(1.05)' }
-    ], 700, i * 110));
+  const root = one('[data-jett-showcase]');
+  if (!root) return;
+  const button = one('[data-jett-interact]', root), cue = one('[data-jett-cue]', root);
+  const status = one('[data-jett-status]', root), directions = all('[data-jett-direction]', root);
+  const stage = one('.jett-motion-stage', root), speed = one('.jett-speed', root);
+  [[16,88,1,.5],[25,100,2,.6],[37,80,1,.8],[45,98,3,1],[51,78,1,.8],[59,95,2,.9],[68,86,1,.7],[76,100,3,.9],[85,73,1,.55]].forEach(([y,length,weight,alpha]) => {
+    const line = document.createElement('i');
+    line.style.cssText = `--y:${y}%;--length:${length}%;--weight:${weight}px;--alpha:${alpha}`;
+    speed.append(line);
   });
-
-  function syncMotion() {
-    cancelAnimations();
-    jettButton.disabled = motionReduced();
-    jettCue.textContent = motionReduced() ? '动效已关闭' : '点击 · 唤起风效';
+  let state = 'idle', direction = 1, raf = 0, started = 0, queued = false, distance = 0;
+  const set = (key,value) => root.style.setProperty(`--jett-${key}`,String(value));
+  const clamp = t => Math.max(0,Math.min(1,t));
+  const reduced = () => document.documentElement.dataset.reduceMotion === 'true';
+  function change(next,now=performance.now()) {
+    state = next; started = now; root.dataset.jettState = next;
+    const active = next === 'dashing' || next === 'settling' || next === 'resetting';
+    button.disabled = active || reduced();
+    directions.forEach(b => b.disabled = active || reduced());
+    button.setAttribute('aria-pressed',String(next==='priming'||next==='ready'));
   }
-  window.addEventListener('portfolio:motion-change', syncMotion);
-  systemMotion.addEventListener('change', syncMotion);
-  document.addEventListener('visibilitychange', () => { if (document.hidden) cancelAnimations(); });
-  syncMotion();
+  function neutral(message = '捷风 · 逐风') {
+    cancelAnimationFrame(raf); raf=0; queued=false;
+    ['x','echo-x','bg'].forEach(k=>set(k,'0px'));
+    ['trail','wind','meter'].forEach(k=>set(k,0));
+    set('opacity',1);set('fade',1);set('lean','0deg');set('smear',1);
+    change('idle'); cue.textContent=reduced()?'动效已关闭':'点击 · 准备逐风';
+    button.setAttribute('aria-label',reduced()?'捷风立绘，动效已关闭':`捷风逐风：点击准备，再次点击向${direction>0?'右':'左'}冲刺`);
+    status.textContent=message;one('[data-jett-countdown]',root).textContent='';
+  }
+  function dash(now) {
+    distance=stage.clientWidth*.23*direction;
+    queued=false;one('[data-jett-countdown]',root).textContent='';set('direction',direction);set('meter',0);change('dashing',now);
+    cue.textContent=direction>0?'向右逐风':'向左逐风';status.textContent='冲刺中';
+  }
+  function frame(now) {
+    if(reduced()||document.hidden){neutral();return;}
+    const elapsed=now-started;
+    if(state==='priming'){
+      const t=clamp(elapsed/1000);set('wind',t*.7);set('meter',t);
+      if(t===1){change('ready',now);cue.textContent='再次点击 · 逐风';button.setAttribute('aria-label',`逐风就绪，再次点击向${direction>0?'右':'左'}冲刺`);status.textContent='逐风就绪';if(queued)dash(now);}
+    }else if(state==='ready'){
+      const remaining=Math.max(0,7.5-elapsed/1000);
+      set('meter',remaining/7.5);set('wind',.5+.15*Math.sin(elapsed/170));
+      one('[data-jett-countdown]',root).textContent=remaining.toFixed(1)+' 秒';
+      // Countdown is visible, while the live status announces only meaningful states.
+      root.setAttribute('data-ready-seconds',remaining.toFixed(1));
+      if(elapsed>=7500){neutral('准备窗口结束');return;}
+    }else if(state==='dashing'){
+      const t=clamp(elapsed/280), x=distance*(1-Math.pow(1-t,2));
+      const burst=Math.sin(Math.PI*t);
+      set('x',`${x}px`);set('echo-x',`${x-distance*.65*burst}px`);
+      set('bg',`${-x*.35}px`);set('trail',burst);set('wind',1-t);
+      set('lean',`${direction*-9*burst}deg`);set('smear',1+.12*burst);set('opacity',1-.25*burst);
+      if(t===1){set('lean','0deg');set('smear',1);set('trail',0);set('wind',0);set('opacity',1);change('settling',now);cue.textContent='逐风结束';status.textContent='已停稳 · 即将复位';}
+    }else if(state==='settling'){
+      if(elapsed>=1000){change('resetting',now);status.textContent='演示复位';}
+    }else if(state==='resetting'){
+      const t=clamp(elapsed/500);
+      set('fade',Math.abs(2*t-1));
+      if(t>=.5){set('x','0px');set('bg','0px');}
+      if(t===1){neutral();return;}
+    }
+    if(state!=='idle')raf=requestAnimationFrame(frame);
+  }
+  function activate(){
+    if(reduced()||document.hidden)return;
+    if(state==='idle'){neutral();change('priming');cue.textContent='准备中…';status.textContent='准备逐风';raf=requestAnimationFrame(frame);}
+    else if(state==='priming'){queued=true;cue.textContent='就绪后冲刺';}
+    else if(state==='ready')dash(performance.now());
+  }
+  function choose(value){
+    direction=value;
+    directions.forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.jettDirection)===value)));
+    if(state==='idle')neutral();
+    else if(state==='ready'){button.setAttribute('aria-label',`逐风就绪，再次点击向${direction>0?'右':'左'}冲刺`);status.textContent=`逐风就绪 · 向${value>0?'右':'左'}`;}
+  }
+  button.addEventListener('click',activate);
+  directions.forEach(b=>b.addEventListener('click',()=>choose(Number(b.dataset.jettDirection))));
+  one('[data-jett-reset]',root).addEventListener('click',()=>neutral());
+  root.addEventListener('keydown',event=>{
+    if(event.key==='Escape'){event.preventDefault();neutral();return;}
+    if(button.disabled)return;
+    if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();choose(event.key==='ArrowLeft'?-1:1);}
+    if(event.key.toLowerCase()==='e'&&!event.repeat){event.preventDefault();activate();}
+  });
+  addEventListener('portfolio:motion-change',()=>neutral());
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)neutral();});
+  addEventListener('pagehide',()=>neutral());
+  new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)neutral();}).observe(root);
+  neutral();
 })();
