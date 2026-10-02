@@ -161,15 +161,16 @@ updateMotion();
   const duration=4900;
   const poses=[
     [0,0,0,0,0,0,1], [.1,-2,-16,5,-10,7,1.03],
-    [.24,-4,-28,8,-16,14,1.07], [.43,-4,-28,8,-16,14,1.07],
-    [.57,3,40,16,12,38,.86], [.74,3,40,16,12,38,.86],
+    [.24,-4,-28,8,-16,14,1.07], [.43,-3.6,-26,7,-15,13,1.065],
+    [.57,3,40,16,12,38,.86], [.74,2.5,38,15,11,36,.875],
     [.86,1,-12,8,5,28,1.02], [1,0,0,0,0,0,1]
   ];
   const transform=v=>`translate3d(${v[0]}%,${v[1]}px,0) rotateZ(${v[4]}deg) rotateY(${v[3]}deg) rotateX(${v[2]}deg) scale(${v[5]})`;
-  const frames=poses.map(p=>({offset:p[0],transform:transform(p.slice(1)),easing:'cubic-bezier(.4,0,.2,1)'}));
   let animation=null, progress=0, pointer=null, suppressClick=false;
+  // Playback and direct manipulation share one sampled pose and clock.
+  const currentProgress=()=>animation ? Math.min(1,(performance.now()-animation.start)/duration) : progress;
   const isReduced=()=>document.documentElement.dataset.reduceMotion==='true';
-  function stop(){if(animation){const a=animation;animation=null;a.cancel();}}
+  function stop(){if(animation){cancelAnimationFrame(animation.frame);animation=null;}}
   function pose(p){
     progress=Math.max(0,Math.min(1,p));
     let i=poses.findIndex(k=>k[0]>=progress);if(i<1)i=1;
@@ -185,22 +186,29 @@ updateMotion();
   function play(){
     if(isReduced()||document.hidden||animation)return;
     root.dataset.inspectState='playing';trigger.setAttribute('aria-busy','true');cue.textContent='检视中';status.textContent='检视掠影狂徒';
-    const current=rig.animate(frames,{duration,fill:'both'});animation=current;current.currentTime=progress*duration;
-    current.finished.then(()=>{if(animation===current)neutral();},()=>{});
+    const current={start:performance.now()-progress*duration,frame:0};animation=current;
+    function tick(){
+      if(animation!==current)return;
+      pose(currentProgress());
+      if(progress>=1){neutral();return;}
+      current.frame=requestAnimationFrame(tick);
+    }
+    current.frame=requestAnimationFrame(tick);
   }
   trigger.addEventListener('click',e=>{if(suppressClick&&e.detail>0){suppressClick=false;return;}suppressClick=false;play();});
   // Optional direct manipulation stays on the gun; no separate scrubber UI.
   trigger.addEventListener('pointerdown',e=>{
     if(e.button!==0||isReduced())return;
-    pointer={id:e.pointerId,x:e.clientX,y:e.clientY,p:animation?Number(animation.currentTime)/duration:progress,drag:false};suppressClick=false;
+    pointer={id:e.pointerId,x:e.clientX,y:e.clientY,p:progress,drag:false};suppressClick=false;
   });
   trigger.addEventListener('pointermove',e=>{
     if(!pointer||e.pointerId!==pointer.id)return;
-    const dx=e.clientX-pointer.x,dy=e.clientY-pointer.y;
+    let dx=e.clientX-pointer.x;const dy=e.clientY-pointer.y;
     if(!pointer.drag){
       if(Math.abs(dy)>10&&Math.abs(dy)>Math.abs(dx)){pointer=null;return;}
       if(Math.abs(dx)<7)return;
-      pointer.drag=true;stop();trigger.setPointerCapture(e.pointerId);root.dataset.inspectState='scrubbing';trigger.setAttribute('aria-busy','false');cue.textContent='检视中';
+      pointer.p=currentProgress();pointer.x=e.clientX;
+      pointer.drag=true;stop();pose(pointer.p);trigger.setPointerCapture(e.pointerId);dx=0;root.dataset.inspectState='scrubbing';trigger.setAttribute('aria-busy','false');cue.textContent='检视中';
     }
     pose(pointer.p+dx/(trigger.clientWidth*.8));
   });
