@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-03",
+  "sourceCommit": "5aa5ae44d3cb8938cb13079197957e2f00c6947b",
+  "page": "https://xiecf0618-glitch.github.io/valorant-portfolio/",
+  "deploymentRun": "https://github.com/xiecf0618-glitch/valorant-portfolio/actions/runs/37090992177",
+  "deploymentConclusion": "success",
+  "fingerprints": {
+    "app": "94f37f684eea",
+    "weaponRuntime": "0bd00c8fd3da",
+    "model": "26e473017c4d"
+  },
+  "localChecks": {
+    "unitTestsPassed": 4,
+    "buildPassed": true,
+    "sceneAnchors": 23,
+    "sourceEntries": 16,
+    "gitDiffCheckPassed": true
+  },
+  "geometryReview": {
+    "method": "Actual GLB render plus 10001-sample projection sweep",
+    "canvasSizes": [
+      [
+        600,
+        360
+      ],
+      [
+        350,
+        260
+      ]
+    ],
+    "holdFraming": "pass",
+    "muzzleLeftAndTopClipping": false,
+    "nearPlaneClipping": false,
+    "stockGripCrop": "intentional first-person framing",
+    "lighting": "approximate Blender lighting, not browser material acceptance"
+  },
+  "publicBrowserQA": {
+    "environment": "Connected Windows Chromium with actual WebGL2; report relayed from browser QA task",
+    "runtimeMatched": true,
+    "realGeometryAndTexturesRendered": true,
+    "consoleOrResourceErrors": 0,
+    "actualGunClick": "pass",
+    "liftSideRollReturn": "pass",
+    "repeatedClick": "pass",
+    "desktopScrubHandoff": "pass, zero pose jump",
+    "mobileScrubHandoff": "pass, 0.12 percentage-point progress difference, continuous pose",
+    "escape": "pass",
+    "offscreenIdle": "pass",
+    "horizontalOverflow": false,
+    "sceneCount": 23,
+    "returningPhaseRegrab": {
+      "trials": 3,
+      "result": "pass stability check",
+      "behavior": "pointerdown ignored during the 230ms return; no scrubbing or pose jump; release finishes idle at 0%; next click starts playback",
+      "limit": "temporary input lock, not continuous regrab"
+    },
+    "viewportWidths": [
+      1440,
+      1366,
+      390,
+      360
+    ],
+    "viewportHeights": "not stated in browser QA summary"
+  },
+  "cloudBrowserFallbackQA": {
+    "webgl": "disabled by cloud browser runtime",
+    "staticFallbackVisible": true,
+    "mainPageUsable": true
+  },
+  "notClaimed": [
+    "Real phone hardware/performance or battery testing",
+    "Exact native game animation",
+    "Original game hands",
+    "Upgraded weapon particles or audio"
+  ]
+}
