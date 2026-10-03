@@ -21,5 +21,8 @@ export function poseSegment(progress) {
 export function samplePose(progress) {
   if(progress<=0||progress>=1)return {p:[...KEYS[0].p],r:[...KEYS[0].r]};
   const {a,b,u}=poseSegment(progress);
-  return {p:a.p.map((v,j)=>v+(b.p[j]-v)*u),r:a.r.map((v,j)=>v+(b.r[j]-v)*u)};
+  const position=a.p.map((v,j)=>v+(b.p[j]-v)*u);
+  // Keep the muzzle inside the pane during the fast wrist roll. Holds stay put.
+  if(progress>.54&&progress<.66){const arc=Math.sin(Math.PI*(progress-.54)/.12);position[0]+=.04*arc;position[1]-=.015*arc;}
+  return {p:position,r:a.r.map((v,j)=>v+(b.r[j]-v)*u)};
 }
