@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {samplePose,DURATION,KEYS} from '../../src/weapon-timeline.js';
+test('finite continuous timeline, 3.75 seconds, exact idle return',()=>{assert.equal(DURATION,3750);assert.deepEqual(samplePose(0),samplePose(1));for(let p=-.1;p<=1.1;p+=.001){const v=samplePose(p);assert(v.p.concat(v.r).every(Number.isFinite));}for(let i=1;i<KEYS.length-1;i++){const a=samplePose(KEYS[i].t-1e-7),b=samplePose(KEYS[i].t+1e-7);assert(a.p.concat(a.r).every((v,j)=>Math.abs(v-b.p.concat(b.r)[j])<.001));}});
+test('holds retain distinct 3D side/underside poses',()=>{const a=samplePose(.35),b=samplePose(.76);assert(Math.abs(a.r[0]-b.r[0])>2);assert(Math.abs(a.r[2]-b.r[2])>.5);assert.deepEqual(samplePose(-1),samplePose(0));assert.deepEqual(samplePose(2),samplePose(1));});

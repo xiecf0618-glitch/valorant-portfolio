@@ -6,7 +6,11 @@ const html = await readFile('index.html', 'utf8');
 const css = await readFile('styles.css', 'utf8');
 const script = await readFile('app.js', 'utf8');
 const revision = content => createHash('sha256').update(content).digest('hex').slice(0,12);
-const revisions = { stylesheet: revision(css), script: revision(script) };
+const modelHash = revision(await readFile('assets/models/reaver-vandal.glb'));
+const weaponRuntime = (await readFile('assets/runtime/weapon-inspect.js','utf8')).replace('../models/reaver-vandal.glb', `../models/reaver-vandal.glb?v=${modelHash}`);
+const weaponHash = revision(weaponRuntime);
+const publishedScript = script.replace('./assets/runtime/weapon-inspect.js', `./assets/runtime/weapon-inspect.js?v=${weaponHash}`);
+const revisions = { stylesheet: revision(css), script: revision(publishedScript), weapon:weaponHash, model:modelHash };
 const ids = [...html.matchAll(/id="(scene\d+)"/g)].map(match=>match[1]);
 if (ids.length !== 23 || new Set(ids).size !== 23) throw new Error('Expected 23 unique scene anchors.');
 if (/DecompressionStream|V5 ONLINE|VISUAL INTEGRATION|data:image\/svg\+xml;charset/.test(html)) throw new Error('Legacy loader or placeholder remains.');
@@ -24,6 +28,8 @@ for (const source of sources) if (!html.includes(source.url.replaceAll('&','&amp
 await rm(dist, { recursive:true, force:true });
 await mkdir(dist, { recursive:true });
 for (const file of ['index.html','styles.css','app.js','assets']) await cp(file,path.join(dist,file),{recursive:true});
+await writeFile(path.join(dist,'app.js'),publishedScript);
+await writeFile(path.join(dist,'assets/runtime/weapon-inspect.js'),weaponRuntime);
 // A newly deployed document must not reuse an earlier release's cached CSS/JS.
 // Content-derived query versions also stay stable for documentation-only releases.
 if (!html.includes('href="styles.css"') || !html.includes('src="app.js"')) throw new Error('Expected entry-point stylesheet and script.');

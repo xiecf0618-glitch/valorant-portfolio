@@ -22,9 +22,9 @@
 
 ## 源码与维护
 
-无框架、无第三方运行时依赖的静态网站。`index.html`维护正文与来源，`styles.css`维护视觉，`app.js`负责标签、目录、阅读进度和键盘交互。`assets/`保存本地素材、PDF与工作图；`docs/`保存审计与验收；`scripts/`提供本地服务与构建检查。
+无框架静态网站；枪械检视使用本地打包的 Three.js 0.180.0，运行时不访问第三方 CDN。`index.html`维护正文与来源，`styles.css`维护视觉，`app.js`负责标签、目录、阅读进度和键盘交互。`assets/`保存本地素材、PDF与工作图；`docs/`保存审计与验收；`scripts/`提供本地服务与构建检查。
 
-使用Node.js 22或更新版本，无需安装依赖：
+使用 Node.js 22 或更新版本；已有提交的本地运行时可直接构建。修改三维渲染源码后运行 npm ci 和 npm run bundle:weapon：
 
 ```sh
 node scripts/serve.mjs --port 4173

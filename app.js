@@ -152,82 +152,20 @@ motionButton.addEventListener('click', () => { reduced = !reduced; updateMotion(
 systemMotionPreference.addEventListener('change', event => { reduced = event.matches; updateMotion(); });
 updateMotion();
 
-/* The reference has two held inspect poses. A single side-view PNG cannot
- * reveal the actual top/back surfaces: keep it legible, never flatten it. */
+/* The renderer is a local, pinned bundle. Prewarm near the hero; keep the
+ * static image if WebGL or the model is unavailable. No animation is faked. */
 (() => {
-  const root=one('[data-weapon-showcase]'), trigger=one('[data-weapon-inspect]');
-  const rig=one('[data-weapon-stage]'), cue=one('[data-weapon-cue]'), status=one('[data-weapon-phase]');
-  if(!root||!trigger||!rig)return;
-  const duration=4900;
-  const poses=[
-    [0,0,0,0,0,0,1], [.1,-2,-16,5,-10,7,1.03],
-    [.24,-4,-28,8,-16,14,1.07], [.43,-3.6,-26,7,-15,13,1.065],
-    [.57,3,40,16,12,38,.86], [.74,2.5,38,15,11,36,.875],
-    [.86,1,-12,8,5,28,1.02], [1,0,0,0,0,0,1]
-  ];
-  const transform=v=>`translate3d(${v[0]}%,${v[1]}px,0) rotateZ(${v[4]}deg) rotateY(${v[3]}deg) rotateX(${v[2]}deg) scale(${v[5]})`;
-  let animation=null, progress=0, pointer=null, suppressClick=false;
-  // Playback and direct manipulation share one sampled pose and clock.
-  const currentProgress=()=>animation ? Math.min(1,(performance.now()-animation.start)/duration) : progress;
-  const isReduced=()=>document.documentElement.dataset.reduceMotion==='true';
-  function stop(){if(animation){cancelAnimationFrame(animation.frame);animation=null;}}
-  function pose(p){
-    progress=Math.max(0,Math.min(1,p));
-    let i=poses.findIndex(k=>k[0]>=progress);if(i<1)i=1;
-    const a=poses[i-1],b=poses[i];let t=(progress-a[0])/(b[0]-a[0]);t=t*t*(3-2*t);
-    rig.style.transform=transform(a.slice(1).map((v,j)=>v+(b[j+1]-v)*t));
-    root.dataset.inspectProgress=String(Math.round(progress*100));
-  }
-  function neutral(){
-    stop();pointer=null;progress=0;rig.style.transform='';root.dataset.inspectProgress='0';root.dataset.inspectState='idle';
-    trigger.setAttribute('aria-busy','false');cue.textContent=isReduced()?'动效已关闭':'点击枪械 · 检视';
-    status.textContent=isReduced()?'掠影狂徒，动效已关闭':'掠影狂徒，可以检视';
-  }
-  function play(){
-    if(isReduced()||document.hidden||animation)return;
-    root.dataset.inspectState='playing';trigger.setAttribute('aria-busy','true');cue.textContent='检视中';status.textContent='检视掠影狂徒';
-    const current={start:performance.now()-progress*duration,frame:0};animation=current;
-    function tick(){
-      if(animation!==current)return;
-      pose(currentProgress());
-      if(progress>=1){neutral();return;}
-      current.frame=requestAnimationFrame(tick);
-    }
-    current.frame=requestAnimationFrame(tick);
-  }
-  trigger.addEventListener('click',e=>{if(suppressClick&&e.detail>0){suppressClick=false;return;}suppressClick=false;play();});
-  // Optional direct manipulation stays on the gun; no separate scrubber UI.
-  trigger.addEventListener('pointerdown',e=>{
-    if(e.button!==0||isReduced())return;
-    pointer={id:e.pointerId,x:e.clientX,y:e.clientY,p:progress,drag:false};suppressClick=false;
-  });
-  trigger.addEventListener('pointermove',e=>{
-    if(!pointer||e.pointerId!==pointer.id)return;
-    let dx=e.clientX-pointer.x;const dy=e.clientY-pointer.y;
-    if(!pointer.drag){
-      if(Math.abs(dy)>10&&Math.abs(dy)>Math.abs(dx)){pointer=null;return;}
-      if(Math.abs(dx)<7)return;
-      pointer.p=currentProgress();pointer.x=e.clientX;
-      pointer.drag=true;stop();pose(pointer.p);trigger.setPointerCapture(e.pointerId);dx=0;root.dataset.inspectState='scrubbing';trigger.setAttribute('aria-busy','false');cue.textContent='检视中';
-    }
-    pose(pointer.p+dx/(trigger.clientWidth*.8));
-  });
-  trigger.addEventListener('pointerup',e=>{
-    if(!pointer||e.pointerId!==pointer.id)return;
-    const dragged=pointer.drag;pointer=null;if(!dragged)return;suppressClick=true;
-    if(trigger.hasPointerCapture(e.pointerId))trigger.releasePointerCapture(e.pointerId);play();
-  });
-  trigger.addEventListener('pointercancel',()=>{suppressClick=true;neutral();});
-  trigger.addEventListener('lostpointercapture',()=>{if(pointer?.drag){suppressClick=true;neutral();}});
-  root.addEventListener('keydown',e=>{
-    if(e.key==='Escape'){e.preventDefault();neutral();}
-    if(e.key.toLowerCase()==='y'&&!e.repeat){e.preventDefault();play();}
-  });
-  addEventListener('portfolio:motion-change',neutral);
-  document.addEventListener('visibilitychange',()=>{if(document.hidden)neutral();});
-  addEventListener('pagehide',neutral);
-  new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)neutral();}).observe(root);
-  neutral();
+  const root=one('[data-weapon-showcase]');if(!root)return;
+  let loaded=false;
+  const load=()=>{if(loaded)return;loaded=true;
+    import('./assets/runtime/weapon-inspect.js').then(({mountWeapon})=>mountWeapon(root)).catch(()=>{
+      root.dataset.renderer='fallback';root.dataset.inspectState='unavailable';
+      one('[data-weapon-cue]',root).textContent='静态预览';
+      one('[data-weapon-phase]',root).textContent='三维检视暂不可用，已保留枪械静态预览';
+    });
+  };
+  const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){observer.disconnect();load();}},{rootMargin:'400px'});observer.observe(root);
+  root.addEventListener('pointerenter',load,{once:true});root.addEventListener('focusin',load,{once:true});
 })();
 
 /* One click presents preparation then lateral Tailwind automatically.
