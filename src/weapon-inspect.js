@@ -22,7 +22,7 @@ export async function mountWeapon(root) {
   function draw(){if(ready&&visible&&!document.hidden&&!disposed){renderer.render(scene,camera);root.dataset.renderCount=String(+(root.dataset.renderCount||0)+1);}}
   function pose(p){progress=Math.max(0,Math.min(1,p));const v=samplePose(progress),{a,b,u}=poseSegment(progress);grip.position.fromArray(v.p);grip.position.y+=frameOffsetY;fromQuaternion.setFromEuler(euler.set(...a.r));quaternion.setFromEuler(euler.set(...b.r));grip.quaternion.slerpQuaternions(fromQuaternion,quaternion,u);grip.updateMatrixWorld(true);root.dataset.inspectProgress=(progress*100).toFixed(2);root.dataset.inspectPose=JSON.stringify([...grip.position.toArray(),...grip.quaternion.toArray()].map(n=>+n.toFixed(5)));draw();}
   function releasePointer(){const id=pointer?.id;pointer=null;if(id!==undefined&&button.hasPointerCapture(id))button.releasePointerCapture(id);}
-  function neutral(render=true){cancelFrame();pendingPlay=false;releasePointer();progress=0;if(ready)setState('idle',reduced()?'动效已关闭':'点击枪械 · 检视');if(ready){if(render)pose(0);else{const v=samplePose(0);grip.position.fromArray(v.p);grip.position.y+=frameOffsetY;grip.quaternion.setFromEuler(euler.set(...v.r));root.dataset.inspectProgress='0';}}status.textContent=reduced()?'掠影狂徒，动效已关闭':'掠影狂徒，可以检视';}
+  function neutral(render=true){cancelFrame();pendingPlay=false;releasePointer();progress=0;if(ready)setState('idle',reduced()?'��Ч�ѹر�':'���ǹе �� ����');if(ready){if(render)pose(0);else{const v=samplePose(0);grip.position.fromArray(v.p);grip.position.y+=frameOffsetY;grip.quaternion.setFromEuler(euler.set(...v.r));root.dataset.inspectProgress='0';}}status.textContent=reduced()?'��Ӱ��ͽ����Ч�ѹر�':'��Ӱ��ͽ�����Լ���';}
   function tick(now){raf=0;if(!visible||document.hidden||disposed){neutral(false);return;}
     if(state==='returning'){
       const u=Math.min(1,(now-returnStart)/230),s=u*u*(3-2*u),idle=samplePose(0);
@@ -35,10 +35,10 @@ export async function mountWeapon(root) {
     raf=requestAnimationFrame(tick);
   }
   function play(){if(reduced()||document.hidden||!visible||disposed)return;if(!ready){pendingPlay=state==='loading';return;}if(state==='playing'||state==='returning')return;
-    setState('playing','检视中');status.textContent='正在检视掠影狂徒';playStart=performance.now()-progress*DURATION;cancelFrame();raf=requestAnimationFrame(tick);
+    setState('playing','������');status.textContent='���ڼ�����Ӱ��ͽ';playStart=performance.now()-progress*DURATION;cancelFrame();raf=requestAnimationFrame(tick);
   }
   function returnToIdle(){if(!ready)return;pendingPlay=false;releasePointer();cancelFrame();if(reduced()||!visible||document.hidden||progress===0){neutral();return;}
-    returnPose={p:grip.position.clone(),q:grip.quaternion.clone()};returnStart=performance.now();setState('returning','复位中');raf=requestAnimationFrame(tick);
+    returnPose={p:grip.position.clone(),q:grip.quaternion.clone()};returnStart=performance.now();setState('returning','��λ��');raf=requestAnimationFrame(tick);
   }
   function hit(x,y){if(!ready)return false;const b=canvas.getBoundingClientRect();ndc.set((x-b.left)/b.width*2-1,-(y-b.top)/b.height*2+1);raycaster.setFromCamera(ndc,camera);return raycaster.intersectObject(model,true).length>0;}
   button.addEventListener('pointerdown',event=>{if(event.button!==0||state==='returning'||reduced()||!hit(event.clientX,event.clientY))return;pointer={id:event.pointerId,x:event.clientX,y:event.clientY,p:progress,drag:false};suppressClick=false;});
@@ -47,7 +47,7 @@ export async function mountWeapon(root) {
     if(pointer.id!==event.pointerId)return;let dx=event.clientX-pointer.x;const dy=event.clientY-pointer.y;
     if(!pointer.drag){if(Math.abs(dy)>10&&Math.abs(dy)>Math.abs(dx)){pointer=null;return;}if(Math.abs(dx)<7)return;
       // Freeze the last rendered pose, then zero the drag origin: no catch-up jump.
-      pointer.p=progress;pointer.x=event.clientX;pointer.drag=true;cancelFrame();button.setPointerCapture(event.pointerId);dx=0;setState('scrubbing','拖动检视');
+      pointer.p=progress;pointer.x=event.clientX;pointer.drag=true;cancelFrame();button.setPointerCapture(event.pointerId);dx=0;setState('scrubbing','�϶�����');
     }
     pose(pointer.p+dx/(button.clientWidth*.8));
   });
@@ -62,12 +62,12 @@ export async function mountWeapon(root) {
   addEventListener('pagehide',()=>neutral(false));
   addEventListener('pageshow',()=>{if(ready)draw();});
   const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(!visible)neutral(false);else if(ready)draw();});observer.observe(root);
-  function fail(error){cancelFrame();ready=false;pendingPlay=false;setState('unavailable','静态预览');root.dataset.renderer='fallback';status.textContent='三维检视暂不可用，已保留枪械静态预览';fallback.hidden=false;canvas.hidden=true;console.warn('Weapon renderer unavailable:',error?.message||error);}
+  function fail(error){cancelFrame();ready=false;pendingPlay=false;setState('unavailable','��̬Ԥ��');root.dataset.renderer='fallback';status.textContent='��ά�����ݲ����ã��ѱ���ǹе��̬Ԥ��';fallback.hidden=false;canvas.hidden=true;console.warn('Weapon renderer unavailable:',error?.message||error);}
   try{
-    setState('loading','三维模型加载中');space.append(canvas);
+    setState('loading','��άģ�ͼ�����');space.append(canvas);
     renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:'low-power'});
     renderer.setClearColor(0,0);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
-    scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(50,1,.03,10);camera.position.set(0,0,0);camera.lookAt(0,0,-1);camera.updateMatrixWorld();
+    scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(50,1,.03,10);camera.position.set(.28,-.17,.35);camera.lookAt(.28,-.17,-1);camera.updateMatrixWorld();
     const pmrem=new THREE.PMREMGenerator(renderer),room=new RoomEnvironment();environment=pmrem.fromScene(room,.04);scene.environment=environment.texture;room.dispose();pmrem.dispose();
     scene.add(new THREE.HemisphereLight(0xdedfff,0x232331,1.2));
     const key=new THREE.DirectionalLight(0xf6f1ff,1.6);key.position.set(-2,3,4);scene.add(key);
