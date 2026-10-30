@@ -273,3 +273,10 @@ body{font-size:17px;line-height:1.9}
 
 .hero{flex-direction:column;justify-content:center}
 .hero-sub{max-width:100%}.hero-footnote{line-height:1.6} @media(max-width:560px){.hero-footnote{flex-direction:row;justify-content:space-between;gap:14px}.hero-footnote span{max-width:190px}.hero-footnote a{max-width:115px;text-align:right}.weapon-space{height:230px}.hero-art{padding-top:0}}
+
+/* Restore the existing map artwork; keep editorial spacing and readable copy. */
+.scene::before,.scene[data-chapter=esports]::before{display:block;opacity:var(--art-opacity)}
+.hero{--art-opacity:.42}.hero::before{mask-image:linear-gradient(90deg,#0004 0%,#0007 45%,#000 100%)}
+.hero .weapon-viewer .interaction-hint{pointer-events:auto;cursor:pointer;color:#c4d0db;text-shadow:0 1px 6px #000}
+.hero .weapon-viewer .interaction-hint:hover{color:white;text-decoration:underline;text-underline-offset:5px}
+@media(max-width:800px){.hero::before{height:100%;background-size:auto 100%;background-position:65% 50%;mask-image:linear-gradient(180deg,#0005 0%,#0007 45%,#000 100%)}.hero{--art-opacity:.32}}

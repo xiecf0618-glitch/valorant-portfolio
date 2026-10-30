@@ -8,6 +8,8 @@ export async function mountWeapon(root) {
   const button=root.querySelector('[data-weapon-inspect]');
   const space=root.querySelector('.weapon-space');
   const cue=root.querySelector('[data-weapon-cue]');
+  const hint=root.querySelector('.interaction-hint');
+  const isHint=target=>target instanceof Element&&hint?.contains(target);
   const status=root.querySelector('[data-weapon-phase]');
   const fallback=root.querySelector('[data-weapon-stage]');
   const canvas=document.createElement('canvas');canvas.className='weapon-canvas';canvas.setAttribute('aria-hidden','true');
@@ -41,7 +43,7 @@ export async function mountWeapon(root) {
     returnPose={p:grip.position.clone(),q:grip.quaternion.clone()};returnStart=performance.now();setState('returning','复位中');raf=requestAnimationFrame(tick);
   }
   function hit(x,y){if(!ready)return false;const b=canvas.getBoundingClientRect();ndc.set((x-b.left)/b.width*2-1,-(y-b.top)/b.height*2+1);raycaster.setFromCamera(ndc,camera);return raycaster.intersectObject(model,true).length>0;}
-  button.addEventListener('pointerdown',event=>{if(event.button!==0||state==='returning'||reduced()||!hit(event.clientX,event.clientY))return;pointer={id:event.pointerId,x:event.clientX,y:event.clientY,p:progress,drag:false};suppressClick=false;});
+  button.addEventListener('pointerdown',event=>{if(isHint(event.target)||event.button!==0||state==='returning'||reduced()||!hit(event.clientX,event.clientY))return;pointer={id:event.pointerId,x:event.clientX,y:event.clientY,p:progress,drag:false};suppressClick=false;});
   button.addEventListener('pointermove',event=>{
     if(!pointer){button.classList.toggle('weapon-hit',hit(event.clientX,event.clientY));return;}
     if(pointer.id!==event.pointerId)return;let dx=event.clientX-pointer.x;const dy=event.clientY-pointer.y;
@@ -52,7 +54,7 @@ export async function mountWeapon(root) {
     pose(pointer.p+dx/(button.clientWidth*.8));
   });
   button.addEventListener('pointerup',event=>{if(!pointer||pointer.id!==event.pointerId)return;const dragged=pointer.drag;releasePointer();if(dragged){suppressClick=true;play();}});
-  button.addEventListener('click',event=>{if(suppressClick&&event.detail>0){suppressClick=false;return;}suppressClick=false;if(event.detail===0||hit(event.clientX,event.clientY))play();});
+  button.addEventListener('click',event=>{if(suppressClick&&event.detail>0){suppressClick=false;return;}suppressClick=false;if(event.detail===0||isHint(event.target)||hit(event.clientX,event.clientY))play();});
   button.addEventListener('pointercancel',()=>{suppressClick=true;returnToIdle();});
   button.addEventListener('lostpointercapture',()=>{if(pointer?.drag){suppressClick=true;returnToIdle();}});
   button.addEventListener('pointerleave',()=>button.classList.remove('weapon-hit'));
